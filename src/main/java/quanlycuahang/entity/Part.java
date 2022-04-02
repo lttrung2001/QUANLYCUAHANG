@@ -18,7 +18,7 @@ public class Part {
 	private int id;
 	@Column(name = "PART_NAME", nullable = false)
 	private String name;
-	@OneToMany(fetch = FetchType.LAZY,mappedBy = "part")
+	@OneToMany(fetch = FetchType.EAGER,mappedBy = "part")
 	private Set<ProductType> proTypeList = new HashSet<ProductType>();
 	public int getId() {
 		return id;
