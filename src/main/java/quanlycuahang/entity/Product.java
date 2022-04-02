@@ -31,8 +31,6 @@ public class Product {
 	private String image;
 	@Column(name = "QTT_IN_STOCK", nullable = false)
 	private int qttInStock;
-	// Cot ben duoi co the sai
-	// Tim hieu convert DateTime SQL Server to Date in Java
 	@Column(name = "INSERT_DATE", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date insertDate;
