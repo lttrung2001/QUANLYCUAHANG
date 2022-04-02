@@ -20,5 +20,32 @@ public class Part {
 	private String name;
 	@OneToMany(fetch = FetchType.LAZY,mappedBy = "part")
 	private Set<ProductType> proTypeList = new HashSet<ProductType>();
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Set<ProductType> getProTypeList() {
+		return proTypeList;
+	}
+	public void setProTypeList(Set<ProductType> proTypeList) {
+		this.proTypeList = proTypeList;
+	}
+	public Part(int id, String name, Set<ProductType> proTypeList) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.proTypeList = proTypeList;
+	}
+	public Part() {
+		super();
+	}
 	
 }

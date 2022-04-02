@@ -21,8 +21,7 @@ public class BillDetail {
 	@ManyToOne
 	@MapsId("billId")
 	@JoinColumn(name = "BILL_ID", nullable = false)
-	private Bill bill;
-	
+	private Bill bill;	
 	@ManyToOne
 	@MapsId("productId")
 	@JoinColumn(name = "PRODUCT_ID", nullable = false)
@@ -30,4 +29,49 @@ public class BillDetail {
 	
 	@Column(name = "AMOUNT_BILL", nullable = false)
 	private int amount;
+
+	public BillDetailKey getId() {
+		return id;
+	}
+
+	public void setId(BillDetailKey id) {
+		this.id = id;
+	}
+
+	public Bill getBill() {
+		return bill;
+	}
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
+	}
+
+	public Product getProductInBill() {
+		return productInBill;
+	}
+
+	public void setProductInBill(Product productInBill) {
+		this.productInBill = productInBill;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public BillDetail(BillDetailKey id, Bill bill, Product productInBill, int amount) {
+		super();
+		this.id = id;
+		this.bill = bill;
+		this.productInBill = productInBill;
+		this.amount = amount;
+	}
+
+	public BillDetail() {
+		super();
+	}
+	
 }

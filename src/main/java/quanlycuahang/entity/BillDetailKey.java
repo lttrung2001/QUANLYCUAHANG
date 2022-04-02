@@ -11,7 +11,7 @@ public class BillDetailKey implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4907697808888733160L;
 	@Column(name = "BILL_ID", nullable = false)
 	private int billId;
 	@Column(name = "PRODUCT_ID", nullable = false)

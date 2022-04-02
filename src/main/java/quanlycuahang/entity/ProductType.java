@@ -22,8 +22,43 @@ public class ProductType {
 	@Column(name = "PRO_TYPE_NAME", nullable = false)
 	private String proTypeName;
 	@ManyToOne
-	@JoinColumn(name = "PART_ID", nullable = false)
+	@JoinColumn(name = "PART", nullable = false)
 	private Part part;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "proType")
 	private Set<Product> list = new HashSet<Product>();
+	public int getProTypeId() {
+		return proTypeId;
+	}
+	public void setProTypeId(int proTypeId) {
+		this.proTypeId = proTypeId;
+	}
+	public String getProTypeName() {
+		return proTypeName;
+	}
+	public void setProTypeName(String proTypeName) {
+		this.proTypeName = proTypeName;
+	}
+	public Part getPart() {
+		return part;
+	}
+	public void setPart(Part part) {
+		this.part = part;
+	}
+	public Set<Product> getList() {
+		return list;
+	}
+	public void setList(Set<Product> list) {
+		this.list = list;
+	}
+	public ProductType(int proTypeId, String proTypeName, Part part, Set<Product> list) {
+		super();
+		this.proTypeId = proTypeId;
+		this.proTypeName = proTypeName;
+		this.part = part;
+		this.list = list;
+	}
+	public ProductType() {
+		super();
+	}
+	
 }
