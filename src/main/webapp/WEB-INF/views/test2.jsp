@@ -16,11 +16,11 @@
 	<p>Nhan vien xac nhan: ${bill.staffCreate.lastName } ${bill.staffCreate.firstName }  </p>
 	<p>Trang thai: ${bill.status }</p>
 	<p>Dia chi giao hang: ${bill.address }</p>
-	<ul>
+	<ol>
 	<c:forEach var="detail" items="${bill.billDetails }">
 		<li>Ten san pham: ${detail.productInBill.name }_So luong: ${detail.amount }_Gia: ${detail.productInBill.price }</li>
 	</c:forEach>
-	</ul>
+	</ol>
 </c:forEach>
 </body>
 </html>
