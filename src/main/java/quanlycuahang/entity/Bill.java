@@ -31,7 +31,7 @@ public class Bill {
 	@ManyToOne
 	@JoinColumn(name = "STAFF_CREATE", nullable = false)
 	private Staff staffCreate;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "bill")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "bill")
 	Set<BillDetail> billDetails = new HashSet<BillDetail>();
 	public int getId() {
 		return id;

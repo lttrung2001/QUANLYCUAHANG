@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -24,7 +25,7 @@ public class ClientAccount {
 	private int point;
 	@OneToOne(mappedBy = "clientAccount")
 	private Client clientInfo;
-	@OneToMany(mappedBy = "accountInCart")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "accountInCart")
 	private Set<Cart> products = new HashSet<Cart>();
 	public int getId() {
 		return id;

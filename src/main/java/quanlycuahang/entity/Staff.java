@@ -35,7 +35,7 @@ public class Staff {
 	private String phoneNumber;
 	@Column(name = "IS_WORKING", nullable = false)
 	private char isWorking;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "staffCreate")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "staffCreate")
 	private Set<Bill> createdBills = new HashSet<Bill>();
 	@OneToOne(mappedBy = "staffInfo")
 	private StaffAccount account;

@@ -24,7 +24,7 @@ public class ProductType {
 	@ManyToOne
 	@JoinColumn(name = "PART", nullable = false)
 	private Part part;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "proType")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "proType")
 	private Set<Product> list = new HashSet<Product>();
 	public int getProTypeId() {
 		return proTypeId;
