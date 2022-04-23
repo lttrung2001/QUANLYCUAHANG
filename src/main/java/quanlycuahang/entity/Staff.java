@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,6 +37,7 @@ public class Staff {
 	@Column(name = "IS_WORKING", nullable = false)
 	private char isWorking;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "staffCreate")
+	@OrderBy
 	private Set<Bill> createdBills = new HashSet<Bill>();
 	@OneToOne(mappedBy = "staffInfo")
 	private StaffAccount account;
