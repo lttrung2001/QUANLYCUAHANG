@@ -21,7 +21,6 @@
 		<li>Ten san pham: ${detail.productInBill.id }_${detail.productInBill.name }_So luong: ${detail.amount }_Gia: ${detail.productInBill.price }</li>
 	</c:forEach>
 	</ol>
-asdasfasfasf
 </c:forEach>
 </body>
 </html>
