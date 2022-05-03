@@ -9,7 +9,6 @@
 </head>
 <body>
 <h1>Danh sach don hang do nhan vien 106 xac nhan</h1>
-hihihihi
 <c:forEach var="bill" items="${trung.createdBills }">
 	<h3>Ma hoa don: ${bill.id }</h3>
 	<p>Ngay tao: ${bill.createDate }</p>
