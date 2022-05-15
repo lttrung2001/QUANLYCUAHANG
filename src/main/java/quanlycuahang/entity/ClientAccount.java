@@ -1,5 +1,6 @@
 package quanlycuahang.entity;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "CLIENT_ACCOUNT")
@@ -23,6 +26,9 @@ public class ClientAccount {
 	private String password;
 	@Column(name = "POINT", nullable = false)
 	private int point;
+	@Column(name = "CREATE_AT", nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDate;
 	@OneToOne(mappedBy = "clientAccount")
 	private Client clientInfo;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "accountInCart")
@@ -63,17 +69,25 @@ public class ClientAccount {
 	public void setProducts(Set<Cart> products) {
 		this.products = products;
 	}
-	public ClientAccount(int id, String username, String password, int point, Client clientInfo, Set<Cart> products) {
+	public ClientAccount(int id, String username, String password, int point, Date createdDate, Client clientInfo,
+			Set<Cart> products) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.point = point;
+		this.createdDate = createdDate;
 		this.clientInfo = clientInfo;
 		this.products = products;
 	}
 	public ClientAccount() {
 		super();
+	}
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 	
 }
