@@ -21,6 +21,12 @@
 <!-- 		<property name="logo" value="images/logos/poly.png"/> -->
 <!-- 	</bean> -->
 <!-- 	Chứa 8 ảnh mặc định -->
+<!-- 	Thông tin tài khoản admin -->
+		<bean id="admin">
+			<property name="username" value="admin"/>
+			<property name="password" value="quanlycuahang"/>
+			<property name="fullname" value="Lê Thành Trung"/>
+		</bean>
 	
 
 </beans>
