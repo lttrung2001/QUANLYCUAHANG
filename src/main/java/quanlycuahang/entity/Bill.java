@@ -2,6 +2,7 @@ package quanlycuahang.entity;
 
 import java.util.Date;
 
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,8 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
@@ -30,9 +29,8 @@ public class Bill {
 	private char status;
 	@Column(name = "DELIVER_ADDRESS", nullable = false)
 	private String address;
-	@ManyToOne
-	@JoinColumn(name = "STAFF_CREATE", nullable = false)
-	private Staff staffCreate;
+	@Column(name = "STAFF_CREATE", nullable = false)
+	private String staffCreate;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "bill")
 	@OrderBy("productInBill ASC")
 	Set<BillDetail> billDetails = new HashSet<BillDetail>();
@@ -60,10 +58,10 @@ public class Bill {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Staff getStaffCreate() {
+	public String getStaffCreate() {
 		return staffCreate;
 	}
-	public void setStaffCreate(Staff staffCreate) {
+	public void setStaffCreate(String staffCreate) {
 		this.staffCreate = staffCreate;
 	}
 	public Set<BillDetail> getBillDetails() {
@@ -72,8 +70,7 @@ public class Bill {
 	public void setBillDetails(Set<BillDetail> billDetails) {
 		this.billDetails = billDetails;
 	}
-	public Bill(int id, Date createDate, char status, String address, Staff staffCreate,
-			Set<BillDetail> billDetails) {
+	public Bill(int id, Date createDate, char status, String address, String staffCreate, Set<BillDetail> billDetails) {
 		super();
 		this.id = id;
 		this.createDate = createDate;
@@ -84,5 +81,8 @@ public class Bill {
 	}
 	public Bill() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
+	
+	
 }
