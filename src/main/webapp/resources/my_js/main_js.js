@@ -315,52 +315,57 @@ window.onload=function(){
 	
 	// Buy item
 	let totalTemp=0
-	let totalObject=document.querySelector('.total-object p')
-	let totalPriceObject=document.querySelector('.price-object')
+	let totalObject=document.querySelector('.total-object p')	
 	let descItem=document.querySelectorAll('.describe-item')
+	let priceItem=document.querySelectorAll('.price-item')
+	let priceTemp=0
+	let totalPriceObject=document.querySelector('.price-object')
 	let descSelected=document.querySelector('.describe-object p')
 	for(let i=0; i<buyItem.length; i++){
 		
 		buyItem[i].addEventListener('click',function(){
 			totalTemp=0
+			totalPriceObject.innerHTML=''
 			totalObject.innerHTML=0
-			
 			filterLogin.style.display='block'
 			selectItem.style.display='flex'
 			chooseImg.src=imgs[i].src
-			descSelected.innerHTML=descItem[i].textContent
+			descSelected.innerHTML=descItem[i].textContent			
+			priceTemp=priceItem[i].innerHTML
 			// close object
-				closeObject.addEventListener('click',function(){
-					selectItem.style.display='none'
-					filterLogin.style.display='none'
-				})
+				
 			// next and prev object
-				nextImg.addEventListener('click',function(){
-					setTimeout(function(){
-						selectItem.style.display='flex'
-					},200)
-					selectItem.style.display='none'
-				})
-				prevImg.addEventListener('click',function(){
-					setTimeout(function(){
-						selectItem.style.display='flex'
-					},200)
-					selectItem.style.display='none'
-				})	
+				
 		})
+		closeObject.addEventListener('click',function(){
+			selectItem.style.display='none'
+			filterLogin.style.display='none'
+		})
+		nextImg.addEventListener('click',function(){
+			setTimeout(function(){
+				selectItem.style.display='flex'
+			},200)
+			selectItem.style.display='none'
+		})
+		prevImg.addEventListener('click',function(){
+			setTimeout(function(){
+				selectItem.style.display='flex'
+			},200)
+			selectItem.style.display='none'
+		})	
 	}
 	// select size object
 	
 	// add and subtract total object
 	var addTotalObject=document.querySelector('.add-total')
 	var subTotalObject=document.querySelector('.subtract-total')
-	let priceTemp=100
+	
 	addTotalObject.addEventListener('click',function(){
 		totalTemp=totalTemp+1
 		totalObject.innerHTML=totalTemp
 		console.log(priceTemp)
 		// Sum Price of Object
-		totalPriceObject.innerHTML=priceTemp*totalTemp+'$'
+		totalPriceObject.innerHTML=priceTemp*totalTemp
 	})
 	subTotalObject.addEventListener('click',function(){
 		if(totalTemp>0){
@@ -368,7 +373,7 @@ window.onload=function(){
 			totalObject.innerHTML=totalTemp
 			console.log(priceTemp)
 			// Sum Price of Object
-			totalPriceObject.innerHTML=priceTemp*totalTemp+'$'
+			totalPriceObject.innerHTML=priceTemp*totalTemp
 		}
 	})
 	
