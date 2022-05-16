@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <!-- end of topbar -->
-                <%@include file="/WEB-INF/views/shop/reuse/ThongKejsp" %>
+                <%@include file="/WEB-INF/views/shop/reuse/ThongKe.jsp" %>
 
                 
             </div>

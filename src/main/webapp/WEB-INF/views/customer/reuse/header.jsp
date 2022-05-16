@@ -1,7 +1,8 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div id="header">
     <nav class="container">
         <a  id="logo" href="#home">
-            <img src="my_png/Logo-byOanh.png" alt="CAB Shop">				
+            <img src="<c:url value='/resources/my_png/Logo-byOanh.png'/>" alt="CAB Shop">				
         </a>
         
         <ul id="main-menu">
@@ -13,7 +14,6 @@
                     <li><a href="#" onclick="notification_option()">Hoodies</a></li>
                     <li><a href="#" onclick="notification_option()">Polos</a></li>
                     <li><a href="#" onclick="notification_option()">Long-Shirts</a></li>
-
                 </ul>
             </li>
             

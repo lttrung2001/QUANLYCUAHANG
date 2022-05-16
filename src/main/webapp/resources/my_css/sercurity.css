@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f7f9fa;
+}
+.header {
+  background-color: #333;
+  position: sticky; /*sticky bắt buộc phải đi cùng với top hoặc bot */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  opacity: 0.9;
+  height: 80px;
+  padding: 3px 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo h2 {
+  color: #d43831;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.logo img {
+  transform: translateY(5px);
+  margin-right: 10px;
+}
+.logo img {
+  width: 90px;
+  height: auto;
+  object-fit: cover;
+}
+.loginName span {
+  font-size: 18px;
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+.loginName button {
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 7px;
+  padding: 3px 8px;
+  box-shadow: 0 0 4px #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container {
+  padding: 0 300px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 30px;
+}
+.container .list {
+  height: 450px;
+  background: #fff;
+  box-shadow: 0 0 1px #ccc;
+}
+.container .list ul {
+  padding: 20px 40px;
+}
+.container .list ul li {
+  list-style: none;
+  margin: 20px 0;
+}
+.container .list ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/*      -- boxChange         */
+.boxChange {
+  height: 450px;
+  font-family: sans-serif;
+  font-weight: 200;
+  background: #fff;
+  padding: 40px 50px;
+  box-shadow: 0 0 1px #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.boxChange .boxInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 40px 0;
+  display: none;
+}
+.boxChange h2 {
+  padding-bottom: 20px;
+  border-bottom: #000 solid 1px;
+}
+.boxChange > ion-icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.boxChange .boxInfo div {
+  padding: 20px 0;
+  padding-left: 5px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 4fr 1fr;
+  grid-gap: 10px;
+  border-bottom: 1px solid #ccc;
+  white-space: nowrap;
+}
+.boxChange .saveChange {
+  outline: none;
+  border: none;
+  background: #fff;
+  padding: 6px 15px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  box-shadow: 0 2px 8px rgb(71, 71, 71);
+  border-radius: 8px;
+}
+.boxChange .saveChange:hover {
+  box-shadow: 0 2px 10px #333;
+}
+.boxChange .emailChange{
+  display: none;
+}
+.boxChange .emailChange h3{
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
+  transform: translateY(-10px);
+}
+.boxChange .emailChange .email-container{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* grid-gap: 10px; */
+  padding: 50px 0;
+}
+.boxChange .emailChange .titleChange .originalInfo{
+}
+.boxChange .emailChange .boxChangeEmail {
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.boxChange .emailChange .boxChangeEmail p {
+  margin: 3px;
+}
+.boxChange .emailChange .boxChangeEmail p input {
+  outline: none;
+}
+.boxChange .passChange .changePassContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* display: none; */
+  border-bottom: none;
+  padding: 30px 0;
+}
+.boxChange .passChange .changePassContainer input{
+  width: 50%;
+}
+.boxChange .passChange h3{
+  padding: 10px 0;
+  border-bottom: solid 1px #000;
+  margin-bottom: 30px;
+}
+.boxChange .passChange .boxChangePass {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  white-space: nowrap;
+  animation: 0.5s;
+}
+
+.boxChange .passChange .boxChangePass p {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px;
+}
+.boxChange input {
+  text-align: start;
+  outline: none;
+  padding: 1px 4px;
+  white-space: normal;
+}
+
+.boxChange div span {
+  font-size: 16px;
+}
+.boxChange div .titleChange {
+  font-weight: bold;
+}
+.boxChange div >button {
+  outline: none;
+  border: none;
+  background: none;
+  color: #2691d9;
+  font-size: 15px;
+  cursor: pointer;
+}
+.boxChange div span button{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  text-decoration: underline;
+}
+.confirmChange {
+  display: none;
+}
+/*    End of boxChange Info */

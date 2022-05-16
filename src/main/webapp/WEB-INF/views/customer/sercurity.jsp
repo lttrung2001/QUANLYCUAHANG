@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security</title>
+    <base href="${pageContext.servletContext.contextPath }/">
     <link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
     <link rel="stylesheet" type="text/css" href="/resources/my_css/sercurity.css"/>
     <script src="https://kit.fontawesome.com/0e7ed669fa.js" crossorigin="anonymous"></script>

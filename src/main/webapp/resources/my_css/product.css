@@ -1,0 +1,321 @@
+.header-object {
+  font-size: 27px;
+  font-weight: 600;
+  color: black;
+  /* font-family: "Times New Roman"; */
+  text-align: center;
+}
+#content-page {
+  display: inline-block;
+  background-color: #cfcfcf;
+  padding: 10px 20px;
+  margin: 30px auto -10px auto;
+  border-radius: 50px;
+  box-shadow: 3px 3px 3px #3f3f3f;
+  cursor: default;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Thanh Menu lớn*/
+
+/*Trưng bày hàng*/
+.container-object {
+  /*	margin: 10px 30px 20px 30px;*/
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+}
+.container-object div p {
+  display: flex;
+  justify-content: center;
+}
+.container-object a {
+  color: #ed7d31;
+  text-decoration: none;
+}
+.container-object a p:hover {
+  width: 50%;
+  margin: auto;
+  transform: translateY(1px);
+}
+
+.container-object a p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+}
+.items {
+  position: relative;
+  margin: 10px;
+}
+.items img {
+  /*	border-radius: 50px;*/
+  width: 343px;
+  height: 343px;
+  border: black hidden 2px;
+  z-index: 2;
+}
+.items .item {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.3);
+  top: 0;
+  bottom: 60px;
+  width: 0;
+  overflow: hidden;
+  transition: width ease 0.5s;
+}
+
+.items .item h2 {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  text-align: center;
+  color: #ed7d31;
+  font-size: 250%;
+  word-spacing: 15px;
+}
+.container-object div:hover .item {
+  /* display: block; */
+  cursor: pointer;
+  width: 100%;
+}
+.items .img-items {
+  background-color: rgb(245, 245, 245);
+  z-index: 1;
+}
+
+.container-object div:hover .buy-item {
+  cursor: pointer;
+  /* height: 100%; */
+}
+.items:hover .buy-item {
+  height: 16%;
+  color: #ed7d31;
+}
+.items:hover {
+  filter: brightness(90%);
+}
+
+.items .buy-item {
+  position: absolute;
+  height: 0%;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  text-align: center;
+  color: transparent;
+  font-size: 170%;
+  word-spacing: 15px;
+  background-color: #ccc;
+  overflow: hidden;
+  transition: height ease 0.5s;
+  opacity: 0.9;
+  filter: brightness(70%);
+}
+/* selector img */
+.select-item {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  top: 100px;
+  left: 300px;
+  border-radius: 10px;
+}
+.select-item .object-select {
+  background: rgb(220, 220, 220);
+  width: 80%;
+}
+.select-item .prev-object {
+  position: absolute;
+  left: 10px;
+  font-size: 40px;
+  cursor: pointer;
+}
+.select-item .next-object {
+  position: absolute;
+  right: 10px;
+  font-size: 40px;
+  cursor: pointer;
+}
+.select-item .right-object {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 630px;
+  background: #fff;
+  width: 220px;
+  height: 600px;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+.select-item .right-object #cart-icon-object {
+  font-size: 70px;
+  color: var(--error-color);
+  margin: 50px 60px;
+}
+.select-item .right-object .sizeButton {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0 50px 0;
+}
+.select-item .right-object .total-object {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  font-size: 13px;
+  margin-bottom: 50px;
+}
+.select-item .right-object .total-object button {
+  outline: none;
+  border: none;
+  background: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.select-item .right-object .total-object button ion-icon {
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.select-item .right-object .total-object p {
+  font-size: 18px;
+  color: #000;
+  margin: 0 10px;
+}
+.select-item .right-object .price-object {
+  font-size: 40px;
+  color: #000;
+  position: absolute;
+  top: 400px;
+  right: 20px;
+}
+
+.choose-size-object {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+.choose-size-button {
+  background-color: #000;
+  color: white;
+  border: solid black 1px;
+}
+.select-item .right-object .size-object button:hover {
+  background-color: white;
+  color: black;
+  border: solid black 1px;
+}
+.select-item .right-object .size-object p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.select-item .right-object .total-object button ion-icon:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.select-item .right-object .confirm-object button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 100px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #e74c3c;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.select-item .right-object .confirm-object button:hover {
+  transform: scale(1.01, 1.01);
+}
+.select-item .close-object {
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background: none;
+  position: absolute;
+  left: 860px;
+  top: 0px;
+  color: white;
+  cursor: pointer;
+}
+/* end of selector img */
+
+/* Load more */
+#loadMore {
+  padding: 5px 20px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  left: 50%;
+  margin-top: 40px;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  width: 155px;
+  height: 45px;
+  text-align: center;
+}
+#loadMore:hover a {
+  letter-spacing: 1.2px;
+}
+
+#loadMore a {
+  background: rgb(237, 125, 49);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-top: solid 1px rgb(94, 94, 94);
+  border-bottom: solid 1px rgb(94, 94, 94);
+  font-weight: 800;
+  letter-spacing: 1px;
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+}
+#loadMore a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  border-radius: 3px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
+  transition: ease 1s;
+}
+#loadMore:hover a::before {
+  /* transform: translateX(100%); */
+  width: 100%;
+  opacity: 0;
+}
+/* End of Load more */
