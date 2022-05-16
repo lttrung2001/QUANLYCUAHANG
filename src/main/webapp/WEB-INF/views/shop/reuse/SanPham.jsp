@@ -94,8 +94,8 @@
 					<td>${pd.price}</td>
                     <td><img width="50px" height="50px" src="${product.image }" ></td>
                     <td>
-                        <i class="fa-solid fa-wrench"></i>
-                        <i class="fa-solid fa-trash"></i>
+                        <button><i class="fa-solid fa-wrench"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
                     </td>
                     
                 </tr>
