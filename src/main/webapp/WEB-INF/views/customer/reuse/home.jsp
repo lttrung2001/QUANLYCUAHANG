@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <section id="home">
     <div class="header-object">
@@ -5,24 +7,25 @@
     </div>
     
     <div class="container-object" >
-    	<c:forEach var="p" items="${products }">
-	        <div class="items">
-	            <figure>
-	                <img src="<c:url value='${p.image }'/>" alt="" class="img-items">
-	                <p>${p.price }</p>
-	                <a href="#"><p>${p.name }</p></a>
-	            </figure>
-	            <div class="buy-item">
-	                <h2>BUY NOW</h2>
-	            </div>
+	<c:forEach var="p" items="${products }">
+	    <div class="items">
+	        <figure>
+	            <img src="<c:url value='${p.image }'/>" alt="" class="img-items">
+	            <p>${p.price }</p>
+	            <p>${p.desc }</p>
+	            <a href="#"><p>${p.name }</p></a>
+	        </figure>
+	        <div class="buy-item">
+	            <h2>BUY NOW</h2>
 	        </div>
-    	</c:forEach>
-    </div>
+	    </div>
+	</c:forEach>
+	</div>
     <ul id="listImages"></ul>
     <!-- select Item  -->
     <div class="select-item">
         <div class="object-select">
-            <img src="my_image/10-removebg-preview.png" >
+            <img src="" >
         </div>
         <div class="prev-object">
             <ion-icon name="chevron-back-outline"></ion-icon>
@@ -35,7 +38,7 @@
             
             <div  class="describe-object">
 		<strong>Mô tả:</strong>
-		<p>Vải cotton 4 chiều, thấm hút tốt, nên được giặt bằng tay và tránh phơi ánh nắng trực tiếp</p>
+		<p>${p.desc }</p>
 	    </div>
             <div class="total-object">
                 <button class="subtract-total"><ion-icon name="remove"></ion-icon></button>

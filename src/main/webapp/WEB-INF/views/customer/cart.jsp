@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/0e7ed669fa.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" type="text/css" href="/resources/my_css/CSS-Cart.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/CSS-Cart.css'/>">
 </head>
 <body>
     <div class="shoppingCart">
@@ -34,52 +34,6 @@
                     <div class="price">80$</div>
                     <button><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div class="item">
-                    <img src="/resources/my_image/T-Shirt.png" >
-                    <div class="nameItem">
-                        <div class="typeItem">Shirt</div>
-                        <div class="detailItem">T-Shirt Cotton</div>
-                        <div class="sizeItem">Size[L]</div>
-                    </div>
-                    <div class="numberItem">
-                        <button><i class="fa-solid fa-minus"></i></button>
-                        <small>1</small>
-                        <button><i class="fa-solid fa-plus"></i> </button>               
-                    </div>
-                    <div class="price">100$</div>
-                    <button><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <div class="item">
-                    <img src="/resources/my_image/Polo.png" >
-                    <div class="nameItem">
-                        <div class="typeItem">Shirt</div>
-                        <div class="detailItem">T-Shirt Cotton</div>
-                        <div class="sizeItem">Size[L]</div>
-                    </div>
-                    <div class="numberItem">
-                        <button><i class="fa-solid fa-minus"></i></button>
-                        <small>1</small>
-                        <button><i class="fa-solid fa-plus"></i> </button>               
-                    </div>
-                    <div class="price">110$</div>
-                    <button><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <div class="item">
-                    <img src="/resources/my_image/Hoodie.png" >
-                    <div class="nameItem">
-                        <div class="typeItem">Shirt</div>
-                        <div class="detailItem">T-Shirt Cotton</div>
-                        <div class="sizeItem">Size[L]</div>
-                    </div>
-                    <div class="numberItem">
-                        <button><i class="fa-solid fa-minus"></i></button>
-                        <small>1</small>
-                        <button><i class="fa-solid fa-plus"></i> </button>               
-                    </div>
-                    <div class="price">220$</div>
-                    <button><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                
             </div>
             <div class="backShop">
                 <a  href="#"><ion-icon name="return-up-back-outline"></ion-icon> Back to shop</a>
