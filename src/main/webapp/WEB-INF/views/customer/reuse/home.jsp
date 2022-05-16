@@ -35,7 +35,13 @@
         </div>
         <div class="right-object">
             <i id="cart-icon-object" class="fa-solid fa-cart-arrow-down"></i>
-            
+            <div class="idObject_nameObject">
+		<p>Name:</p>				
+		<span class="nameObject">Hoodie</span>
+		<span>( </span>
+		<span class="idObject">H123</span>
+		<span> )</span>
+	    </div>
             <div  class="describe-object">
 		<strong>Mô tả:</strong>
 		<p></p>
