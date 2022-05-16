@@ -56,7 +56,6 @@ window.onload=function(){
 	var prevImg=document.querySelector('.prev-object')
 	let chooseImg=document.querySelector('.object-select img')
 	var selectItem=document.querySelector('.select-item')
-	var chooseSize=document.querySelectorAll('.size-object button')
 	var closeObject=document.querySelector('.close-object')
 
 	//Tao object
@@ -318,15 +317,18 @@ window.onload=function(){
 	let totalTemp=0
 	let totalObject=document.querySelector('.total-object p')
 	let totalPriceObject=document.querySelector('.price-object')
+	let descItem=document.querySelectorAll('.describe-item')
+	let descSelected=document.querySelector('.describe-object p')
 	for(let i=0; i<buyItem.length; i++){
 		
 		buyItem[i].addEventListener('click',function(){
 			totalTemp=0
 			totalObject.innerHTML=0
-			// totalPriceObject.innerHTML=0
+			
 			filterLogin.style.display='block'
 			selectItem.style.display='flex'
 			chooseImg.src=imgs[i].src
+			descSelected.innerHTML=descItem[i].textContent
 			// close object
 				closeObject.addEventListener('click',function(){
 					selectItem.style.display='none'
@@ -348,17 +350,7 @@ window.onload=function(){
 		})
 	}
 	// select size object
-	for(let j=0; j<chooseSize.length; j++){
-		chooseSize[j].addEventListener('click',function(){
-			for(let k=0; k<chooseSize.length; k++){
-				chooseSize[k].classList.add('choose-size-button')
-			}
-			chooseSize[j].classList.remove('choose-size-button')
-		// 	// alert(i)
-			// console.log(j)
-		})
-
-	}
+	
 	// add and subtract total object
 	var addTotalObject=document.querySelector('.add-total')
 	var subTotalObject=document.querySelector('.subtract-total')

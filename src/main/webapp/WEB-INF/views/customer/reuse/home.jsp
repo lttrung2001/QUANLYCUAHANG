@@ -11,8 +11,8 @@
 	    <div class="items">
 	        <figure>
 	            <img src="<c:url value='${p.image }'/>" alt="" class="img-items">
-	            <p>${p.price }</p>
-	            <p>${p.desc }</p>
+	            <p  class="price-item">${p.price }</p>
+                    <p style="display: none;" class="describe-item">{p.desc }</p>
 	            <a href="#"><p>${p.name }</p></a>
 	        </figure>
 	        <div class="buy-item">
