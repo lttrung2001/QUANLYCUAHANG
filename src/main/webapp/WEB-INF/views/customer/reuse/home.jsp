@@ -33,15 +33,10 @@
         <div class="right-object">
             <i id="cart-icon-object" class="fa-solid fa-cart-arrow-down"></i>
             
-            <div  class="size-object">
-                <p>Size:</p>
-                <div class="sizeButton">
-                    <button class="choose-size-object choose-size-button">S</button>
-                    <button class="choose-size-object choose-size-button">M</button>
-                    <button class="choose-size-object choose-size-button">L</button>
-                    <button class="choose-size-object choose-size-button" style="margin-right: 0px;">XL</button>
-                </div>
-            </div>
+            <div  class="describe-object">
+		<strong>Mô tả:</strong>
+		<p>Vải cotton 4 chiều, thấm hút tốt, nên được giặt bằng tay và tránh phơi ánh nắng trực tiếp</p>
+	    </div>
             <div class="total-object">
                 <button class="subtract-total"><ion-icon name="remove"></ion-icon></button>
                 <p>0</p>
