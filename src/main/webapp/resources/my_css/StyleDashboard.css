@@ -636,7 +636,22 @@ body{
 }
 .tableTypePro table tr{
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr 0.5fr;
+}
+.tableTypePro table tr td:nth-child(4){
+    text-align: right;
+}
+.tableTypePro table tr td:nth-child(4) button{
+    background: none;
+    border: none;
+}
+.tableTypePro table tr td:nth-child(4) i{
+    margin: 0 2px;
+}
+.tableTypePro table tr td:nth-child(4) i:hover{
+    cursor: pointer;
+    transform: rotate(10deg);
+    
 }
                 /* =====QL SẢN PHẨM===== */
 .mainProduct{
@@ -725,23 +740,26 @@ body{
     top: 35px;
     left: 300px;
 }
+
 .mainProduct .boxEditProduct input[type='text']{
-    width: 65%;
+    /* width: 55%; */
 }
-.mainProduct .boxEditProduct >:nth-child(1),
 .mainProduct .boxEditProduct >:nth-child(2),
-.mainProduct .boxEditProduct >:nth-child(3)
+.mainProduct .boxEditProduct >:nth-child(3),
+.mainProduct .boxEditProduct >:nth-child(4)
 {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 10px 0; 
+    
+    
 }
 .mainProduct .nameProduct,
 .mainProduct .idProduct,
 .mainProduct .numProduct,
 .mainProduct .priceProduct{
-    width: 380px;
+    width: 350px;
     display: flex;
     justify-content: space-between;
 }
@@ -769,7 +787,42 @@ body{
     padding: 3px 13px;
     cursor: pointer;
 }
-/* End of boxEdit */
+.boxEditProduct .choooseTypeProduct{
+    position: absolute;
+    width: 180px;
+    /* bottom: 60px; */
+    top: 150px;
+
+}
+.boxEditProduct .choooseTypeProduct .textChoose{
+    border: 1px solid #222;
+    display: block;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxEditProduct .choooseTypeProduct i{
+    cursor: pointer;
+}
+.boxEditProduct .choooseTypeProduct .combobox{
+    /* display: none; */
+    position: absolute;
+    z-index: 1;
+    padding: 2px 5px ;
+    border: 1px solid #222;
+    width: 100%;
+    border-top: none;
+    background: var(--white);
+    
+}
+.boxEditProduct .choooseTypeProduct .combobox p {
+    
+    cursor: pointer;
+}.boxEditProduct .choooseTypeProduct .combobox p:hover{
+    background: #ccc;
+}
+/* ========================= End of boxEdit ===================== */
 
 .mainProduct .tableProduct{
     width: 90%;
