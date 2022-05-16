@@ -8,15 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title >CAB Shop</title>
 	<base href="${pageContext.servletContext.contextPath }/">
-	<link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
+	<link rel="title icon" href="<c:url value='/resources/my_png/Logo-byOanh.png'/>">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<script src="https://kit.fontawesome.com/0e7ed669fa.js" crossorigin="anonymous"></script>	
-	<script type="text/javascript" src="/resources/my_js/main_js.js" ></script>
-	<link rel="stylesheet" type="text/css" href="/resources/my_css/DinhDangTask1.css"/>
+	<script type="text/javascript" src="<c:url value='/resources/my_js/main_js.js'/>" ></script>
+	<link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/DinhDangTask1.css'/>"/>
 
 	<!-- smoothy scroll  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -101,12 +101,11 @@
 	<article id="quangcao">
 		<aside><a href="#" target="_blank">Book quảng cáo em đi mọi người</a></aside>
 	</article>
-	<!--  -->
 
 	<%@include file="/WEB-INF/views/customer/reuse/top.jsp" %>
 	
 	<%@include file="/WEB-INF/views/customer/reuse/footer.jsp" %>
 
-<script type="text/javascript" src="/resources/my_js/main_js.js" ></script>
+<script type="text/javascript" src="" ></script>
 </body>
 </html>	

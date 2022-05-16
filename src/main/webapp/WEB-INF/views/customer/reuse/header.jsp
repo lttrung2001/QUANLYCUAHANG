@@ -8,26 +8,23 @@
         </a>
         
         <ul id="main-menu">
-            <li><a class="style-menu " href="#home" >HOME</a></li>
-            <li class="Option"><a class="style-menu" href="#top">TOP</a>
+            <li><a class="style-menu " href="home.htm" >HOME</a></li>
+            <li class="Option"><a class="style-menu" href="top.htm">TOP</a>
                 <ul class="top-menu sub-menu ">
-                    <li><a href="#" onclick="notification_option()">T-Shirts</a></li>
-                    <li><a href="#" onclick="notification_option()">Jackets</a></li>
-                    <li><a href="#" onclick="notification_option()">Hoodies</a></li>
-                    <li><a href="#" onclick="notification_option()">Polos</a></li>
-                    <li><a href="#" onclick="notification_option()">Long-Shirts</a></li>
+                	<c:forEach var="pt" items="${productTypeTop }">
+                		<li><a href="top/${pt.proTypeId }.htm" onclick="notification_option()">${pt.proTypeName }</a></li>
+                	</c:forEach>
                 </ul>
             </li>
             
-            <li class="Option"><a class="style-menu" href="#bot" >BOT</a>
+            <li class="Option"><a class="style-menu" href="bot.htm" >BOT</a>
                 <ul class="bot-menu sub-menu">
-                    <li><a href="#" onclick="notification_option()">Skirts</a></li>
-                    <li><a href="#" onclick="notification_option()">Pants</a></li>
-                    <li><a href="#" onclick="notification_option()">Shorts</a></li>
-                    <li><a href="#" onclick="notification_option()">Jeans</a></li>
+	                <c:forEach var="pt" items="${productTypeBot }">
+                		<li><a href="bot/${pt.proTypeId }.htm" onclick="notification_option()">${pt.proTypeName }</a></li>
+                	</c:forEach>
                 </ul>
             </li>
-            <li class="Option"><a class="style-menu" href="#sale">SALE</a>
+            <li class="Option"><a class="style-menu" href="#">SALE</a>
                 <ul class="sale-menu sub-menu">
                     <li><a href="#" onclick="notification_option()">90%</a></li>
                     <li><a href="#" onclick="notification_option()">70%</a></li>
@@ -43,7 +40,7 @@
                 <button id="icon-person-btn" ><ion-icon name="person-outline"></ion-icon></button>
                 <ul id="login_signup" class="hideAccount">
                     <li><button type="button" id="Login">Log in</button></li>
-                    <li><button type="button"  id="Signup">Sign up</button></li>
+                    <li><button type="button" id="Signup">Sign up</button></li>
                 </ul>
             </div>
             <div class="iconLogged">
