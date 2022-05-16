@@ -1,6 +1,7 @@
 package quanlycuahang.controller.customer;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,6 @@ public class HomeController {
 	private QLSanPhamDAO productDAO;
 	@Autowired
 	private PartDAO partDAO;
-	
 	@Autowired
 	private ProductTypeDAO productTypeDAO;
 	
