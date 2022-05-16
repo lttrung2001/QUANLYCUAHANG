@@ -943,6 +943,10 @@ body{
     width: 70px;    
     text-align: center;
 }
+.mainProduct .tableProduct table tbody tr td:nth-child(6) button{
+    background: none;
+    border: none;
+}
 .mainProduct .tableProduct table tbody tr td:nth-child(6) i{
     margin: 5px;
     color: var(--black1);
