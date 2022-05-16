@@ -89,5 +89,10 @@ public class ClientAccount {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
+	@Override
+	public String toString() {
+		return "ClientAccount [id=" + id + ", username=" + username + ", password=" + password + ", point=" + point
+				+ ", createdDate=" + createdDate + ", clientInfo=" + clientInfo + ", products=" + products + "]";
+	}
 	
 }

@@ -20,6 +20,7 @@ public class CheckoutController {
 	@RequestMapping(value = "checkout")
 	public String checkout(HttpServletRequest request, ModelMap model) {
 		HttpSession session = request.getSession();
+		System.out.println("Controller "+ session.toString());
 		session.setAttribute("account", dao.getClientAccountById(1));
 		ClientAccount account = (ClientAccount) session.getAttribute("account");
 		model.addAttribute("cart", account.getProducts());

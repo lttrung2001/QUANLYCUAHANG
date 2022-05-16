@@ -12,7 +12,7 @@
 	        <figure>
 	            <img src="<c:url value='${p.image }'/>" alt="" class="img-items">
 	            <p  class="price-item">${p.price }</p>
-                    <p style="display: none;" class="describe-item">{p.desc }</p>
+                    <p style="display: none;" class="describe-item">${p.desc }</p>
 	            <a href="#"><p>${p.name }</p></a>
 	        </figure>
 	        <div class="buy-item">
@@ -38,7 +38,7 @@
             
             <div  class="describe-object">
 		<strong>Mô tả:</strong>
-		<p>${p.desc }</p>
+		<p></p>
 	    </div>
             <div class="total-object">
                 <button class="subtract-total"><ion-icon name="remove"></ion-icon></button>
