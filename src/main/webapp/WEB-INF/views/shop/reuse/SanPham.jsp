@@ -1,5 +1,5 @@
-<div class="mainProduct">
 
+<div class="mainProduct">
     <div class="topMainProduct">
         <h3>Thêm sản phẩm</h3>
         <div class="searchProduct">
@@ -8,39 +8,41 @@
         </div>
         
     </div>
-    <form:form  modelAttribute="product" action="shop/QL_SanPham.htm">
+<form:form  modelAttribute="product" action="shop/QL_SanPham.htm">
     <div class="boxEditProduct">    
         <div class="choooseTypeProduct">
-            <strong>Loáº¡i sáº£n pháº©m</strong>
+            <strong>Loại sản phẩm</strong>
             <span class="textChoose">
                 <span>Long-Shirt</span>    
                 <i class="fa-solid fa-caret-down"></i>                            
             </span>                         
             <div class="combobox hideListTypeProduct">
-                <form:select path="proType.proTypeId" items="${productTypeSelect }" itemValue="proTypeId" itemLable="proTypeName" ></form:select>
+                <form:select path="proType.proTypeId" items="${productTypeSelect }" 
+                itemValue="proTypeId" itemLable="proTypeName" ></form:select>
             </div>
         </div>          
         <div class="topBoxEditProduct">
             <div class="nameProduct">
-                <span>TÃªn sáº£n pháº©m</span>
-                <form:input path="name" type="text"
+                <span>Tên sản phẩm</span>
+               <form:input path="name" type="text"
 						id="exampleFormControlInput1"
 						placeholder="Vui lòng nhập tên sản phẩm" />
             </div>
             <div class="idProduct">
-                <span>MÃ´ táº£ sáº£n pháº©m</span>
-                <i type="text">${ product.desc}</i>
+                <span>Mô tả sản phẩm</span>
+                <form:textarea path="desc"
+						rows="5" cols="1"/>
             </div>
         </div>
         <div class="botBoxEditProduct">
             <div class="numProduct">
-                <span>Sá» lÆ°á»£ng</span>
+                <span>Số lượng</span>
                 <form:input path="qttInStock" type="text" 
 						id="exampleFormControlInput1"
 						placeholder="Vui lòng nhập số lượng  sản phẩm" />
             </div>
             <div class="priceProduct">
-                <span>GiÃ¡ tiá»n</span>
+                <span>Giá tiền</span>
                 <form:input path="price" type="text" 
 						id="exampleFormControlInput1"
 						placeholder="Vui lòng nhập giá của sản phẩm" />
@@ -49,11 +51,12 @@
         </div>
         <div class="endBoxEditProduct">
             <div class="imgProduct">
-                <span>HÃ¬nh áº£nh</span>
+                <span>Hình ảnh</span>
                 <input type="file">
             </div>
-            <Button>LÆ°u</Button>
+            <Button>Lưu</Button>
         </div>
+        
     </div>
 </form:form> 
     <div class="tableProduct">
@@ -63,7 +66,7 @@
             </div>
             <button><i class="fa-solid fa-caret-down"></i></button>
             <div class="listTypeProduct hideListTypeProduct">
-                <p>Long-Shirt</p>
+               <p>Long-Shirt</p>
                 <p>Jacket</p>
                 <p>T-Shirt</p>
                 <p>Polo</p>
@@ -72,11 +75,11 @@
         <table>
             <thead>
                 <tr>
-                    <td>MÃ£ sáº£n pháº©m</td>
-                    <td>TÃªn sáº£n pháº©m</td>
-                    <td>Sá» lÆ°á»£ng</td>
-                    <td>GiÃ¡ tiá»n</td>
-                    <td>HÃ¬nh áº£nh</td>
+                    <td>Mã sản phẩm</td>
+                    <td>Tên sản phẩm</td>
+                    <td>Số lượng</td>
+                    <td>Giá tiền</td>
+                    <td>Hình ảnh</td>
                     <td></td>
                     
                 </tr>
@@ -97,7 +100,6 @@
                     
                 </tr>
             </c:forEach>
-                
             </tbody>
         </table>
     </div>
