@@ -19,21 +19,23 @@
         <div class="productCart">
             <h2>LIST YOUR PRODUCT:</h2>
             <div class="items">
+            	<c:forEach var="c" items="${cart }">
                 <div class="item">
-                    <img src="/resources/my_image/short.png" >
+                    <img src="<c:url value='${c.productInCart.image }'/>" >
                     <div class="nameItem">
-                        <div class="typeItem">Shirt</div>
-                        <div class="detailItem">T-Shirt Cotton</div>
+                        <div class="typeItem">${c.productInCart.proType.proTypeName }</div>
+                        <div class="detailItem">${c.productInCart.desc }</div>
                         <div class="sizeItem">Size[L]</div>
                     </div>
                     <div class="numberItem">
                         <button><i class="fa-solid fa-minus"></i></button>
-                        <small>1</small>
+                        <small>${c.amount }</small>
                         <button><i class="fa-solid fa-plus"></i> </button>               
                     </div>
-                    <div class="price">80$</div>
+                    <div class="price">${c.productInCart.price }</div>
                     <button><i class="fa-solid fa-xmark"></i></button>
                 </div>
+                </c:forEach>
             </div>
             <div class="backShop">
                 <a  href="#"><ion-icon name="return-up-back-outline"></ion-icon> Back to shop</a>
