@@ -1034,10 +1034,12 @@ form.search-form button i{
   color: var(--error-color);
   margin: 50px 60px;
 }
-.select-item .right-object .sizeButton{
-  display: flex;
-  flex-direction: row;
-  margin:10px 0 50px 0;
+.idObject_nameObject span{
+  font-size: 15px;
+  font-weight: 500;
+}
+.idObject_nameObject .nameObject{
+  margin-left: 5px;
 }
 .select-item .right-object .total-object{
   display: flex;
@@ -1083,6 +1085,7 @@ form.search-form button i{
   font-weight: 500;
   padding: 0 5px;
 }
+
 
 .select-item .right-object .total-object button ion-icon:hover{
   background-color: rgba(255, 255, 255, 0.8);
