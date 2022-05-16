@@ -1071,33 +1071,19 @@ form.search-form button i{
   top:400px;
   right: 20px;
 }
+.select-item .right-object .describe-object{
+  margin: 10px 0 40px 0;
+}
+.select-item .right-object .describe-object strong{
+  font-size: 17px;
+  font-weight: bold;
+}
+.select-item .right-object .describe-object p{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 5px;
+}
 
-.choose-size-object{
-  background-color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 3px;
-  margin-right: 10px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border: 1px solid #000;
-}
-.choose-size-button{
-  background-color: #000;
-  color: white;
-  border: solid black 1px;
-}
-.select-item .right-object .size-object button:hover{
-  background-color: white;
-  color: black;
-  border: solid black 1px;
-}
-.select-item .right-object .size-object p{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 .select-item .right-object .total-object button ion-icon:hover{
   background-color: rgba(255, 255, 255, 0.8);
 }
