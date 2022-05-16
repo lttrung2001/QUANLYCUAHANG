@@ -2,6 +2,8 @@ package quanlycuahang.dao.shop;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import quanlycuahang.entity.Product;
 @Repository
+@Transactional
 public class QLSanPhamDAO {
 	@Autowired
 	SessionFactory factory;

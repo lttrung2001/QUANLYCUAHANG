@@ -3,6 +3,7 @@ package quanlycuahang.controller.shop;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -19,22 +20,22 @@ import quanlycuahang.entity.Product;
 import quanlycuahang.dao.shop.QLSanPhamDAO;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/product/")
 public class QLSanPhamController {
 	@Autowired
 	QLSanPhamDAO sanPhamDAO;
 	
 	@Autowired
 	SessionFactory factory;
-	@RequestMapping(value = "indexSP")
+	@RequestMapping(value = "index")
 	public String index(HttpServletRequest request, ModelMap model, @ModelAttribute("product") Product product) {
 		List<Product> products = sanPhamDAO.getAllProduct();
 		model.addAttribute("btnStatus", "btnAdd");
 		model.addAttribute("products", products);
 
-		return "qlSanPham";
+		return "shop/QL_SanPham";
 	}
-	
+	@Transactional
 	@ModelAttribute("productTypeSelect")
 	public List<ProductType> getProductType(){
 		Session session = factory.getCurrentSession();
@@ -57,7 +58,7 @@ public class QLSanPhamController {
 			model.addAttribute("message","Them that bai");
 		}
 		model.addAttribute("products",  sanPhamDAO.getAllProduct());
-		return "qlSanPham";
+		return "shop/QL_SanPham";
 	}
 	
 	@RequestMapping(value="/index/{id}.htm",params = "linkDelete")
@@ -73,7 +74,7 @@ public class QLSanPhamController {
 			model.addAttribute("message","Xoa that bai");
 		}
 		model.addAttribute("products", sanPhamDAO.getAllProduct());
-		return "qlSanPham";
+		return "shop/QL_SanPham";
 	}
 	
 	@RequestMapping(value="/index/{id}",params = "linkEdit")
@@ -91,7 +92,7 @@ public class QLSanPhamController {
 		model.addAttribute("btnStatus", "btnEdit");
 		model.addAttribute("products", sanPhamDAO.getProductByID(id));
 		model.addAttribute("products", sanPhamDAO.getAllProduct());
-		return "qlSanPham";
+		return "shop/QL_SanPham";
 	}
 	
 	@RequestMapping(value="index", params = "btnsearch")
@@ -101,6 +102,6 @@ public class QLSanPhamController {
 		model.addAttribute("products", sanPhamDAO.searchProduct(request.getParameter("searchInput")));
 		model.addAttribute("products", sanPhamDAO.getAllProduct());
 		
-		 return "qlSanPham";
+		 return "shop/QL_SanPham";
 	}
 }
