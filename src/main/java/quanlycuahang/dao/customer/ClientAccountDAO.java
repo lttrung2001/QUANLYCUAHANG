@@ -20,24 +20,18 @@ public class ClientAccountDAO {
 	@Autowired
 	private SessionFactory factory;
 	
-	public int createAccount(ClientAccount account) {
+	public void createAccount(ClientAccount account) {
 		Session session =  factory.openSession();
 		Transaction transaction = session.beginTransaction();
 		try {
-			// Tài khoản đã tồn tại
-			if (session.get(ClientAccount.class, account.getUsername()) == null) {
-				session.close();
-				return -1;
-			}
 			session.save(account);
+			session.save(account.getClientInfo());
 			transaction.commit();
-			session.close();
-			return 0;
 		} catch (Exception e) {
 			// TODO: handle exception
 			transaction.rollback();
+		} finally {
 			session.close();
-			return -2; // Tạo tài khoản thất bại
 		}
 	}
 	public int updateAccount(ClientAccount account) {
@@ -55,7 +49,6 @@ public class ClientAccountDAO {
 		session.close();
 		return 0;
 	}
-	@SuppressWarnings("unchecked")
 	public ClientAccount getClientAccountByUsername(String username) {
 		Session session = factory.getCurrentSession();
 		return (ClientAccount) session.get(ClientAccount.class, username);
@@ -64,5 +57,13 @@ public class ClientAccountDAO {
 	public List<ClientAccount> getAccounts() {
 		Session session = factory.getCurrentSession();
 		return (List<ClientAccount>) session.createQuery("from ClientAccount").list();
+	}
+	public int checkAccountExists(ClientAccount account) {
+		Session session = factory.getCurrentSession();
+		ClientAccount acc = (ClientAccount) session.get(ClientAccount.class, account.getUsername());
+		if (acc == null ) return 0;
+		else if (acc.getEmail().equalsIgnoreCase(account.getEmail()))
+			return -2; // Trùng email
+		else return -1; // Trùng tên tài khoản
 	}
 }

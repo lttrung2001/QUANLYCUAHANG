@@ -12,7 +12,7 @@
     <base href="${pageContext.servletContext.contextPath }/">
     <script src="https://kit.fontawesome.com/0e7ed669fa.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/CSS-Cart.css'/>">
 </head>
 <body>
@@ -98,6 +98,12 @@
 				}
 			});
 		};
+		
+		function plusNumberItem(e) {
+			// cộng 1 số lượng và cộng tổng tiền theo giá của mỗi sản phẩm
+			var parent = $(e).parent();
+		}
+		
 	</script>
 </body>
 </html>

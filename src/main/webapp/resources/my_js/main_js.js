@@ -371,7 +371,3 @@ window.onload=function(){
 	// listImages.appendChild(listItem)
 
 	// End of Load more
-}	
-
-
-	

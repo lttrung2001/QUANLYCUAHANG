@@ -1,6 +1,7 @@
 package quanlycuahang.servlet.customer;
 
 import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -47,7 +48,7 @@ public class DeleteProductInCart extends HttpServlet {
         
         try {
 			Connection conn = DriverManager.getConnection(dbURL, user, pass);
-			String sqlString = String.format("DELETE FROM CART WHERE PRODUCT_ID = %d AND ACCOUNT_ID = %s", productId, accountId);
+			String sqlString = String.format("DELETE FROM CART WHERE PRODUCT_ID = %d AND ACCOUNT_ID = '%s'", productId, accountId);
             Statement statement = conn.createStatement();
             statement.executeUpdate(sqlString);
             conn.commit();

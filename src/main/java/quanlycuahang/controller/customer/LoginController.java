@@ -51,8 +51,7 @@ public class LoginController {
 			if (accountInTable != null && 
 				accountInTable.getUsername().equals(account.getUsername()) &&
 				accountInTable.getPassword().equals(account.getPassword())) {
-				HttpSession session = request.getSession();
-				session.setAttribute("account", account);
+				HttpSession session = request.getSession();				session.setAttribute("account", account);
 				return "customer/customer_home";				
 			}
 			else {

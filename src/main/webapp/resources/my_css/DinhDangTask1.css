@@ -661,7 +661,6 @@ form.search-form button i{
 /*      ========================Sign up==================================== */
  #signup-form{
   font-family: sans-serif;
-  display: none;
 	margin: auto;
 	background: rgb(50, 50, 50);;
 	z-index: 100;

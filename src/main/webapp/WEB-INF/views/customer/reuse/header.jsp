@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="icon-button-header iconCart">
-                <button id="icon-bag-btn"><a href="Cart.html"><ion-icon name="cart-outline"></ion-icon></a></button>
+                <button id="icon-bag-btn"><a href="checkout.htm"><ion-icon name="cart-outline"></ion-icon></a></button>
                 <small id="icon-cart">
                     0
                 </small>
