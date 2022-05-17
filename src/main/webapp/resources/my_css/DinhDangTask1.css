@@ -240,17 +240,20 @@ body::-webkit-scrollbar-track{
 } */
 /* */
 #main-menu li:hover .top-menu{
-  height: 235.5px;
+/*   height: 235.5px; */
   /* width: 100%; */
+  height: auto;
   width: 174px;
 }
 #main-menu li:hover .bot-menu{
-  height: 188.4px;
-  width: 174px;
+/*   height: 188.4px; */
+	height: auto;
+  	width: 174px;
 }
 #main-menu li:hover .sale-menu{
-  height: 141.3px;
-  width: 174px;
+/*   height: 141.3px; */
+	height: auto;
+  	width: 174px;
 }
 
 
