@@ -55,12 +55,9 @@
                     <span class="total-price"><c:out value="${totalPrice }"></c:out></span>
                 </div>
             </div>
-            <div class="shipping">
-                <h4>SHIPPING</h4>
-                <select name="Normal" id="">
-                    <option value="">Normal-20$</option>
-                    <option value="">Fast-35$</option>
-                </select>
+            <div class="address">
+                <h4>Thêm địa chỉ giao hàng</h4>
+                <input type="text">
             </div>
             <div class="sale">
                 <h4>SALE: </h4>

@@ -28,6 +28,7 @@ body{
     display: grid;
     grid-template-columns: 2fr 1fr;
     box-shadow: 0 7px 20px rgb(78, 78, 78);
+    overflow: hidden;
 }
 .shoppingCart .productCart{
     padding: 30px 50px;
@@ -137,7 +138,7 @@ body{
     height: auto;
     /* margin: 20px auto; */
 }
-.checkout .shipping select{
+.checkout .address input{
     width: 100%;
     height: 35px;
     font-size: 16px;
@@ -145,14 +146,12 @@ body{
     margin-top: 10px;
     background: #F7F7F7;
     outline: none;
-}
-.checkout .shipping select:hover{
-    border: 1px solid #333;
+    word-wrap: normal;
+    border: 1px solid #222;
 }
 
-.checkout .sale span{
-    margin-top: 20px;
-}
+
+
 .checkout .detailCheckout .totalItem{
     display: flex;
     justify-content: space-between;
