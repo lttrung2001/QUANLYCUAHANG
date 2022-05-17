@@ -39,8 +39,8 @@
             <div class="icon-button-header">
                 <button id="icon-person-btn" ><ion-icon name="person-outline"></ion-icon></button>
                 <ul id="login_signup" class="hideAccount">
-                    <li><button type="button" id="Login">Log in</button></li>
-                    <li><button type="button" id="Signup">Sign up</button></li>
+                    <li><a href="#" id="Login">Log in</a></li>
+					<li><a href="#" id="Signup">Sign up</a></li>
                 </ul>
             </div>
             <div class="iconLogged">
