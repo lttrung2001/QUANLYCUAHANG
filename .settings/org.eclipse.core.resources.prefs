@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/quanlycuahang/controller/customer/LoginController.java=UTF-8
 encoding//src/main/java/quanlycuahang/dao/customer/ClientAccountDAO.java=UTF-8
+encoding//src/main/java/quanlycuahang/entity/ClientAccount.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/customer/reuse/header.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/customer/reuse/home.jsp=UTF-8

@@ -14,13 +14,20 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "CLIENT_ACCOUNT")
 public class ClientAccount {
 	@Id
 	@Column(name = "USERNAME", nullable = false)
+	@NotBlank(message = "Không để trống username")
+	@NotEmpty(message = "Không để trống username")
 	private String username;
 	@Column(name = "PASSWORD", nullable = false)
+	@NotBlank(message = "Không để trống password")
+	@NotEmpty(message = "Không để trống password")
 	private String password;
 	@Column(name = "POINT", nullable = false)
 	private int point;

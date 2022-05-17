@@ -35,14 +35,11 @@ public class DeleteProductInCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
-		System.out.println("Servlet "+ session.toString());
 		ClientAccount account = (ClientAccount) session.getAttribute("account");
-		System.out.println(account.toString());
 		int productId = Integer.parseInt(request.getParameter("productId"));
-		int accountId = account.getId();
-		System.out.println(accountId);
+		String accountId = account.getUsername();
 		
 		String dbURL = "jdbc:sqlserver://localhost:1433; Database=QUANLYCUAHANG";
         String user = "sa";
@@ -50,7 +47,7 @@ public class DeleteProductInCart extends HttpServlet {
         
         try {
 			Connection conn = DriverManager.getConnection(dbURL, user, pass);
-			String sqlString = String.format("DELETE FROM CART WHERE PRODUCT_ID = %d AND ACCOUNT_ID = %d", productId, accountId);
+			String sqlString = String.format("DELETE FROM CART WHERE PRODUCT_ID = %d AND ACCOUNT_ID = %s", productId, accountId);
             Statement statement = conn.createStatement();
             statement.executeUpdate(sqlString);
             conn.commit();
