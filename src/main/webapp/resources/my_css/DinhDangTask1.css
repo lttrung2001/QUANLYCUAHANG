@@ -326,7 +326,7 @@ body::-webkit-scrollbar-track{
   /* display: none; */
 }
 .iconCart{
-  display: none;
+/*   display: none; */
 }
 #icon-bag-btn a{
   color: #fff;
