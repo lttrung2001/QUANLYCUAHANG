@@ -52,9 +52,9 @@
                 </ul>
             </div>
             <div class="icon-button-header">
-                <button id="icon-search-btn"  ><ion-icon name="search-outline" ></ion-icon></button>
+                <button id="icon-search-btn" ><ion-icon name="search-outline" ></ion-icon></button>
                 <div class="search-input hide" >
-                    <form class="search-form" action="">
+                    <form class="search-form" action="${part }.htm">
                         <input  type="text" placeholder="Search.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>

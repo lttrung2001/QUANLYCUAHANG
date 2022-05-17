@@ -905,10 +905,8 @@ form.search-form button i{
   text-decoration: none;
 }
 .container-object a p:hover {
-  width: 50%;
   margin: auto;
   transform: translateY(1px);
-
 }
 
 .container-object a p {

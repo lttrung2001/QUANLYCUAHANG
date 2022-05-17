@@ -77,18 +77,15 @@
    	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 		function deleteProductInCart(e) {
-			console.log(e);
 			var parent = $(e).parent();
-			console.log(parent);
-			var id = $($($(parent).children()[1]).children()[0]).text();
-			var productPrice = $($($(parent).children()[2]).children()[1]).text();
-			var productAmount = $($(parent).children()[3]).text();
-			var previousTotalItem = $($('.totalItem').children()[1]).text();
-			$($('.totalItem').children()[1]).text(previousTotalItem-1);
-			console.log(productPrice*productAmount);
-			$('.total-price').text($('.total-price').text()-productPrice*productAmount);
-			$($('.totalPrice').children()[1]).text($($('.totalPrice').children()[1]).text()-productPrice*productAmount)
-			$(parent).remove();
+			var id = $($($(parent).children()[1]).children()[0]).text(); // Id mỗi sản phẩm
+			var productPrice = $($($(parent).children()[2]).children()[1]).text(); // Giá mỗi sản phẩm
+			var productAmount = $($(parent).children()[3]).text(); // Số lượng mỗi sản phẩm
+			var previousTotalItem = $($('.totalItem').children()[1]).text(); // Lấy tổng số lượng sản phẩm ban đầu
+			$($('.totalItem').children()[1]).text(previousTotalItem-1); // Trừ đi tổng số lượng sản phẩm khi xóa
+			$('.total-price').text($('.total-price').text()-productPrice*productAmount); // Trừ đi tổng giá sản phẩm khi xóa
+			$($('.totalPrice').children()[1]).text($($('.totalPrice').children()[1]).text()-productPrice*productAmount) // Trừ đi tổng giá sản phẩm khi xóa
+			$(parent).remove(); // Xóa sản phẩm ở DOM
 			$.ajax({
 				url : "/QUANLYCUAHANG/DeleteProductInCart",
 				type : "get",

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <section id="home">
     <div class="header-object">
-        <div id="content-page">NEW ARRIVALS</div>
+        <div id="content-page">${fn:toUpperCase(part) }</div>
     </div>
     
     <div class="container-object" >
