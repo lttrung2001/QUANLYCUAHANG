@@ -65,31 +65,7 @@ login.addEventListener('click',function(){
 
 
 // Product Management
-    let dropDownTypeProduct=document.querySelector('.menuTypeProduct button')
-    let listTypeProduct=document.querySelector('.listTypeProduct')
-    let valueTypeProduct=document.querySelector('.mainProduct .tableProduct .menuTypeProduct .typeProduct input')
-    dropDownTypeProduct.addEventListener('click',function(){
-        listTypeProduct.classList.toggle('hideListTypeProduct')
-        let chooseTypeProduct=document.querySelectorAll('.listTypeProduct p')
-        let displayTypeProduct=document.querySelector('.typeProduct')
-        chooseTypeProduct.forEach((item)=>
-            item.addEventListener('click',function(){
-                displayTypeProduct.innerHTML=item.innerHTML
-                valueTypeProduct.value=item.innerHTML
-                listTypeProduct.classList.add('hideListTypeProduct')
-            }))
-        
-        // let valueTable=document.querySelectorAll('.tableProduct table tbody tr td')
-        // for(let i=0; i<chooseTypeProduct.length; i++){
-        //     chooseTypeProduct[i].addEventListener('click',function(){
-        //         if(i==3){
-        //             valueTable.forEach(e=>
-        //                 e.innerHTML=''
-        //             )
-        //         }
-        //     })
-        // }
-    })
+    
     let inputSearchProduct=document.querySelector('.searchProduct input')
     let iconSearchProduct=document.querySelectorAll('.mainProduct .topMainProduct .searchProduct span')
     let demHoverSearchQLSP=0
