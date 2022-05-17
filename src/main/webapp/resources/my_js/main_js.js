@@ -142,10 +142,10 @@ window.onload=function(){
 			var loginBox = document.getElementById("login-form");
 			chooseLogin.addEventListener('click',function(){
 				
-				loginBox.style.display="block";
+				//loginBox.style.display="block";
 				menuAccount.classList.add('hideAccount')
 				resetFormLogin()
-				filterLogin.style.display='block'
+				//filterLogin.style.display='block'
 				let closeLogin=document.getElementById('close-login')
 				// let iconUser=document.querySelector('.iconUser')
 				controlIconAccount=1

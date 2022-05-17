@@ -522,7 +522,7 @@ form.search-form button i{
   box-sizing: border-box;
   padding: 70px 40px;
   font-family: sans-serif;
-  display: none;
+  
   border-radius: 10px;
 }
 .avtLogin{
@@ -640,7 +640,6 @@ form.search-form button i{
 }
 .filter-login{
   z-index: 2;
-  display: none;
   position: absolute;
   left: 0;
   top: 0;
