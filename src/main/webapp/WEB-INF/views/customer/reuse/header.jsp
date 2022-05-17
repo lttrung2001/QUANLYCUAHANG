@@ -29,25 +29,25 @@
         </ul>
         <div id="header-icon">
             <!-- <span id="icon-account"> <ion-icon name="person-circle"></ion-icon></span> -->
-           	<c:if test="${sessionScope.account == null }">
-	            <div class="icon-button-header">
-	                <button id="icon-person-btn" ><ion-icon name="person-outline"></ion-icon></button>
-	                <ul id="login_signup" class="hideAccount">
-	                    <li><button type="button" id="Login">Log in</button></li>
-	                    <li><button type="button" id="Signup">Sign up</button></li>
-	                </ul>
-	            </div>
-           	</c:if>
-           	<c:if test="${sessionScope.account != null }">
-	            <div class="iconLogged">
-	                <button><ion-icon name="person"></ion-icon></button>
-	                <ul class="menuLogged hide">
-	                    <li class="changeInfor"><a href="#">Thay đổi thông tin</a></li>
-	                    <li class="history"><a href="#">Lịch sử</a></li>
-	                    <li class="logOut"><a href="#">Đăng xuất</a></li>
-	                </ul>
-	            </div>
-           	</c:if>
+            <c:if test="${sessionScope.account != null }">
+            <div class="icon-button-header">
+                <button id="icon-person-btn" ><ion-icon name="person-outline"></ion-icon></button>
+                <ul id="login_signup" class="hideAccount">
+                    <li><a href="#" id="Login">Log in</a></li>
+					<li><a href="#" id="Signup">Sign up</a></li>
+                </ul>
+            </div>
+            </c:if>
+            <c:if test="${sessionScope.account != null }">
+            <div class="iconLogged">
+                <button><ion-icon name="person"></ion-icon></button>
+                <ul class="menuLogged hide">
+                    <li class="changeInfor"><a href="#">Thay đổi thông tin</a></li>
+                    <li class="history"><a href="#">Lịch sử</a></li>
+                    <li class="logOut"><a href="#">Đăng xuất</a></li>
+                </ul>
+            </div>
+            </c:if>
             <div class="icon-button-header">
                 <button id="icon-search-btn" ><ion-icon name="search-outline" ></ion-icon></button>
                 <div class="search-input hide" >
