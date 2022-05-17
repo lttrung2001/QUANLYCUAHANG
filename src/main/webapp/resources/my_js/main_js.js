@@ -245,6 +245,16 @@ window.onload=function(){
 		}
 	}
 
+	// ========= QUEN MAT KHAU ===========================
+	let btnForgetPass=document.querySelector('.forgotPassword button')
+	btnForgetPass.addEventListener('click',function(){
+		btnForgetPass.innerHTML='XÁC NHẬN'
+		document.querySelector('.forgotPassword .codeCheckPass').style.display='block'
+		document.querySelector('.forgotPassword small').innerHTML='Nhập mã code vừa được gửi tới email của bạn'
+	})
+
+
+	//======================================================
 // end of icon account
 
 // =======Logged
