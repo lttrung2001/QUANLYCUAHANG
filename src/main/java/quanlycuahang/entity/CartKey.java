@@ -14,25 +14,26 @@ public class CartKey implements Serializable{
 	@Column(name = "PRODUCT_ID", nullable = false)
 	private int productId;
 	@Column(name = "ACCOUNT_ID", nullable = false)
-	private int accountId;
+	private String accountId;
 	public int getProductId() {
 		return productId;
 	}
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-	public int getAccountId() {
-		return accountId;
-	}
-	public void setAccountId(int accountId) {
-		this.accountId = accountId;
-	}
-	public CartKey(int productId, int accountId, int amount) {
+	
+	public CartKey(int productId, String accountId) {
 		super();
 		this.productId = productId;
 		this.accountId = accountId;
 	}
 	public CartKey() {
 		super();
+	}
+	public String getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 }

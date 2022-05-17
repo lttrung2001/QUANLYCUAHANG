@@ -18,8 +18,6 @@ import javax.persistence.TemporalType;
 @Table(name = "CLIENT_ACCOUNT")
 public class ClientAccount {
 	@Id
-	@Column(name = "ID", nullable = false)
-	private int id;
 	@Column(name = "USERNAME", nullable = false)
 	private String username;
 	@Column(name = "PASSWORD", nullable = false)
@@ -33,12 +31,6 @@ public class ClientAccount {
 	private Client clientInfo;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "accountInCart")
 	private Set<Cart> products = new HashSet<Cart>();
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getUsername() {
 		return username;
 	}
@@ -69,17 +61,6 @@ public class ClientAccount {
 	public void setProducts(Set<Cart> products) {
 		this.products = products;
 	}
-	public ClientAccount(int id, String username, String password, int point, Date createdDate, Client clientInfo,
-			Set<Cart> products) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.point = point;
-		this.createdDate = createdDate;
-		this.clientInfo = clientInfo;
-		this.products = products;
-	}
 	public ClientAccount() {
 		super();
 	}
@@ -89,10 +70,14 @@ public class ClientAccount {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-	@Override
-	public String toString() {
-		return "ClientAccount [id=" + id + ", username=" + username + ", password=" + password + ", point=" + point
-				+ ", createdDate=" + createdDate + ", clientInfo=" + clientInfo + ", products=" + products + "]";
-	}
-	
+	public ClientAccount(String username, String password, int point, Date createdDate, Client clientInfo,
+			Set<Cart> products) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.point = point;
+		this.createdDate = createdDate;
+		this.clientInfo = clientInfo;
+		this.products = products;
+	}	
 }

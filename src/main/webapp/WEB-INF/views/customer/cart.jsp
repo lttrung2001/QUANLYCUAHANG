@@ -25,9 +25,10 @@
                 <div class="item">
                     <img src="<c:url value='${c.productInCart.image }'/>" >
                     <div class="nameItem">
-                        <div class="typeItem">${c.productInCart.id }</div>
+                        <div class="typeItem">${c.productInCart.name }</div>
                         <div class="detailItem">${c.productInCart.desc }</div>
                         <div class="sizeItem">Size[L]</div>
+                    	<div style="display: none;">${c.productInCart.id }</div>
                     </div>
                     <div class="numberItem">
                         <button><i class="fa-solid fa-minus"></i></button>
@@ -75,7 +76,7 @@
 	<script>
 		function deleteProductInCart(e) {
 			var parent = $(e).parent();
-			var id = $($($(parent).children()[1]).children()[0]).text(); // Id mỗi sản phẩm
+			var id = $($($(parent).children()[1]).children()[3]).text(); // Id mỗi sản phẩm
 			var productPrice = $($($(parent).children()[2]).children()[1]).text(); // Giá mỗi sản phẩm
 			var productAmount = $($(parent).children()[3]).text(); // Số lượng mỗi sản phẩm
 			var previousTotalItem = $($('.totalItem').children()[1]).text(); // Lấy tổng số lượng sản phẩm ban đầu

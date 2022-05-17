@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Client {
 	@Id
 	@Column(name = "CLIENT_ID", nullable = false)
-	private int id;
+	private String id;
 	@Column(name = "LAST_NAME", nullable = false)
 	private String lastName;
 	@Column(name = "FIRST_NAME", nullable = false)
@@ -25,16 +25,8 @@ public class Client {
 	private String email;
 	
 	@OneToOne
-	@JoinColumn(name = "CLIENT_ID", referencedColumnName = "ID")
+	@JoinColumn(name = "CLIENT_ID", referencedColumnName = "USERNAME")
 	private ClientAccount clientAccount;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getLastName() {
 		return lastName;
@@ -84,7 +76,7 @@ public class Client {
 		this.clientAccount = clientAccount;
 	}
 
-	public Client(int id, String lastName, String firstName, String address, String phoneNumber, String email,
+	public Client(String id, String lastName, String firstName, String address, String phoneNumber, String email,
 			ClientAccount clientAccount) {
 		super();
 		this.id = id;
@@ -98,6 +90,14 @@ public class Client {
 
 	public Client() {
 		super();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 }
