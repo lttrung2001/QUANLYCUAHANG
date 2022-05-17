@@ -108,41 +108,50 @@ window.onload=function(){
 	let iconLogged=document.querySelector('.iconLogged')
 	let iconCart=document.querySelector('.iconCart')
 	let controlIconAccount=0
-	iconAccount.addEventListener('click',getClick)
-	function getClick(){
-		controlIconAccount++
-		console.log(controlIconAccount)
-		if(controlIconAccount%2!=0){
-			var user=document.getElementById("username-login")
-			var pass=document.getElementById("password-login")
-			var errorLogin=document.querySelector('.error-login')
-			var warningLogin=document.querySelector('.warning-login')
-			var loading=document.querySelector('.loading-login')
-			function resetFormLogin(){
-				loading.style.display='none'
-				errorLogin.style.display='none'
-				warningLogin.style.display='none'
-				user.value=''
-				pass.value=''
-			}
-			function resetFormSignup(){
-				let userSignup=document.getElementById('username-signup')
-				let passSignup=document.getElementById('password-signup')
-				let emailSignup=document.getElementById('email-signup')
-				let confirmPassSignup=document.getElementById('confirm-password-signup')
-				userSignup.value=''
-				passSignup.value=''
-				emailSignup.value=''
-				confirmPassSignup.value=''
-				document.getElementById('address-signup').value=''
-				document.getElementById('phone-signup').value=''
-				document.getElementById('name-signup').value=''
-			}
-			menuAccount.classList.remove('hideAccount')
-			let chooseLogin=document.getElementById('Login')
-			let chooseSignup=document.getElementById('Signup')
-			var signupBox=document.getElementById('signup-form')
-			var loginBox = document.getElementById("login-form");
+	function getMenu(){
+		menuAccount.classList.toggle('hideAccount')
+		
+	}
+	if(iconAccount!=null){
+		iconAccount.addEventListener('click',getMenu)
+	}
+	
+	
+//	iconAccount.addEventListener('click',getClick)
+//	function getClick(){
+//		controlIconAccount++
+//		console.log(controlIconAccount)
+//		if(controlIconAccount%2!=0){
+//			var user=document.getElementById("username-login")
+//			var pass=document.getElementById("password-login")
+//			var errorLogin=document.querySelector('.error-login')
+//			var warningLogin=document.querySelector('.warning-login')
+//			var loading=document.querySelector('.loading-login')
+//			function resetFormLogin(){
+//				loading.style.display='none'
+//				errorLogin.style.display='none'
+//				warningLogin.style.display='none'
+//				user.value=''
+//				pass.value=''
+//			}
+//			function resetFormSignup(){
+//				let userSignup=document.getElementById('username-signup')
+//				let passSignup=document.getElementById('password-signup')
+//				let emailSignup=document.getElementById('email-signup')
+//				let confirmPassSignup=document.getElementById('confirm-password-signup')
+//				userSignup.value=''
+//				passSignup.value=''
+//				emailSignup.value=''
+//				confirmPassSignup.value=''
+//				document.getElementById('address-signup').value=''
+//				document.getElementById('phone-signup').value=''
+//				document.getElementById('name-signup').value=''
+//			}
+//			menuAccount.classList.remove('hideAccount')
+//			let chooseLogin=document.getElementById('Login')
+//			let chooseSignup=document.getElementById('Signup')
+//			var signupBox=document.getElementById('signup-form')
+//			var loginBox = document.getElementById("login-form");
 //			chooseLogin.addEventListener('click',function(){
 //				
 //				loginBox.style.display="block";
@@ -240,10 +249,10 @@ window.onload=function(){
 //			})
 			
 		}
-		else{
-			menuAccount.classList.add('hideAccount')
-		}
-	}
+//		else{
+//			menuAccount.classList.add('hideAccount')
+//		}
+//	}
 
 	// ========= QUEN MAT KHAU ===========================
 	let btnForgetPass=document.querySelector('.forgotPassword button')
@@ -260,6 +269,7 @@ window.onload=function(){
 // =======Logged
 	iconLogged.addEventListener('click',function(){
 		document.querySelector('.menuLogged').classList.toggle('hide')
+		
 	})
 
 	
