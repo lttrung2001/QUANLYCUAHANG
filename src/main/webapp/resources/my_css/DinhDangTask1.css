@@ -397,7 +397,6 @@ form.search-form button i{
 .iconLogged{
   position: relative;
   font-family: sans-serif;
-  display: none;
 }
 .iconLogged button:hover{
   transform: translateY(1px);

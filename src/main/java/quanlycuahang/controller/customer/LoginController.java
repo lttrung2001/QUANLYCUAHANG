@@ -56,7 +56,7 @@ public class LoginController {
 				return "customer/customer_home";				
 			}
 			else {
-				errors.rejectValue("password", "account", "Tài khoản hoặc mật khẩu bị sai!");
+				errors.rejectValue("password", "account", "Sai thông tin đăng nhập!");
 				model.addAttribute("account", account);
 				return "customer/login";
 			}

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My cart</title>
     <base href="${pageContext.servletContext.contextPath }/">
-    <script src="https://kit.fontawesome.com/0e7ed669fa.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0e7ed669fa.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/CSS-Cart.css'/>">
@@ -21,7 +21,7 @@
         <div class="productCart">
             <h2>LIST YOUR PRODUCT:</h2>
             <div class="items">
-            	<c:forEach var="c" items="${cart }">
+            	<c:forEach var="c" items="${account.products }">
                 <div class="item">
                     <img src="<c:url value='${c.productInCart.image }'/>" >
                     <div class="nameItem">
@@ -52,13 +52,13 @@
                 </div>
                 <div class="totalItem">
                     <h4>ITEMS</h4>
-                    <span>${fn:length(cart) }</span>
+                    <span>${fn:length(account.products) }</span>
                     <span class="total-price"><c:out value="${totalPrice }"></c:out></span>
                 </div>
             </div>
             <div class="address">
                 <h4>Thêm địa chỉ giao hàng</h4>
-                <input type="text">
+                <input type="text" value="${account.clientInfo.address }">
             </div>
             <div class="sale">
                 <h4>SALE: </h4>

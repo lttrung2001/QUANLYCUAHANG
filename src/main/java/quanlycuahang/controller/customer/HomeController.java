@@ -78,4 +78,13 @@ public class HomeController {
 		model.addAttribute("products", productTypeDAO.getProductTypeById(id).getList());
 		return "customer/customer_home";
 	}
+	
+	@RequestMapping(value = "new")
+	public String newArrival(ModelMap model) {
+		model.addAttribute("part", "new");
+		model.addAttribute("products", productDAO.getAllProduct());
+		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
+		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
+		return "customer/customer_home";
+	}
 }

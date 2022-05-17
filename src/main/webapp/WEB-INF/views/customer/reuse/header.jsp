@@ -24,33 +24,30 @@
                 	</c:forEach>
                 </ul>
             </li>
-            <li class="Option"><a class="style-menu" href="#">SALE</a>
-                <ul class="sale-menu sub-menu">
-                    <li><a href="#" onclick="notification_option()">90%</a></li>
-                    <li><a href="#" onclick="notification_option()">70%</a></li>
-                    <li><a href="#" onclick="notification_option()">50%</a></li>
-                </ul>
-
-            </li>
+            <li class="Option"><a class="style-menu" href="new.htm">NEW</a></li>
             <!-- <li><a href="#contact" class="style-menu">CONTACT</a></li> -->
         </ul>
         <div id="header-icon">
             <!-- <span id="icon-account"> <ion-icon name="person-circle"></ion-icon></span> -->
-            <div class="icon-button-header">
-                <button id="icon-person-btn" ><ion-icon name="person-outline"></ion-icon></button>
-                <ul id="login_signup" class="hideAccount">
-                    <li><button type="button" id="Login">Log in</button></li>
-                    <li><button type="button" id="Signup">Sign up</button></li>
-                </ul>
-            </div>
-            <div class="iconLogged">
-                <button><ion-icon name="person"></ion-icon></button>
-                <ul class="menuLogged hide">
-                    <li class="changeInfor"><a href="#">Thay đổi thông tin</a></li>
-                    <li class="history"><a href="#">Lịch sử</a></li>
-                    <li class="logOut"><a href="#">Đăng xuất</a></li>
-                </ul>
-            </div>
+           	<c:if test="${sessionScope.account == null }">
+	            <div class="icon-button-header">
+	                <button id="icon-person-btn" ><ion-icon name="person-outline"></ion-icon></button>
+	                <ul id="login_signup" class="hideAccount">
+	                    <li><button type="button" id="Login">Log in</button></li>
+	                    <li><button type="button" id="Signup">Sign up</button></li>
+	                </ul>
+	            </div>
+           	</c:if>
+           	<c:if test="${sessionScope.account != null }">
+	            <div class="iconLogged">
+	                <button><ion-icon name="person"></ion-icon></button>
+	                <ul class="menuLogged hide">
+	                    <li class="changeInfor"><a href="#">Thay đổi thông tin</a></li>
+	                    <li class="history"><a href="#">Lịch sử</a></li>
+	                    <li class="logOut"><a href="#">Đăng xuất</a></li>
+	                </ul>
+	            </div>
+           	</c:if>
             <div class="icon-button-header">
                 <button id="icon-search-btn" ><ion-icon name="search-outline" ></ion-icon></button>
                 <div class="search-input hide" >
