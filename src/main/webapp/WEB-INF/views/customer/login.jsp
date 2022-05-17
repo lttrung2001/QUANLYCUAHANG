@@ -37,10 +37,7 @@
 			<p>Password</p>
 			<form:input path="password" type="password" value="" id="password-login" placeholder="Enter Password" />
 			<form:errors cssClass="warning-login" path="password"></form:errors>
-			<div class="error-login">Incorrect account or password</div>
-			<div class="warning-login">Not be empty</div>
-			<button class="loading-login"></button >
-			<div class="login-button"><span>Login</span></div>
+			<div class="login-button"><button>Login</button></div>
 		</form:form>
 		<a href="#">Lost your password?</a>
 		<a href="#">Don't have an account?</a>

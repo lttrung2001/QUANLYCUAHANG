@@ -143,101 +143,101 @@ window.onload=function(){
 			let chooseSignup=document.getElementById('Signup')
 			var signupBox=document.getElementById('signup-form')
 			var loginBox = document.getElementById("login-form");
-			chooseLogin.addEventListener('click',function(){
-				
-				loginBox.style.display="block";
-				menuAccount.classList.add('hideAccount')
-				resetFormLogin()
-				filterLogin.style.display='block'
-				let closeLogin=document.getElementById('close-login')
-				// let iconUser=document.querySelector('.iconUser')
-				controlIconAccount=1
-				iconHeader.forEach(function(e){
-					e.disabled=true
-				})
-				function enterLogin(){
-					if(user.value=='' || pass.value==''){		
-						warningLogin.style.display='block'
-						errorLogin.style.display='none'
-					}
-					else{
-						warningLogin.style.display='none'
-						if(user.value=="n19dccn018@student.ptithcm.edu.vn" && pass.value=="xxx"){
-							errorLogin.style.display='none'
-							loading.style.display='block'
-							console.log(2)
-							setTimeout(function(){
-								loginBox.style.display='none'
-								filterLogin.style.display='none'
-								iconAccount.style.display='none'
-								iconLogged.style.display='block'
-								iconCart.style.display='block'
-								controlIconAccount=0
-								iconHeader.forEach(function(e){
-									e.disabled=false
-								})
-							},200)
-							
-							
-						}
-						else{
-							errorLogin.style.display='block'
-						}
-					}
-				}
-				var login=document.querySelector('.login-button')
-				login.addEventListener('click',enterLogin)
-				
-				closeLogin.addEventListener('click',function(){
-					loginBox.style.display='none'
-					filterLogin.style.display='none'
-					controlIconAccount=0
-					iconHeader.forEach(function(e){
-						e.disabled=false
-					})
-				})
-			})
-			chooseSignup.addEventListener('click',function(){
-				var formSignup=document.querySelector('#signup-form form')
-				var submitSignup=document.querySelector('.btn-submit-signup')
-				signupBox.style.display="block";
-				menuAccount.classList.add('hideAccount')
-				filterLogin.style.display='block'
-				resetFormSignup()
-				let closeSignup=document.getElementById('close-signup')
-				controlIconAccount=1
-				iconHeader.forEach(function(e){
-					e.disabled=true
-				})
-				formSignup.addEventListener('submit',function(e){
-					let userSignup=document.getElementById('username-signup')
-					let passSignup=document.getElementById('password-signup')
-					e.preventDefault()
-					console.log(userSignup.value, passSignup.value)
-					resetFormSignup()
-					
-				})
-				// submitSignup.addEventListener('click',function(){
-				// 	loading.style.display='block'
-				// 	setTimeout(function(){
-				// 		signupBox.style.display='none'
-				// 		filterLogin.style.display='none'
-				// 		controlIconAccount=0
-				// 		iconHeader.forEach(function(e){
-				// 			e.disabled=false
-				// 		})
-				// 		},2000)
-				// })
-				closeSignup.addEventListener('click',function(){
-
-					signupBox.style.display='none'
-					filterLogin.style.display='none'
-					controlIconAccount=0
-					iconHeader.forEach(function(e){
-						e.disabled=false
-					})
-				})
-			})
+//			chooseLogin.addEventListener('click',function(){
+//				
+//				loginBox.style.display="block";
+//				menuAccount.classList.add('hideAccount')
+//				resetFormLogin()
+//				filterLogin.style.display='block'
+//				let closeLogin=document.getElementById('close-login')
+//				// let iconUser=document.querySelector('.iconUser')
+//				controlIconAccount=1
+//				iconHeader.forEach(function(e){
+//					e.disabled=true
+//				})
+//				function enterLogin(){
+//					if(user.value=='' || pass.value==''){		
+//						warningLogin.style.display='block'
+//						errorLogin.style.display='none'
+//					}
+//					else{
+//						warningLogin.style.display='none'
+//						if(user.value=="n19dccn018@student.ptithcm.edu.vn" && pass.value=="xxx"){
+//							errorLogin.style.display='none'
+//							loading.style.display='block'
+//							console.log(2)
+//							setTimeout(function(){
+//								loginBox.style.display='none'
+//								filterLogin.style.display='none'
+//								iconAccount.style.display='none'
+//								iconLogged.style.display='block'
+//								iconCart.style.display='block'
+//								controlIconAccount=0
+//								iconHeader.forEach(function(e){
+//									e.disabled=false
+//								})
+//							},200)
+//							
+//							
+//						}
+//						else{
+//							errorLogin.style.display='block'
+//						}
+//					}
+//				}
+//				var login=document.querySelector('.login-button')
+//				login.addEventListener('click',enterLogin)
+//				
+//				closeLogin.addEventListener('click',function(){
+//					loginBox.style.display='none'
+//					filterLogin.style.display='none'
+//					controlIconAccount=0
+//					iconHeader.forEach(function(e){
+//						e.disabled=false
+//					})
+//				})
+//			})
+//			chooseSignup.addEventListener('click',function(){
+//				var formSignup=document.querySelector('#signup-form form')
+//				var submitSignup=document.querySelector('.btn-submit-signup')
+//				signupBox.style.display="block";
+//				menuAccount.classList.add('hideAccount')
+//				filterLogin.style.display='block'
+//				resetFormSignup()
+//				let closeSignup=document.getElementById('close-signup')
+//				controlIconAccount=1
+//				iconHeader.forEach(function(e){
+//					e.disabled=true
+//				})
+//				formSignup.addEventListener('submit',function(e){
+//					let userSignup=document.getElementById('username-signup')
+//					let passSignup=document.getElementById('password-signup')
+//					e.preventDefault()
+//					console.log(userSignup.value, passSignup.value)
+//					resetFormSignup()
+//					
+//				})
+//				// submitSignup.addEventListener('click',function(){
+//				// 	loading.style.display='block'
+//				// 	setTimeout(function(){
+//				// 		signupBox.style.display='none'
+//				// 		filterLogin.style.display='none'
+//				// 		controlIconAccount=0
+//				// 		iconHeader.forEach(function(e){
+//				// 			e.disabled=false
+//				// 		})
+//				// 		},2000)
+//				// })
+//				closeSignup.addEventListener('click',function(){
+//
+//					signupBox.style.display='none'
+//					filterLogin.style.display='none'
+//					controlIconAccount=0
+//					iconHeader.forEach(function(e){
+//						e.disabled=false
+//					})
+//				})
+//			})
 			
 		}
 		else{

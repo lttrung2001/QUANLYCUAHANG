@@ -570,7 +570,6 @@ form.search-form button i{
   height: 40px;
   width: 100%;
   background: rgba(251, 37, 37,0.8);
-  font-size: 18px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -581,7 +580,12 @@ form.search-form button i{
 .login-button:hover{
   background: rgba(251, 37, 37,0.9);
   cursor: pointer;
-  
+}
+.login-button button{
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 #login-form a{
