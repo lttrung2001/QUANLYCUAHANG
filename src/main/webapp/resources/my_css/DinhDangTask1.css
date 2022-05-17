@@ -745,6 +745,49 @@ form.search-form button i{
 .signup-link a:hover{
   text-decoration: underline;
 }
+/* ==============================Forget Pass================================ */
+.forgotPassword{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 30px 40px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  z-index: 4;
+}
+.forgotPassword div{
+  margin: 20px 0;
+}
+.forgotPassword input{
+  width: 90%;
+  padding: 6px 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  /* border: none;
+  border-bottom: #333 solid 1px; */
+}
+.forgotPassword .codeCheckPass{
+  display: none;
+}
+.forgotPassword small{
+  color: var(--success-color);
+}
+.forgotPassword button{
+  outline: none;
+  border: none;
+  background: var(--signature-color);
+  padding: 8px 15px;
+  border-radius: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.forgotPassword button:hover{
+  transform: scale(102%);
+}
 /* ==============================End sign up =============================== */
 
 /*    boxChange Info  */
