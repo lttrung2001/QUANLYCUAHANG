@@ -41,6 +41,8 @@ public class ClientAccount {
 	@NotEmpty(message = "Không để trống email!")
 	@Email(message = "Email không đúng định dạng!")
 	private String email;
+	@Column(name = "CODE")
+	private String code;
 	@OneToOne(mappedBy = "clientAccount")
 	private Client clientInfo;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "accountInCart")
@@ -87,7 +89,7 @@ public class ClientAccount {
 	public void setProducts(Set<Cart> products) {
 		this.products = products;
 	}
-	public ClientAccount(String username, String password, int point, Date createdDate, String email, Client clientInfo,
+	public ClientAccount(String username, String password, int point, Date createdDate, String email, String code, Client clientInfo,
 			Set<Cart> products) {
 		super();
 		this.username = username;
@@ -95,11 +97,19 @@ public class ClientAccount {
 		this.point = point;
 		this.createdDate = createdDate;
 		this.email = email;
+		this.code = code;
 		this.clientInfo = clientInfo;
 		this.products = products;
 	}
+	
 	public ClientAccount() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
 	}
 }

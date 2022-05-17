@@ -51,8 +51,15 @@ public class LoginController {
 			if (accountInTable != null && 
 				accountInTable.getUsername().equals(account.getUsername()) &&
 				accountInTable.getPassword().equals(account.getPassword())) {
-				HttpSession session = request.getSession();				session.setAttribute("account", account);
-				return "customer/customer_home";				
+				if (accountInTable.getCode().equals("") ) {
+					HttpSession session = request.getSession();					session.setAttribute("account", account);
+					return "customer/customer_home";									
+				}
+				else {
+					errors.rejectValue("username", "account", "Tài khoản chưa được kích hoạt!");
+					model.addAttribute("account", account);
+					return "customer/login";
+				}
 			}
 			else {
 				errors.rejectValue("password", "account", "Sai thông tin đăng nhập!");
