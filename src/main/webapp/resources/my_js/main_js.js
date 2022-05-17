@@ -260,64 +260,6 @@ window.onload=function(){
 // =======Logged
 	iconLogged.addEventListener('click',function(){
 		document.querySelector('.menuLogged').classList.toggle('hide')
-		document.querySelector('.iconLogged .logOut').addEventListener('click',function(){
-			let logOUtCofirm=confirm('Are you sure?')
-			if(logOUtCofirm==true){
-				location.href='index.html'
-			}
-			
-		})
-		document.querySelector('.iconLogged .changeInfor').addEventListener('click',function(){
-			let boxChange=document.querySelector('.boxChange')
-			boxChange.style.display='block'
-			filterLogin.style.display='block'
-			// Change Info
-			let changeInfo =document.querySelectorAll('.boxChange div button')
-			let originalInfo=document.querySelectorAll('.boxChange .originalInfo')
-			let valueInputs=new Array(changeInfo.length)
-			// let inputElement=document.createElement('input')
-			
-			for(let i=0; i<changeInfo.length; i++){
-				valueInputs[i]=document.createElement('input')
-				changeInfo[i].addEventListener('click',function(){
-					if(i==4){
-						document.querySelector('.passChange .secretPass').style.display='none'
-						setTimeout(function(){
-							document.querySelector('.boxChangePass').style.display='block'
-							document.querySelector('.passChange>button:first-child').style.display='none'
-						},200)
-					}
-					else{
-						valueInputs[i].type='text'
-						valueInputs[i].value=originalInfo[i].innerHTML
-						originalInfo[i].parentNode.replaceChild(valueInputs[i],originalInfo[i])
-			
-					}
-					document.querySelector('.saveChange').addEventListener('click',function(){
-						originalInfo[i].innerHTML=valueInputs[i].value
-						valueInputs[i].parentNode.replaceChild(originalInfo[i],valueInputs[i])
-						boxChange.style.display='none'
-						filterLogin.style.display='none'
-					})
-					document.querySelector('.closeBoxChange').addEventListener('click',function(){
-						originalInfo[i].innerHTML=valueInputs[i].value
-						valueInputs[i].parentNode.replaceChild(originalInfo[i],valueInputs[i])
-						boxChange.style.display='none'
-						filterLogin.style.display='none'
-					})
-				})
-			}
-			document.querySelector('.saveChange').addEventListener('click',function(){
-				boxChange.style.display='none'
-				filterLogin.style.display='none'
-			})
-			document.querySelector('.closeBoxChange').addEventListener('click',function(){
-				boxChange.style.display='none'
-				filterLogin.style.display='none'
-			})
-			
-			// End of change Info
-		})
 	})
 
 	
