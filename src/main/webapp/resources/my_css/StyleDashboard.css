@@ -306,7 +306,7 @@ body{
     font-size: 20px;
 }
 
-/*=========QL Đơn hàng==========  */
+/*=========QL Ä�Æ¡n hÃ ng==========  */
 .mainOrder{
     position: relative;
     width: 100%;
@@ -494,7 +494,7 @@ body{
     border-radius: 20px;
 }
 
-/* =======End QL Đơn Hàng========= */
+/* =======End QL Ä�Æ¡n HÃ ng========= */
 
 .mainTypeProduct{
     position: relative;
@@ -658,7 +658,6 @@ body{
     position: relative;
     width: 100%;
     height: 100%;
-    display: none;
 }
 .mainProduct .topMainProduct{
     width: 100%;
@@ -676,7 +675,7 @@ body{
     /* display: flex; */
     /* width: 100%; */
     font-size: 20px;
-    height: 30px;
+    height: 31px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -689,10 +688,16 @@ body{
     background: var(--blue);
     padding: 0 10px
 }
-.mainProduct .topMainProduct .searchProduct i{
+.mainProduct .topMainProduct .searchProduct button{
     cursor: pointer;
+    background: none;
+    border: none;
     /* transform: translateY(2px); */
 }
+.mainProduct .topMainProduct .searchProduct button i{
+    font-size: 16px;
+}
+
 .mainProduct .topMainProduct .searchProduct span{
     height: 100%;
 }
@@ -714,13 +719,13 @@ body{
 /* boxEdit */
 .mainProduct .boxEditProduct{
     width: 90%;
-    /* height: 0; */
+    /* height: 200px; */
     margin: 20px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
+    padding:  0;
     padding-top: 15px;
     background: var(--white);
     box-shadow: 0 0px 25px rgba(0,0,0,0.1);
@@ -728,43 +733,59 @@ body{
     overflow: hidden;
     z-index: 1;
     /* display: none; */
+    position: relative;
 }
-.mainProduct .boxEditProduct::after{
+.mainProduct .topMainProduct::after{
     content: "";
-    background: #fff;
+    background: #ccc;
     width: 30px;
     height: 30px;
     position: absolute;
     transform: rotate(45deg);
     /* top: 20px; */
-    top: 35px;
+    top: 38px;
     left: 300px;
 }
 
 .mainProduct .boxEditProduct input[type='text']{
-    /* width: 55%; */
+    width: 270px;
 }
+.mainProduct .boxEditProduct >:nth-child(1),
 .mainProduct .boxEditProduct >:nth-child(2),
-.mainProduct .boxEditProduct >:nth-child(3),
-.mainProduct .boxEditProduct >:nth-child(4)
+.mainProduct .boxEditProduct >:nth-child(3)
 {
     width: 95%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 10px 0; 
     
     
 }
 .mainProduct .nameProduct,
-.mainProduct .idProduct,
+.mainProduct .choooseTypeProduct,
+.mainProduct .descProduct,
 .mainProduct .numProduct,
 .mainProduct .priceProduct{
-    width: 350px;
+    width: 45%;
     display: flex;
     justify-content: space-between;
 }
-.mainProduct .boxEditProduct .topBoxEditProduct input{
+.mainProduct .descProduct{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mainProduct .descProduct textarea{
+    width: 270px;
+    padding: 2px 3px;
+    outline: none;
+    font-size: 13px;
+    overflow-x: hidden;
+    word-wrap: break-word;
     
+}
+.mainProduct .boxEditProduct .topBoxEditProduct input{  
     padding: 3px 5px;
     font-size: 16px;
     outline: none;
@@ -775,52 +796,36 @@ body{
     font-size: 16px;
     outline: none;
 }
-.mainProduct .boxEditProduct .topBoxEditProduct, .botBoxEditProduct {
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-weight: 500;
-}
+
 .endBoxEditProduct button{
     outline: none;
     padding: 3px 13px;
     cursor: pointer;
 }
 .boxEditProduct .choooseTypeProduct{
-    position: absolute;
-    width: 180px;
-    /* bottom: 60px; */
-    top: 150px;
+    /* display: flex; */
 
+    /* justify-content: flex-start; */
 }
-.boxEditProduct .choooseTypeProduct .textChoose{
-    border: 1px solid #222;
-    display: block;
-    padding: 2px 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.boxEditProduct .choooseTypeProduct i{
+.boxEditProduct .choooseTypeProduct select{
+    width: 270px;
+    padding: 3px 5px;
+    font-size: 16px;
+    outline: none;
     cursor: pointer;
 }
-.boxEditProduct .choooseTypeProduct .combobox{
-    /* display: none; */
+    /* button Luu  */
+.saveEditProduct{ 
     position: absolute;
-    z-index: 1;
-    padding: 2px 5px ;
-    border: 1px solid #222;
-    width: 100%;
-    border-top: none;
-    background: var(--white);
-    
-}
-.boxEditProduct .choooseTypeProduct .combobox p {
-    
+    bottom: 5px;
+    padding: 5px 20px;
+    background: var(--blue);
+    border: none;
     cursor: pointer;
-}.boxEditProduct .choooseTypeProduct .combobox p:hover{
-    background: #ccc;
+    color: #fff;
+}
+.saveEditProduct:hover{
+    opacity: 0.9;
 }
 /* ========================= End of boxEdit ===================== */
 
@@ -834,42 +839,21 @@ body{
     width: 200px;
     height: 28px;
     display: flex;
-    border: 1px solid var(--black1);
     justify-content: space-between;
     position: relative;
 
 }
 
-.mainProduct .tableProduct .menuTypeProduct .typeProduct{
-    padding: 3px 5px;
-}
-.mainProduct .tableProduct .menuTypeProduct .typeProduct input{
-    display: none;
-}
-.mainProduct .tableProduct .menuTypeProduct  button{
+
+.mainProduct .tableProduct .menuTypeProduct select{
     outline: none;
-    background: none;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-}
-.mainProduct .tableProduct .menuTypeProduct .listTypeProduct{
-    position: absolute;
     width: 100%;
     padding: 3px 5px;
     border: 1px solid var(--black1);
-    border-top: none;
     top: 27px;
     z-index: 1;
-    background: var(--white);
-    
-}
-.mainProduct .tableProduct .menuTypeProduct .listTypeProduct p:hover{
-    background: var(--black2);
+    background: var(--white); 
     cursor: pointer;
-}
-.hideListTypeProduct{
-    display: none;
 }
 .mainProduct .tableProduct{
     /* padding-top: 50px; */
@@ -940,22 +924,21 @@ body{
     border-bottom: 3px solid transparent;
 }
 .mainProduct .tableProduct table tr td:nth-child(6){
+    text-align: center;
+}
+
+.mainProduct .tableProduct table tr td:nth-child(7){
     width: 70px;    
     text-align: center;
 }
-.mainProduct .tableProduct table tbody tr td:nth-child(6) button{
-    background: none;
-    border: none;
-}
-.mainProduct .tableProduct table tbody tr td:nth-child(6) i{
+.mainProduct .tableProduct table tr td:nth-child(7) i{
     margin: 5px;
     color: var(--black1);
 }
-.mainProduct .tableProduct table tbody tr td:nth-child(6) i:hover{
+.mainProduct .tableProduct table tr td:nth-child(7) i:hover{
     cursor: pointer;
     transform: rotate(-15deg);
 }
-
                 /* =====QL KHÁCH HÀNG===== */
     /* responsive */
 /* @media screen and (max-width: 1023px) {
@@ -1219,7 +1202,7 @@ body{
     border: 1px solid #222;
 }
 
-                /* =====THỐNG KÊ===== */
+                /* =====THá»�NG KÃŠ===== */
 
 
 .mainStatistical{
@@ -1303,7 +1286,7 @@ body{
     color: var(--white);
     border-radius: 5px;
 }
-/* như cũ */
+/* nhÆ° cÅ© */
 /* .details .recentOrders table{
     width: 100%;
     border-collapse: collapse;
@@ -1372,8 +1355,8 @@ body{
     border-radius: 4px;
     font-size: 14px;
 } */
-/* end of như cũ */
-/* mới */
+/* end of nhÆ° cÅ© */
+/* má»›i */
 .details .recentOrders table{
     width: 100%;
     border-collapse: collapse;
@@ -1456,7 +1439,7 @@ body{
     border-radius: 4px;
     font-size: 14px;
 }
-/* end of mới */
+/* end of má»›i */
 /* end of order details List */
 
 /* recent Customer */
