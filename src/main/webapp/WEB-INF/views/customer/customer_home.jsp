@@ -37,63 +37,9 @@
 	<!-- End Scroll TOP -->
 
 	<!-- Login and Sign up -->
-	<div id="login-form">
-		<buttton id="close-login">
-			<span><i class="fa-solid fa-xmark"></i></span>
-		</buttton>
-		<img class="avtLogin" src="<c:url value='/resources/my_png/avatar.png'/>">
-		<h1>LOGIN</h1>
-		<form action="">
-			<p>Username</p>
-			<input type="text" value="" id="username-login" placeholder="Enter Username" />
-			<p>Password</p>
-			<input type="password" value="" id="password-login" placeholder="Enter Password" />
-			<div class="error-login">Incorrect account or password</div>
-			<div class="warning-login">Not be empty</div>
-			<button class="loading-login"></button >
-			<div class="login-button"><span>Login</span></div>
-		</form>
-		<a href="#">Lost your password?</a>
-		<a href="#">Don't have an account?</a>
-		
-	</div>
-
-
-	<div class="filter-login"></div>
+	
 	<!-- Sign up -->
-	<div id="signup-form">
-		<buttton id="close-signup" >
-			<span><i class="fa-solid fa-xmark"></i></span>
-		</buttton>
-		<form action="">
-			<h1>Register</h1>
-			<div class="form-control-signup ">
-				<input id="username-signup" type="text" placeholder="Username">
-				<small ></small>
-				<span></span>
-			</div>
-			<div class="form-control-signup ">
-				<input id="email-signup" type="email" placeholder="Email">
-				<small ></small>
-				<span></span>
-			</div>
-			<div class="form-control-signup ">
-				<input id="password-signup" type="password" placeholder="Password">
-				<small ></small>
-				<span></span>
-			</div>
-			<div class="form-control-signup ">
-				<input id="confirm-password-signup" type="password" placeholder="Confirm password">
-				<small ></small>
-				<span></span>
-			</div>
-			<button class="loading-login"></button >
-			<button type="submit" class="btn-submit-signup">Confirm</button>
-			<div class="signup-link">
-				Don't remember your password? <a href="#">Help!</a>
-			</div>
-		</form>
-	</div>
+	
 	<!-- End sign up -->
 	
 	<!-- End Log -->
