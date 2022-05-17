@@ -683,7 +683,7 @@ form.search-form button i{
 }
 .form-control-signup{
   position: relative;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 .form-control-signup input{
   background: transparent;
@@ -694,6 +694,7 @@ form.search-form button i{
   border: none;
   outline: none;
   border-bottom: #fff 1px solid;
+  color: #fff;
 }
 .form-control-signup span{
   position: absolute;

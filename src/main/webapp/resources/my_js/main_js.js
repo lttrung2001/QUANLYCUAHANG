@@ -134,6 +134,9 @@ window.onload=function(){
 				passSignup.value=''
 				emailSignup.value=''
 				confirmPassSignup.value=''
+				document.getElementById('address-signup').value=''
+				document.getElementById('phone-signup').value=''
+				document.getElementById('name-signup').value=''
 			}
 			menuAccount.classList.remove('hideAccount')
 			let chooseLogin=document.getElementById('Login')
@@ -142,10 +145,10 @@ window.onload=function(){
 			var loginBox = document.getElementById("login-form");
 			chooseLogin.addEventListener('click',function(){
 				
-				//loginBox.style.display="block";
+				loginBox.style.display="block";
 				menuAccount.classList.add('hideAccount')
 				resetFormLogin()
-				//filterLogin.style.display='block'
+				filterLogin.style.display='block'
 				let closeLogin=document.getElementById('close-login')
 				// let iconUser=document.querySelector('.iconUser')
 				controlIconAccount=1
@@ -214,17 +217,17 @@ window.onload=function(){
 					resetFormSignup()
 					
 				})
-				submitSignup.addEventListener('click',function(){
-					loading.style.display='block'
-					setTimeout(function(){
-						signupBox.style.display='none'
-						filterLogin.style.display='none'
-						controlIconAccount=0
-						iconHeader.forEach(function(e){
-							e.disabled=false
-						})
-						},2000)
-				})
+				// submitSignup.addEventListener('click',function(){
+				// 	loading.style.display='block'
+				// 	setTimeout(function(){
+				// 		signupBox.style.display='none'
+				// 		filterLogin.style.display='none'
+				// 		controlIconAccount=0
+				// 		iconHeader.forEach(function(e){
+				// 			e.disabled=false
+				// 		})
+				// 		},2000)
+				// })
 				closeSignup.addEventListener('click',function(){
 
 					signupBox.style.display='none'
