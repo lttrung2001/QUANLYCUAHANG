@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <base href="${pageContext.servletContext.contextPath }/">
     <link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
     <link rel="stylesheet" type="text/css" href="/resources/my_css/sercurity.css"/>
-    <script src="https://kit.fontawesome.com/0e7ed669fa.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0e7ed669fa.js"></script>
 </head>
 <body>
     <div class="header">
