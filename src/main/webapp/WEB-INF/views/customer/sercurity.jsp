@@ -22,7 +22,7 @@
         </div>
         <div class="loginName">
             <span>huynh2k7</span>
-            <button>Đăng xuất</button>
+            <a href="">Đăng xuất</a>
         </div>
     </div>
 
@@ -36,67 +36,77 @@
         </div>
         <div class="boxChange">
             <div class="boxInfo">
-                <h2>Thông tin của bạn: </h2>
-                <ion-icon class="closeBoxChange" name="close"></ion-icon>
-                <div class="nameChange">
-                    <span class="titleChange"><i class="fa-solid fa-signature"></i>Tên</span >
-                    <input type="text" value="Nguyễn Đăng Bắc">
-                    <button><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
-                </div>
-                <div class="addressChange">
-                    <span class="titleChange"><i class="fa-solid fa-location-dot"></i> Địa chỉ</span >
-                    <textarea name="" id="" rows="2"></textarea>
-                    <button><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
-                </div>
-                <div class="phoneChange">
-                    <span class="titleChange"><ion-icon name="call"></ion-icon> Số điện thoại</span >
-                    <input type="text">
-                    <button><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
-                </div>
+                <form action="">
+                    <h2>Thông tin của bạn: </h2>
+                    <ion-icon class="closeBoxChange" name="close"></ion-icon>
+                    <div class="nameChange">
+                        <span class="titleChange"><i class="fa-solid fa-signature"></i>Tên</span >
+                        <input type="text" value="Nguyễn Đăng Bắc">
+                        <!-- <button ><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button> -->
+                    </div>
+                    <div class="addressChange">
+                        <span class="titleChange"><i class="fa-solid fa-location-dot"></i> Địa chỉ</span >
+                        <textarea name="" id="" rows="2"></textarea>
+                        <!-- <button ><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button> -->
+                    </div>
+                    <div class="phoneChange">
+                        <span class="titleChange"><ion-icon name="call"></ion-icon> Số điện thoại</span >
+                        <input type="text">
+                        <!-- <button ><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button> -->
+                    </div>
+                    <button>Lưu thay đổi</button>
+                </form>
             </div>
             <div class="emailChange">
-                <h3>ĐỔI EMAIL MỚI</h3>
-                <div class="note-mail">
-                    <small>Ấn nút lấy mã để nhận mã xác nhận qua email!</small>
-                </div>
-                <div class="email-container">
-                    <span class="titleChange titleEmailChange"><i class="fa-solid fa-at"></i> Email</span >
-                        <span class="originalInfo mailOriginal">dangbac872001@gmail.com</span>
-                        <span class="boxChangeEmail">
-                            <p>
-                                <input type="text" name="" id="">
-                            </p>
-                            <p>
-                                <input type="text" placeholder="Nhập mã xác thực" value="">
-                                <span><button>Lấy mã</button></span>
-                            </p>
-                        </span>
-                    <button class="emailFixButton"><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
-                </div>
+                <form action="">
+                    <h3>ĐỔI EMAIL MỚI</h3>
+                    <div class="note-mail">
+                        <small>Ấn nút lấy mã để nhận mã xác nhận qua email!</small>
+                    </div>
+                    <div class="email-container">
+                        <span class="titleChange titleEmailChange"><i class="fa-solid fa-at"></i> Email</span >
+                            <span class="originalInfo mailOriginal">dangbac872001@gmail.com</span>
+                            <span class="boxChangeEmail">
+                                <p>
+                                    <input type="text" name="" id="">
+                                </p>
+                                <p>
+                                    <input type="text" placeholder="Nhập mã xác thực" value="">
+                                    <span><button>Lấy mã</button></span>
+                                </p>
+                            </span>
+                        <button class="emailFixButton"><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
+
+                    </div>
+                    <button>Lưu thay đổi</button>
+                </form>
             </div>
 
             <div class="passChange">
-                <h3>ĐỔI MẬT KHẨU</h3>
-                <div class="changePassContainer">
-                    <span class="boxChangePass">
-                        <p>
-                            <span>Mật khẩu hiện tại</span> 
-                            <input type="password" name="" id="">
-                        </p>
-                        <p>
-                            <span>Mật khẩu mới</span> 
-                            <input type="password" name="" id="">
-                        </p>
-                        <p>
-                            <span>Nhập lại mật khẩu mới</span> 
-                            <input type="password" name="" id="">
-                        </p>
-                    </span>		
-                </div>	
+                <form action="">
+                    <h3>ĐỔI MẬT KHẨU</h3>
+                    <div class="changePassContainer">
+                        <span class="boxChangePass">
+                            <p>
+                                <span>Mật khẩu hiện tại</span> 
+                                <input type="password" name="" id="">
+                            </p>
+                            <p>
+                                <span>Mật khẩu mới</span> 
+                                <input type="password" name="" id="">
+                            </p>
+                            <p>
+                                <span>Nhập lại mật khẩu mới</span> 
+                                <input type="password" name="" id="">
+                            </p>
+                        </span>		
+                    </div>	
+                    <button class="saveChange">Lưu thay đổi</button>
+                </form>
             </div>
-            <button class="saveChange">Lưu thay đổi</button>
+            
         </div>
     </div>
-    <script type="text/javascript" src="/resources/my_js/sercurity.js" ></script>
+    <script type="text/javascript" src="my_js/sercurity.js" ></script>
 </body>
 </html>

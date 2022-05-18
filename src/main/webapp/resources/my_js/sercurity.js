@@ -33,7 +33,8 @@ window.onload=function(){
             }
         })
     }
-    document.querySelector('.emailFixButton').addEventListener('click',function(){
+    document.querySelector('.emailFixButton').addEventListener('click',function(e){
+		e.preventDefault()
         document.querySelector('.boxChange .emailChange .boxChangeEmail').style.display='block'      
         document.querySelector('.mailOriginal').style.display='none'
         document.querySelector('.titleEmailChange').innerHTML=' Email mới'
