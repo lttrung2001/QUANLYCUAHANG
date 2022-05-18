@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root{
     --success-color: #2691d9;
@@ -762,6 +763,9 @@ form.search-form button i{
   font-family: 'Roboto', sans-serif;
   z-index: 4;
 }
+.forgotPassword h1{
+  margin: 15px 0;
+}
 .forgotPassword div{
   margin: 20px 0;
 }
@@ -780,7 +784,7 @@ form.search-form button i{
 .forgotPassword small{
   color: var(--success-color);
 }
-.forgotPassword button{
+.forgotPassword .submitFP{
   outline: none;
   border: none;
   background: var(--signature-color);
@@ -789,8 +793,19 @@ form.search-form button i{
   margin: 10px 0;
   cursor: pointer;
 }
-.forgotPassword button:hover{
+.forgotPassword .submitFP:hover{
   transform: scale(102%);
+}
+.forgotPassword .closeFP{
+  background: none;
+  padding: 2px 6px;
+  border: none;  
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
 }
 /* ==============================End sign up =============================== */
 

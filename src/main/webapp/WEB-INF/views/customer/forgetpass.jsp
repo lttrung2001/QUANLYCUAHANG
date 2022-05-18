@@ -23,6 +23,7 @@
 <body>
 	<%@include file="/WEB-INF/views/customer/reuse/header.jsp" %>	
 	 <div class="forgotPassword">
+        <button class="closeFP">x</button>
         <h1>QUÊN MẬT KHẨU</h1>    
         <div>
 			<input type="text" placeholder="Nhập tên tài khoản">
@@ -36,9 +37,9 @@
         </div>
         <small>Nhập đúng thông tin sau đó nhấn tiếp tục</small>
         <br/>
-        <button>TIẾP TỤC</button>
+        <button class="submitFP">TIẾP TỤC</button>
     </div>
-	<div class="filter-login"></div>
-    <script type="text/javascript" src="my_js/main_js.js" ></script>
+    <div class="filter-login"></div>
+    <script type="text/javascript" src="/resources/my_js/foget_password.js" ></script>
 </body>
 </html>
