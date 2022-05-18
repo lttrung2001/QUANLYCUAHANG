@@ -140,7 +140,7 @@
             <table>
                 <tr>
                     <td ><div class="imgBox"><img src="my_image/Customer Images/e64ed0d383104b4e1201.jpg"></div></td>
-                    <td><h4>Hm One<br><span>Hàn Quốc</span></h4></td>
+                    <td><h4>Hm One<br><span>HÃ n Quá»c</span></h4></td>
                 </tr>
                 <tr>
                     <td ><div class="imgBox"><img src="my_image/Customer Images/IMGcab.jpg"></div></td>
@@ -148,7 +148,7 @@
                 </tr>
                 <tr>
                     <td ><div class="imgBox"><img src="my_image/Customer Images/Meo2.jpg"></div></td>
-                    <td><h4>Ronaldo <br><span>Bồ Đào Nha</span></h4></td>
+                    <td><h4>Ronaldo <br><span>Bá» ÄÃ o Nha</span></h4></td>
                 </tr>
                 <tr>
                     <td ><div class="imgBox"><img src="my_image/Customer Images/Meo3.jpg"></div></td>
@@ -156,11 +156,11 @@
                 </tr>
                 <tr>
                     <td ><div class="imgBox"><img src="my_image/Customer Images/Meo4.jpg"></div></td>
-                    <td><h4>F. De Jong <br><span>Hà Lan</span></h4></td>
+                    <td><h4>F. De Jong <br><span>HÃ  Lan</span></h4></td>
                 </tr>
                 <tr>
                     <td ><div class="imgBox"><img src="my_image/Customer Images/Meo5.jpg"></div></td>
-                    <td><h4>De Bruyne <br><span>Bỉ</span></h4></td>
+                    <td><h4>De Bruyne <br><span>Bá»</span></h4></td>
                 </tr>
                 
             </table>

@@ -6,7 +6,7 @@
         </div>
         <h3>Lionel Messi</h3>
         <div class="addressCard">
-            <i class="fa-solid fa-location-pin"></i> Tân Thành, Đồng Xoài
+            <i class="fa-solid fa-location-pin"></i> TÃ¢n ThÃ nh, Äá»ng XoÃ i
         </div>
         <div class="phoneCard">
             <i class="fa-solid fa-mobile-screen-button"></i> 0982777935
@@ -66,7 +66,7 @@
             <div class="timeline">Dec</div>
         </div>
     </div>
-    <!-- <h1>DANH SÁCH KHÁCH HÀNG</h1> -->
+    <!-- <h1>DANH SÃCH KHÃCH HÃNG</h1> -->
     <div class="topTableCustomer">
         <h2>DANH SÁCH KHÁCH HÀNG</h2>
         <div class="searchCustomer">
