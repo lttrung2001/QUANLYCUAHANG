@@ -118,6 +118,17 @@ body {
   border-bottom: 1px solid #ccc;
   white-space: nowrap;
 }
+.boxChange .boxInfo input{
+  padding: 3px 5px;
+  padding-left: 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+.boxChange .boxInfo textarea{
+  padding: 3px 5px;
+  outline: none;
+  border: 1px solid #ccc;
+}
 .boxChange .saveChange {
   outline: none;
   border: none;
