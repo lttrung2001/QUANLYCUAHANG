@@ -21,6 +21,13 @@
 
 	<!-- smoothy scroll  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		span.error-msg {
+			display: inline-block;
+			margin-top: 8px;
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<%@include file="/WEB-INF/views/customer/reuse/header.jsp" %>
@@ -33,10 +40,10 @@
 		<form:form method="post" action="login.htm" modelAttribute="account">
 			<p>Username</p>
 			<form:input path="username" type="text" value="" id="username-login" placeholder="Enter Username" />
-			<form:errors path="username"></form:errors>
+			<form:errors cssClass="error-msg" path="username"></form:errors>
 			<p>Password</p>
 			<form:input path="password" type="password" value="" id="password-login" placeholder="Enter Password" />
-			<form:errors path="password"></form:errors>
+			<form:errors cssClass="error-msg" path="password"></form:errors>
 			<div class="login-button"><button style="width: 100%; height: 100%; color: #fff;">Login</button></div>
 		</form:form>
 		<a href="#">Lost your password?</a>

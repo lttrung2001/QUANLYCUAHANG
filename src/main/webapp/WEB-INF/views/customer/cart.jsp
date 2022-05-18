@@ -28,11 +28,11 @@
                         <div class="typeItem">${c.productInCart.name }</div>
                         <div class="detailItem">${c.productInCart.desc }</div>
                         <div class="sizeItem">Size[L]</div>
-                    	<div style="display: none;">${c.productInCart.id }</div>
+                    	<div class="productId" style="display: none;">${c.productInCart.id }</div>
                     </div>
                     <div class="numberItem">
                         <button><i class="fa-solid fa-minus"></i></button>
-                        <small>${c.amount }</small>
+                        <small class="productAmount" >${c.amount }</small>
                         <button><i class="fa-solid fa-plus"></i> </button>               
                     </div>
                     <div class="price">${c.productInCart.price }</div>
@@ -58,7 +58,7 @@
             </div>
             <div class="address">
                 <h4>Thêm địa chỉ giao hàng</h4>
-                <input type="text" value="${account.clientInfo.address }">
+                <input class="billAddress" type="text" value="${account.clientInfo.address }">
             </div>
             <div class="sale">
                 <h4>SALE: </h4>
@@ -68,7 +68,7 @@
                 <h4>TOTAL PRICE</h4>
                 <span><c:out value="${totalPrice }"></c:out></span>
             </div>
-            <button>CHECKOUT</button>
+            <button onclick="checkOut();">CHECKOUT</button>
             
         </div>
     </div>
@@ -102,6 +102,41 @@
 		function plusNumberItem(e) {
 			// cộng 1 số lượng và cộng tổng tiền theo giá của mỗi sản phẩm
 			var parent = $(e).parent();
+		}
+		
+		function minusNumberItem(e) {
+			
+		}
+		
+		function checkOut() {
+			var idArray = $('.productId').map(function(){
+	               return parseInt($.trim($(this).text()));
+	            }).get();
+			
+			if (idArray.length === 0) return;
+			
+			var amountArray = $('.productAmount').map(function(){
+	               return parseInt($.trim($(this).text()));
+	            }).get();
+			
+			var address = $('input.billAddress').val();
+			
+			$.ajax({
+				url : "/QUANLYCUAHANG/Checkout",
+				type : "post",
+				data : {
+					ids : JSON.stringify(idArray),
+					amounts : JSON.stringify(amountArray),
+					billAddress : address
+				},
+				success : function(data) {
+					alert('CHECKOUT SUCCESSFUL!');
+					location.reload(true);
+				},
+				error : function(xhr) {
+					alert('CHECKOUT FAILED!');
+				}
+			});
 		}
 		
 	</script>
