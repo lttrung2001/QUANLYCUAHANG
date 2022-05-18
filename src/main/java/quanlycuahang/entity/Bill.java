@@ -3,6 +3,7 @@ package quanlycuahang.entity;
 import java.util.Date;
 
 
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -29,10 +29,9 @@ public class Bill {
 	private char status;
 	@Column(name = "DELIVER_ADDRESS", nullable = false)
 	private String address;
-	@Column(name = "STAFF_CREATE", nullable = false)
+	@Column(name = "STAFF_CREATE")
 	private String staffCreate;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "bill")
-	@OrderBy("productInBill ASC")
 	Set<BillDetail> billDetails = new HashSet<BillDetail>();
 	public int getId() {
 		return id;

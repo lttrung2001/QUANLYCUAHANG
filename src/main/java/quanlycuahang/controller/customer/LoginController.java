@@ -42,7 +42,7 @@ public class LoginController {
 		model.addAttribute("products", productDAO.getAllProduct());
 		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
 		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
-		if (errors.hasErrors()) {
+		if (errors.hasFieldErrors("username") || errors.hasFieldErrors("password")) {
 			model.addAttribute("account", account);
 			return "customer/login";
 		}
@@ -56,7 +56,7 @@ public class LoginController {
 					return "customer/customer_home";									
 				}
 				else {
-					errors.rejectValue("username", "account", "Tài khoản chưa được kích hoạt!");
+					errors.rejectValue("password", "account", "Tài khoản chưa được kích hoạt!");
 					model.addAttribute("account", account);
 					return "customer/login";
 				}

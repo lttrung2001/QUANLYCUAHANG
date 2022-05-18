@@ -1,6 +1,7 @@
 package quanlycuahang.entity;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -8,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +20,6 @@ public class Part {
 	@Column(name = "PART_NAME", nullable = false)
 	private String name;
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "part")
-	@OrderBy("proTypeName ASC")
 	private Set<ProductType> proTypeList = new HashSet<ProductType>();
 	public int getId() {
 		return id;
