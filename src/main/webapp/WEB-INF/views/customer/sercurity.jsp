@@ -40,17 +40,17 @@
                 <ion-icon class="closeBoxChange" name="close"></ion-icon>
                 <div class="nameChange">
                     <span class="titleChange"><i class="fa-solid fa-signature"></i>Tên</span >
-                    <span class="originalInfo">Nguyễn Đăng Bắc</span>
+                    <input type="text" value="Nguyễn Đăng Bắc">
                     <button><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
                 </div>
                 <div class="addressChange">
                     <span class="titleChange"><i class="fa-solid fa-location-dot"></i> Địa chỉ</span >
-                    <span class="originalInfo">Q9, TP.HCM</span>
+                    <textarea name="" id="" rows="2"></textarea>
                     <button><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
                 </div>
                 <div class="phoneChange">
                     <span class="titleChange"><ion-icon name="call"></ion-icon> Số điện thoại</span >
-                    <span class="originalInfo">0982777935</span>
+                    <input type="text">
                     <button><i class="fa-solid fa-pencil" style="font-size: 14px;"></i> Chỉnh sửa</button>
                 </div>
             </div>
