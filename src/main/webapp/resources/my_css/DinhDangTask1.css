@@ -215,8 +215,7 @@ body::-webkit-scrollbar-track{
   /* display: none; */
   overflow: hidden;
   height: 0;
-  /* width: 0; */
-  width: 174px;
+  width: 0;
   list-style: none;
   font-size: 1.1rem;
   font-weight: 600;
@@ -224,7 +223,7 @@ body::-webkit-scrollbar-track{
   left: 50%;
   opacity: 0.9;
   box-shadow: rgba(170, 169, 169, 0.5) 8px 5px 5px;
-  transition: height 0.5s;
+  transition: width 0.5s;
 }
 /* .sub-menu::before{
   content: "";
@@ -280,7 +279,7 @@ body::-webkit-scrollbar-track{
   position: absolute;
   left: 0;
   bottom: -3.3px;
-  transition: all 0.3s ease-in;
+  transition: all 0.5s;
 }
 #main-menu > li:hover > a::before {
   display: block;
