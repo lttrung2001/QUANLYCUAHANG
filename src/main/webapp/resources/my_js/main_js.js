@@ -337,13 +337,13 @@ window.onload=function(){
 	})
 	
 	// Total in cart
-	let totalCart=document.querySelector('#icon-cart')
-	let totalCartTemp=0;
-	let confirmObject=document.querySelector('.confirm-object button')
-	confirmObject.addEventListener('click',function(){
-		totalCartTemp=totalTemp
-		totalCart.innerHTML=totalCartTemp
-	})
+//	let totalCart=document.querySelector('#icon-cart')
+//	let totalCartTemp=0;
+//	let confirmObject=document.querySelector('.confirm-object button')
+//	confirmObject.addEventListener('click',function(){
+//		totalCartTemp=totalTemp
+//		totalCart.innerHTML=totalCartTemp
+//	})
 	// End of Buy item
 	
 	// Load more
