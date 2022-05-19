@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@taglib uri="http://www.springframework.org/tags/form"prefix="form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
     <div id="facePage">
         <div class="mainMenu">
             <div class="logoManagement">
-                <img class="imgLogoManagement" src="/resources/my_png/Logo-byOanh.png" alt="CAB Shop">
+                <img class="imgLogoManagement" src="my_png/Logo-byOanh.png" alt="CAB Shop">
                 <h2>Management</h2>
             </div>
             <div class="container">

@@ -6,17 +6,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My cart</title>
-<base href="${pageContext.servletContext.contextPath }/">
-<script src="https://kit.fontawesome.com/0e7ed669fa.js"></script>
-<script type="module"
-	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/my_css/CSS-Cart.css'/>">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My cart</title>
+    <link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
+    <base href="${pageContext.servletContext.contextPath }/">
+    <script src="https://kit.fontawesome.com/0e7ed669fa.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/CSS-Cart.css'/>">
 </head>
 <body>
 	<c:set var="totalPrice" value="${0}" />
