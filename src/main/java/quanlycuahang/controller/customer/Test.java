@@ -1,5 +1,7 @@
 package quanlycuahang.controller.customer;
 
-public class Test {
 
+
+public class Test {
+	
 }

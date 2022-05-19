@@ -10,6 +10,7 @@ encoding//src/main/webapp/WEB-INF/views/customer/reuse/header.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/customer/reuse/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/shop/reuse/KhachHang.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/shop/reuse/LoaiSanPham.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/shop/reuse/SanPham.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/shop/reuse/ThongKe.jsp=UTF-8
 encoding//src/main/webapp/resources/my_css/StyleDashboard.css=UTF-8
 encoding//src/main/webapp/resources/my_css/sercurity.css=UTF-8
