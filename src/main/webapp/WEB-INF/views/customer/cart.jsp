@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My cart</title>
-    <link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
+    <link rel="title icon" href="<c:url value='/resources/my_png/Logo-byOanh.png'/>">
     <base href="${pageContext.servletContext.contextPath }/">
     <script src="https://kit.fontawesome.com/0e7ed669fa.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -28,9 +28,7 @@
 						<img src="<c:url value='${c.productInCart.image }'/>">
 						<div class="nameItem">
 							<div class="typeItem">${c.productInCart.name }</div>
-							<div class="detailItem">${c.productInCart.desc }</div>
-<!-- 							<div class="sizeItem">Size[L]</div> -->
-							<div class="productId" style="display: none;">${c.productInCart.id }</div>
+							<div class="detailItem">${c.productInCart.id }</div>
 						</div>
 						<div class="numberItem">
 							<button onclick="minusItem(this);">
@@ -41,7 +39,7 @@
 								<i class="fa-solid fa-plus"></i>
 							</button>
 						</div>
-						<div class="price"><fmt:formatNumber value="${c.productInCart.price }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber> </div>
+						<div class="price">${c.productInCart.price }</div>
 						<button onclick="deleteProductInCart(this);">
 							<i class="fa-solid fa-xmark"></i>
 						</button>
@@ -64,8 +62,7 @@
 					<h4>ITEMS</h4>
 					<span>${fn:length(account.products) }</span> <span
 						class="total-price">
-						<fmt:formatNumber value="${totalPrice }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber>
-<%-- 						<c:out value="${totalPrice }"></c:out> --%>
+						<c:out value="${totalPrice }"></c:out>
 						</span>
 				</div>
 			</div>
@@ -76,14 +73,13 @@
 			</div>
 			<div class="sale">
 				<h4>ĐƯỢC GIẢM:</h4>
-				<span><fmt:formatNumber value="${0 }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber></span>
+				<span>0</span>
 			</div>
 			<div class="totalPrice">
 				<h4>THÀNH TIỀN:</h4>
-				<fmt:formatNumber value="${totalPrice }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber>
-<%-- 				<span><c:out value="${totalPrice }"></c:out></span> --%>
+				<span><c:out value="${totalPrice }"></c:out></span>
 			</div>
-			<button onclick="checkOut();">CHECKOUT</button>
+			<button onclick="checkOut();">ĐẶT HÀNG</button>
 
 		</div>
 	</div>
@@ -92,7 +88,7 @@
 	<script>
 		function deleteProductInCart(e) {
 			var parent = $(e).parent();
-			var id = $($($(parent).children()[1]).children()[2]).text(); // Id mỗi sản phẩm
+			var id = $($($(parent).children()[1]).children()[1]).text(); // Id mỗi sản phẩm
 			var productPrice = $($($(parent).children()[2]).children()[1])
 					.text(); // Giá mỗi sản phẩm
 			var productAmount = $($(parent).children()[3]).text(); // Số lượng mỗi sản phẩm
@@ -129,7 +125,7 @@
 		}
 
 		function checkOut() {
-			var idArray = $('.productId').map(function() {
+			var idArray = $('.detailItem').map(function() {
 				return parseInt($.trim($(this).text()));
 			}).get();
 
