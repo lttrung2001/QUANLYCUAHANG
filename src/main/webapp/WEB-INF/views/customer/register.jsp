@@ -8,6 +8,7 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title >CAB Shop</title>
+	<base href="${pageContext.servletContext.contextPath }/">  
 	<link rel="title icon" href="<c:url value='/resources/my_png/Logo-byOanh.png'/>">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">

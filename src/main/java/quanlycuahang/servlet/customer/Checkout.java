@@ -1,6 +1,7 @@
 package quanlycuahang.servlet.customer;
 
 import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -24,7 +25,6 @@ import quanlycuahang.entity.ClientAccount;
 @WebServlet("/Checkout")
 public class Checkout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -61,34 +61,56 @@ public class Checkout extends HttpServlet {
 		String dbURL = "jdbc:sqlserver://localhost:1433; Database=QUANLYCUAHANG";
         String user = "sa";
         String pass = "tt";
-        
-        // Tạo bill
+        Connection conn = null;
         try {
-			Connection conn = DriverManager.getConnection(dbURL, user, pass);
-			String now = getToday();
+			conn = DriverManager.getConnection(dbURL, user, pass);
+			String now = getToday(); // Get current date time
 			String createBillStatement = String.format("INSERT INTO BILL (CREATE_AT, DELIVER_ADDRESS) VALUES (N'%s', N'%s')", now, address);
 			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CREATE_AT = N'%s'", now);
 			Statement statement = conn.createStatement();
+			conn.setAutoCommit(false);
+			// Create bill
 			statement.executeUpdate(createBillStatement);
+			// Get bill id have just added
 			ResultSet rs = statement.executeQuery(getBillId);
 			rs.next();
 			String billId = rs.getString("BILL_ID");
-			
+			// Insert products into bill detail
             String insertToBD = "";
+            String minusQttInStock = "";
             for (int i = 0; i < idArray.length; i++) {
+            	minusQttInStock = String.format("UPDATE PRODUCT "
+            			+ "SET QTT_IN_STOCK = QTT_IN_STOCK - %s "
+            			+ "WHERE PRODUCT_ID = '%s'", amountArray[i],idArray[i]); 
+            	statement.executeUpdate(minusQttInStock);
 				insertToBD = String.format("INSERT INTO BILL_DETAIL VALUES (%s,%s,%s)",
 											billId,
 											idArray[i],
 											amountArray[i]);
 				statement.executeUpdate(insertToBD);
             }
-            String removeFromCart = String.format("DELETE FROM CART WHERE ACCOUNT_ID = N'%s'", account.getUsername());
-            statement.executeUpdate(removeFromCart);
+            // Delete products in cart
+            statement.executeUpdate(String.format("DELETE FROM CART WHERE ACCOUNT_ID = N'%s'", account.getUsername()));
             conn.commit();
             conn.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+        } catch (SQLException e) {
+        	System.out.println("Starting rollback...");
+			try {
+				conn.rollback();
+				response.sendError(501);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				System.out.println("Rollback error!");
+			}
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("Close connection error!");
+			}
 		}
 	}
 

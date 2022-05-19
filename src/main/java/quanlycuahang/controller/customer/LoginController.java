@@ -68,4 +68,15 @@ public class LoginController {
 			}
 		}
 	}
+	
+	@RequestMapping(value = "logout")
+	public String logout(ModelMap model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("account");
+		model.addAttribute("part", "home");
+		model.addAttribute("products", productDAO.getAllProduct());
+		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
+		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
+		return "customer/customer_home";
+	}
 }
