@@ -54,5 +54,22 @@
 	<%@include file="/WEB-INF/views/customer/reuse/footer.jsp" %>
 
 <script type="text/javascript" src="/resources/my_js/main_js.js" ></script>
+<script type="text/javascript">
+	
+	function test(e) {
+		var parent = $(e).parent();
+		var info = $(parent).children()[0];
+		var id = $($(info).children('.id-item')).text();
+		var id2 = $($(parent).find('figure > .id-item')).text();
+		console.log(id);
+		console.log(id2);
+	}
+	
+	function addProductIntoCart(e) {
+		var parent = $(e).parent();
+		var id = $($(parent).find('.idObject_nameObject > .idObject')).text();
+		var amount = $($(parent).find('.total-object > p')).text();
+	}
+</script>
 </body>
 </html>	
