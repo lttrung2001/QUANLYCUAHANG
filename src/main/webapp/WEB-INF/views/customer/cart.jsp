@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
 	<c:set var="totalPrice" value="${0}" />
 	<div class="shoppingCart">
 		<div class="productCart">
-			<h2>LIST YOUR PRODUCT:</h2>
+			<h2>GIỎ HÀNG:</h2>
 			<div class="items">
 				<c:forEach var="c" items="${account.products }">
 					<div class="item">
@@ -29,7 +30,7 @@
 						<div class="nameItem">
 							<div class="typeItem">${c.productInCart.name }</div>
 							<div class="detailItem">${c.productInCart.desc }</div>
-							<div class="sizeItem">Size[L]</div>
+<!-- 							<div class="sizeItem">Size[L]</div> -->
 							<div class="productId" style="display: none;">${c.productInCart.id }</div>
 						</div>
 						<div class="numberItem">
@@ -41,7 +42,7 @@
 								<i class="fa-solid fa-plus"></i>
 							</button>
 						</div>
-						<div class="price">${c.productInCart.price }</div>
+						<div class="price"><fmt:formatNumber value="${c.productInCart.price }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber> </div>
 						<button onclick="deleteProductInCart(this);">
 							<i class="fa-solid fa-xmark"></i>
 						</button>
@@ -63,7 +64,10 @@
 				<div class="totalItem">
 					<h4>ITEMS</h4>
 					<span>${fn:length(account.products) }</span> <span
-						class="total-price"><c:out value="${totalPrice }"></c:out></span>
+						class="total-price">
+						<fmt:formatNumber value="${totalPrice }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber>
+<%-- 						<c:out value="${totalPrice }"></c:out> --%>
+						</span>
 				</div>
 			</div>
 			<div class="address">
@@ -72,12 +76,13 @@
 					value="${account.clientInfo.address }">
 			</div>
 			<div class="sale">
-				<h4>SALE:</h4>
-				<span>0</span>
+				<h4>ĐƯỢC GIẢM:</h4>
+				<span><fmt:formatNumber value="${0 }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber></span>
 			</div>
 			<div class="totalPrice">
-				<h4>TOTAL PRICE</h4>
-				<span><c:out value="${totalPrice }"></c:out></span>
+				<h4>THÀNH TIỀN:</h4>
+				<fmt:formatNumber value="${totalPrice }" currencySymbol="đ" minFractionDigits="0" type="currency"></fmt:formatNumber>
+<%-- 				<span><c:out value="${totalPrice }"></c:out></span> --%>
 			</div>
 			<button onclick="checkOut();">CHECKOUT</button>
 
@@ -88,7 +93,7 @@
 	<script>
 		function deleteProductInCart(e) {
 			var parent = $(e).parent();
-			var id = $($($(parent).children()[1]).children()[3]).text(); // Id mỗi sản phẩm
+			var id = $($($(parent).children()[1]).children()[2]).text(); // Id mỗi sản phẩm
 			var productPrice = $($($(parent).children()[2]).children()[1])
 					.text(); // Giá mỗi sản phẩm
 			var productAmount = $($(parent).children()[3]).text(); // Số lượng mỗi sản phẩm
@@ -129,8 +134,10 @@
 				return parseInt($.trim($(this).text()));
 			}).get();
 
-			if (idArray.length === 0)
+			if (idArray.length === 0) {
+				alert('Hãy thêm sản phẩm vào giỏ hàng để thanh toán nhé! <3');				
 				return;
+			}
 
 			var amountArray = $('.productAmount').map(function() {
 				return parseInt($.trim($(this).text()));
@@ -147,7 +154,7 @@
 					billAddress : address
 				},
 				success : function(data) {
-					alert('CHECKOUT SUCCESSFUL!');
+					alert('Đặt hàng thành công!');
 					location.reload(true);
 				},
 				error : function(xhr) {

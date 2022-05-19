@@ -30,16 +30,12 @@ public class HomeController {
 	public String home(ModelMap model) {
 		model.addAttribute("part", "home");
 		model.addAttribute("products", productDAO.getAllProduct());
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		return "customer/customer_home";
 	}
 	
 	@RequestMapping(value = "top")
 	public String top(ModelMap model) {
 		model.addAttribute("part", "top");
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		Set<ProductType> productType = partDAO.getPartById(1).getProTypeList();
 		Set<Product> products = new HashSet<Product>();
 		for (ProductType pt : productType) 
@@ -51,8 +47,6 @@ public class HomeController {
 	@RequestMapping(value = "top/{id}")
 	public String topByType(ModelMap model, @PathVariable("id") int id) {
 		model.addAttribute("part", "top/"+id);
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		model.addAttribute("products", productTypeDAO.getProductTypeById(id).getList());
 		return "customer/customer_home";
 	}
@@ -60,8 +54,6 @@ public class HomeController {
 	@RequestMapping(value = "bot")
 	public String bot(ModelMap model) {
 		model.addAttribute("part", "bot");
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		Set<ProductType> productType = partDAO.getPartById(2).getProTypeList();
 		Set<Product> products = new HashSet<Product>();
 		for (ProductType pt : productType) 
@@ -73,8 +65,6 @@ public class HomeController {
 	@RequestMapping(value = "bot/{id}")
 	public String botByType(ModelMap model, @PathVariable("id") int id) {
 		model.addAttribute("part", "top/"+id);
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		model.addAttribute("products", productTypeDAO.getProductTypeById(id).getList());
 		return "customer/customer_home";
 	}
@@ -83,8 +73,6 @@ public class HomeController {
 	public String newArrival(ModelMap model) {
 		model.addAttribute("part", "new");
 		model.addAttribute("products", productDAO.getAllProduct());
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		return "customer/customer_home";
 	}
 }

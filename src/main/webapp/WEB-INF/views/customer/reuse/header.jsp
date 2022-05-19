@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div id="header">
     <nav class="container">
-        <a  id="logo" href="#home">
+        <a  id="logo" href="home.htm">
             <img src="<c:url value='/resources/my_png/Logo-byOanh.png'/>" alt="CAB Shop">				
         </a>
         
@@ -59,9 +59,9 @@
             </div>
             <div class="icon-button-header iconCart">
                 <button id="icon-bag-btn"><a href="checkout.htm"><ion-icon name="cart-outline"></ion-icon></a></button>
-                <small id="icon-cart">
-                    0
-                </small>
+<!--                 <small id="icon-cart"> -->
+<!--                     0 -->
+<!--                 </small> -->
             </div>
         </div>
     </nav>

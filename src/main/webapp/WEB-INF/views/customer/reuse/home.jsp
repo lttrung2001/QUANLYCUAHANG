@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <section id="home">
 	<div class="header-object">
 		<div id="content-page">${fn:toUpperCase(part) }</div>
@@ -12,7 +13,7 @@
 			<div class="items">
 				<figure>
 					<img src="<c:url value='${p.image }'/>" alt="" class="img-items">
-					<p class="price-item">${p.price }</p>
+					<p class="price-item"><fmt:formatNumber type="currency" minFractionDigits="0" currencySymbol="đ" value="${p.price }"></fmt:formatNumber></p>
 					<p style="display: none;" class="describe-item">${p.desc }</p>
 					<a href="#"><p>${p.name }</p></a>
 					<p style="display: none;" class="id-item">${p.id }</p>
