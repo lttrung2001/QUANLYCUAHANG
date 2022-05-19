@@ -66,7 +66,7 @@ login.addEventListener('click',function(){
 
 // Product Management
     
-    let inputSearchProduct=document.querySelector('.searchProduct input')
+ /*   let inputSearchProduct=document.querySelector('.searchProduct input')
     let iconSearchProduct=document.querySelectorAll('.mainProduct .topMainProduct .searchProduct span')
     let demHoverSearchQLSP=0
     for(let i=0; i<iconSearchProduct.length; i++){
@@ -78,26 +78,31 @@ login.addEventListener('click',function(){
                 document.querySelector('.mainProduct .topMainProduct .searchProduct span:first-child').style.width='0'
             }
         })
-    }
+    }*/
     // iconSearchProduct.addEventListener('click',function(){
     //     iconSearchProduct.style.right=0
     //     inputSearchProduct.style.width='300px'
     // })
-    inputSearchProduct.addEventListener('keypress',function(){
+/*    inputSearchProduct.addEventListener('keypress',function(){
         demHoverSearchQLSP=1
-    })
+    })*/
     
 
 // End of Product Management
 
 // Customer Managerment
-    mailCustomer=document.querySelectorAll('.cardCustomer .extendInfo .mail')
-    spanMailCustomer=document.querySelectorAll('.cardCustomer .extendInfo .mail span')
-    let demMail=0
-    addressCustome=document.querySelectorAll('.cardCustomer .extendInfo .address span')
-    for(let i=0; i<mailCustomer.length; i++){
-        
+
+    memberListCM=document.querySelectorAll('.cardCustomer')
+    cardDetailCM=document.querySelector('.cardInforCM')
+    for(let i=0; i<memberListCM.length; i++){
+        memberListCM[i].addEventListener('click',function(e){        
+            // document.getElementById('facePage').classList.add('filter')
+            cardDetailCM.style.display='flex'  
+        })
     }
+    document.querySelector('.cardInforCM button i').addEventListener('click',function(){
+        cardDetailCM.style.display='none'
+    })
 // End o fCustomer Managerment
 
 // Statistical : Thống kê
