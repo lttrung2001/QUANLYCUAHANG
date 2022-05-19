@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
-   	CÓ CẦN 3 CÁI DÒNG Ở TRÊN TRONG FILE NÀY KHÔNG?
 <div class="mainOrder">
     <div class="orderBoxs">
         <div class="orderList">
@@ -206,7 +205,7 @@
         </div>
 
         <div class="detailOrder">
-            <img src="my_png/WriteText.png" >
+            <img src="/resources/my_png/WriteText.png" >
             <h3>CHI TIẾT HÓA ĐƠN</h3>
             <div class="boxDetailOrder">
                 <div class="name-order">

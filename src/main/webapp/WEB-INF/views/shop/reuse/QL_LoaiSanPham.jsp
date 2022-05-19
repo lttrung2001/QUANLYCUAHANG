@@ -20,7 +20,7 @@
     <div id="facePage">
         <div class="mainMenu">
             <div class="logoManagement">
-                <img class="imgLogoManagement" src="my_png/Logo-byOanh.png" alt="CAB Shop">
+                <img class="imgLogoManagement" src="/resources/my_png/Logo-byOanh.png" alt="CAB Shop">
                 <h2>Management</h2>
             </div>
             <div class="container">

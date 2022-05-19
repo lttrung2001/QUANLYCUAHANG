@@ -306,7 +306,7 @@ body{
     font-size: 20px;
 }
 
-/*=========QL Ä�Æ¡n hÃ ng==========  */
+/*=========QL Ã„ï¿½Ã†Â¡n hÃƒÂ ng==========  */
 .mainOrder{
     position: relative;
     width: 100%;
@@ -494,7 +494,7 @@ body{
     border-radius: 20px;
 }
 
-/* =======End QL Ä�Æ¡n HÃ ng========= */
+/* =======End QL Ã„ï¿½Ã†Â¡n HÃƒÂ ng========= */
 
 .mainTypeProduct{
     position: relative;
@@ -511,19 +511,39 @@ body{
     width: 95%;
     margin: 0 auto;
     position: relative;
-    display: inline-block;
-    text-align: right;
+    /* display: inline-block;
+    text-align: right; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 .searchTypePro input{
     width: 30%;
     padding: 6px 15px;
     font-size: 20px;
     outline: none;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    /* border: 1px solid #333; */
 }
 .searchTypePro span{
     font-size: 22px;
-    padding: 6px 10px;
+    padding: 7px 10px;
     cursor: pointer;
+    background: rgba(0,0,0,0.7);
+    transform: translateX(-1px);
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.searchTypePro span button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;  
+    color: #fff;
+}
+.searchTypePro span:hover{
+    box-shadow: 0 0 5px rgb(170, 170, 170);
 }
 .editTypePro{
     width: 95%;
@@ -653,7 +673,7 @@ body{
     transform: rotate(10deg);
     
 }
-                /* =====QL SẢN PHẨM===== */
+                /* =====QL Sáº¢N PHáº¨M===== */
 .mainProduct{
     position: relative;
     width: 100%;
@@ -939,7 +959,7 @@ body{
     cursor: pointer;
     transform: rotate(-15deg);
 }
-                /* =====QL KHÁCH HÀNG===== */
+                /* =====QL KHÃ�CH HÃ€NG===== */
     /* responsive */
 /* @media screen and (max-width: 1023px) {
     .listCardCustomer{
@@ -1202,7 +1222,7 @@ body{
     border: 1px solid #222;
 }
 
-                /* =====THá»�NG KÃŠ===== */
+                /* =====THÃ¡Â»ï¿½NG KÃƒÅ ===== */
 
 
 .mainStatistical{
@@ -1286,7 +1306,7 @@ body{
     color: var(--white);
     border-radius: 5px;
 }
-/* nhÆ° cÅ© */
+/* nhÃ†Â° cÃ…Â© */
 /* .details .recentOrders table{
     width: 100%;
     border-collapse: collapse;
@@ -1355,8 +1375,8 @@ body{
     border-radius: 4px;
     font-size: 14px;
 } */
-/* end of nhÆ° cÅ© */
-/* má»›i */
+/* end of nhÃ†Â° cÃ…Â© */
+/* mÃ¡Â»â€ºi */
 .details .recentOrders table{
     width: 100%;
     border-collapse: collapse;
@@ -1439,7 +1459,7 @@ body{
     border-radius: 4px;
     font-size: 14px;
 }
-/* end of má»›i */
+/* end of mÃ¡Â»â€ºi */
 /* end of order details List */
 
 /* recent Customer */
