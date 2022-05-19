@@ -68,6 +68,7 @@ public class Checkout extends HttpServlet {
 			String createBillStatement = String.format("INSERT INTO BILL (CREATE_AT, DELIVER_ADDRESS) VALUES (N'%s', N'%s')", now, address);
 			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CREATE_AT = N'%s'", now);
 			Statement statement = conn.createStatement();
+			conn.setAutoCommit(false);
 			// Create bill
 			statement.executeUpdate(createBillStatement);
 			// Get bill id have just added
@@ -76,24 +77,40 @@ public class Checkout extends HttpServlet {
 			String billId = rs.getString("BILL_ID");
 			// Insert products into bill detail
             String insertToBD = "";
-//            String minusQttInStock = "";
+            String minusQttInStock = "";
             for (int i = 0; i < idArray.length; i++) {
+            	minusQttInStock = String.format("UPDATE PRODUCT "
+            			+ "SET QTT_IN_STOCK = QTT_IN_STOCK - %s "
+            			+ "WHERE PRODUCT_ID = '%s'", amountArray[i],idArray[i]); 
+            	statement.executeUpdate(minusQttInStock);
 				insertToBD = String.format("INSERT INTO BILL_DETAIL VALUES (%s,%s,%s)",
 											billId,
 											idArray[i],
 											amountArray[i]);
 				statement.executeUpdate(insertToBD);
-//				minusQttInStock = String.format("UPDATE PRODUCT "
-//												+ "SET QTT_IN_STOCK = QTT_IN_STOCK - %s "
-//												+ "WHERE PRODUCT_ID = '%s'", amountArray[i],idArray[i]); 
-//				statement.executeUpdate(minusQttInStock);
             }
             // Delete products in cart
-//            statement.executeUpdate(String.format("DELETE FROM CART WHERE ACCOUNT_ID = N'%s'", account.getUsername()));
+            statement.executeUpdate(String.format("DELETE FROM CART WHERE ACCOUNT_ID = N'%s'", account.getUsername()));
             conn.commit();
             conn.close();
         } catch (SQLException e) {
-			e.printStackTrace();
+        	System.out.println("Starting rollback...");
+			try {
+				conn.rollback();
+				response.sendError(501);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				System.out.println("Rollback error!");
+			}
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("Close connection error!");
+			}
 		}
 	}
 

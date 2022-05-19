@@ -30,7 +30,7 @@
         </div>
         <div class="loginName">
             <span>${account.username }</span>
-            <a href="account/logout.htm">Đăng xuất</a>
+            <a href="logout.htm">Đăng xuất</a>
         </div>
     </div>
 
