@@ -1,4 +1,4 @@
-package quanlycuahang.entity;
+package quanlycuahang.bean;
 
 public class Admin {
 	private String username;
