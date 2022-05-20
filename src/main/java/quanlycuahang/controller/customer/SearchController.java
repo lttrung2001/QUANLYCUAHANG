@@ -1,6 +1,7 @@
 package quanlycuahang.controller.customer;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import quanlycuahang.dao.customer.PartDAO;
 import quanlycuahang.dao.shop.ProductTypeDAO;
 import quanlycuahang.dao.shop.QLSanPhamDAO;
 import quanlycuahang.entity.Product;
@@ -21,15 +21,11 @@ public class SearchController {
 	private ProductTypeDAO productTypeDAO;
 	@Autowired
 	private QLSanPhamDAO productDAO;
-	@Autowired
-	private PartDAO partDAO;
 	
 	@RequestMapping(value = "home", params = "search")
 	public String searchHome(ModelMap model, @RequestParam("search") String search) {
 		model.addAttribute("part", "home");
 		model.addAttribute("products", productDAO.searchProduct(search));
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		return "customer/customer_home";
 	}
 	
@@ -37,8 +33,6 @@ public class SearchController {
 	public String searchTop(ModelMap model, @RequestParam("search") String search) {
 		model.addAttribute("part", "top");
 		model.addAttribute("products", productDAO.searchProduct(search));
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		return "customer/customer_home";
 	}
 	
@@ -53,8 +47,6 @@ public class SearchController {
 		});
 		model.addAttribute("part", "top"+id);
 		model.addAttribute("products", products);
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		return "customer/customer_home";
 	}
 	
@@ -62,8 +54,6 @@ public class SearchController {
 	public String searchBot(ModelMap model, @RequestParam("search") String search) {
 		model.addAttribute("part", "bot");
 		model.addAttribute("products", productDAO.searchProduct(search));
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		return "customer/customer_home";
 	}
 	
@@ -78,8 +68,6 @@ public class SearchController {
 		});
 		model.addAttribute("part", "bot"+id);
 		model.addAttribute("products", products);
-		model.addAttribute("productTypeTop", partDAO.getPartById(1).getProTypeList());
-		model.addAttribute("productTypeBot", partDAO.getPartById(2).getProTypeList());
 		return "customer/customer_home";
 	}
 }

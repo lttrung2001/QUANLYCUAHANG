@@ -58,7 +58,9 @@ body{
 .productCart .item .nameItem, .numberItem, .price{
     display: inline-block;
     margin: auto 0;
+	width: 25%;
 }
+
 .item img{
     background: #ccc;
     
@@ -93,6 +95,7 @@ body{
 .productCart .item .typeItem{
     font-weight: bold;
     font-size: 1.1rem;
+    word-wrap: break-word;
 }
 .productCart .item .detailItem{
     font-size: 0.9rem;

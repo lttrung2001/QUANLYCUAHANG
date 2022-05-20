@@ -66,7 +66,7 @@ login.addEventListener('click',function(){
 
 // Product Management
     
-    let inputSearchProduct=document.querySelector('.searchProduct input')
+ /*   let inputSearchProduct=document.querySelector('.searchProduct input')
     let iconSearchProduct=document.querySelectorAll('.mainProduct .topMainProduct .searchProduct span')
     let demHoverSearchQLSP=0
     for(let i=0; i<iconSearchProduct.length; i++){
@@ -78,26 +78,45 @@ login.addEventListener('click',function(){
                 document.querySelector('.mainProduct .topMainProduct .searchProduct span:first-child').style.width='0'
             }
         })
-    }
+    }*/
     // iconSearchProduct.addEventListener('click',function(){
     //     iconSearchProduct.style.right=0
     //     inputSearchProduct.style.width='300px'
     // })
-    inputSearchProduct.addEventListener('keypress',function(){
+/*    inputSearchProduct.addEventListener('keypress',function(){
         demHoverSearchQLSP=1
-    })
+    })*/
     
 
 // End of Product Management
 
 // Customer Managerment
-    mailCustomer=document.querySelectorAll('.cardCustomer .extendInfo .mail')
-    spanMailCustomer=document.querySelectorAll('.cardCustomer .extendInfo .mail span')
-    let demMail=0
-    addressCustome=document.querySelectorAll('.cardCustomer .extendInfo .address span')
-    for(let i=0; i<mailCustomer.length; i++){
-        
+
+    memberListCM=document.querySelectorAll('.cardCustomer')
+    cardDetailCM=document.querySelector('.cardInforCM')
+    nameMemberListCM=document.querySelectorAll('.cardCustomer .nameCus h2')
+    idMemberListCM=document.querySelectorAll('.cardCustomer .nameCus div')
+    addMemberListCM=document.querySelectorAll('.cardCustomer .extendInfo .address span')
+    mailMemberListCM=document.querySelectorAll('.cardCustomer .extendInfo .mail span')
+    phoneMemberListCM=document.querySelectorAll('.cardCustomer .extendInfo .call span')
+    passMemberListCM=document.querySelectorAll('.cardCustomer .extendInfo .pass span')
+    pointMemberListCM=document.querySelectorAll('.cardCustomer .extendInfo .point span')
+    for(let i=0; i<memberListCM.length; i++){
+        memberListCM[i].addEventListener('click',function(e){        
+            // document.getElementById('facePage').classList.add('filter')
+            cardDetailCM.style.display='flex'  
+			document.querySelector('.cardInforCM h3').innerHTML=nameMemberListCM[i].innerHTML
+            document.querySelector('.addressCard span').innerHTML=addMemberListCM[i].textContent
+            document.querySelector('.phoneCard span').innerHTML=phoneMemberListCM[i].textContent
+            document.querySelector('.mailCard span').innerHTML=mailMemberListCM[i].textContent
+            document.querySelector('.userCard span').innerHTML=idMemberListCM[i].textContent
+            document.querySelector('.passwordCard span').innerHTML=passMemberListCM[i].textContent
+            document.querySelector('.pointCard span').innerHTML=pointMemberListCM[i].textContent
+        })
     }
+    document.querySelector('.cardInforCM button i').addEventListener('click',function(){
+        cardDetailCM.style.display='none'
+    })
 // End o fCustomer Managerment
 
 // Statistical : Thống kê

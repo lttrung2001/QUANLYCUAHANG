@@ -27,6 +27,10 @@
 			<property name="password" value="quanlycuahang"/>
 			<property name="fullname" value="Lê Thành Trung"/>
 		</bean>
-	
+	<bean id="uploadfile" class="quanlycuahang.bean.UploadFile">
+		<property name="basePath"
+			value="C:\\Users\\sondi\\Desktop\\QUANLYCUAHANG\\src\\main\\webapp\\resources\\my_image\" />
+			
+	</bean>
 
 </beans>

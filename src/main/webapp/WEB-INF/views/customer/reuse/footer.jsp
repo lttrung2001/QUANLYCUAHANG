@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- Load More -->
-<div href="#" id="loadMore">
-    <a href="#">Load More</a>
-</div>
+<!-- <div href="#" id="loadMore"> -->
+<!--     <a href="#">Load More</a> -->
+<!-- </div> -->
 <!-- End of Load More -->
 <!---------------------------------------------Contact-->
 <footer id="contact">

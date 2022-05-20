@@ -511,39 +511,19 @@ body{
     width: 95%;
     margin: 0 auto;
     position: relative;
-    /* display: inline-block;
-    text-align: right; */
-    display: flex;
-    justify-content: right;
-    align-items: center;
+    display: inline-block;
+    text-align: right;
 }
 .searchTypePro input{
     width: 30%;
     padding: 6px 15px;
     font-size: 20px;
     outline: none;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    /* border: 1px solid #333; */
 }
 .searchTypePro span{
     font-size: 22px;
-    padding: 7px 10px;
+    padding: 6px 10px;
     cursor: pointer;
-    background: rgba(0,0,0,0.7);
-    transform: translateX(-1px);
-    border-bottom-right-radius: 8px;
-    border-top-right-radius: 8px;
-}
-.searchTypePro span button{
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 22px;  
-    color: #fff;
-}
-.searchTypePro span:hover{
-    box-shadow: 0 0 5px rgb(170, 170, 170);
 }
 .editTypePro{
     width: 95%;
@@ -706,16 +686,22 @@ body{
     display: flex;
     align-items: center;
     background: var(--blue);
-    padding: 0 10px
+    padding: 0 10px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateX(-1px);
 }
+
 .mainProduct .topMainProduct .searchProduct button{
     cursor: pointer;
     background: none;
     border: none;
-    /* transform: translateY(2px); */
+    
+    
 }
 .mainProduct .topMainProduct .searchProduct button i{
     font-size: 16px;
+    color: #fff;
 }
 
 .mainProduct .topMainProduct .searchProduct span{
@@ -726,10 +712,16 @@ body{
     height: 100%;
     outline: none;
     width: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: #333 solid 1px;
+}
+.mainProduct .topMainProduct .searchProduct span input:focus{
+    border: var(--blue) 2px solid ;
 }
 .mainProduct .topMainProduct .searchProduct span:first-child{
-    width: 0;
-    transition: 1s;
+    width: 60%;
+    
 }
 /* .mainProduct .topMainProduct .searchProduct:hover .mainProduct .topMainProduct .searchProduct span:first-child{
     width: 60%;
@@ -803,20 +795,34 @@ body{
     font-size: 13px;
     overflow-x: hidden;
     word-wrap: break-word;
+    border-radius:5px;
+    border:1px solid #333;
     
 }
 .mainProduct .boxEditProduct .topBoxEditProduct input{  
     padding: 3px 5px;
+    border-radius:5px;
+    border:1px solid #333;
     font-size: 16px;
-    outline: none;
+  	outline: none;
+}
+.mainProduct .boxEditProduct .topBoxEditProduct input:focus{
+    border: 1px solid var(--blue);
+}
+.mainProduct .descProduct textarea:focus{
+    border: 1px solid var(--blue);
 }
 .mainProduct .boxEditProduct .botBoxEditProduct input[type="text"]{
-    
+    border-radius:5px;
+    border:1px solid #333;
     padding: 3px 5px;
     font-size: 16px;
     outline: none;
 }
 
+.mainProduct .boxEditProduct .botBoxEditProduct input:focus{
+    border: 1px solid var(--blue);
+}
 .endBoxEditProduct button{
     outline: none;
     padding: 3px 13px;
@@ -855,29 +861,39 @@ body{
     margin: auto;
     height: auto;
 }
-.mainProduct .tableProduct .menuTypeProduct{
-    width: 200px;
+.mainProduct .tableProduct .NotificationBox{
+    width: 100%;
     height: 28px;
     display: flex;
     justify-content: space-between;
     position: relative;
-
+    
+}
+.mainProduct .tableProduct .NotificationBox span:first-child{
+    /* width:  */
+    padding: 0 30px;
+    border: 2px solid rgb(251, 236, 97);
+    display: flex;
+    align-items: center;
+}
+.mainProduct .tableProduct .NotificationBox span:first-child i{
+    padding: 1px 8px;
+    background: rgb(251, 236, 97);
+    margin: 0 5px;
+}
+.mainProduct .tableProduct .NotificationBox span:last-child{
+    /* width:  */
+    padding: 0 30px;
+    border: 2px solid var(--blue);
+    display: flex;
+    align-items: center;
+}
+.mainProduct .tableProduct .NotificationBox span:last-child i{
+    padding: 1px 8px;
+    background: var(--blue);
+    margin: 0 5px;
 }
 
-
-.mainProduct .tableProduct .menuTypeProduct select{
-    outline: none;
-    width: 100%;
-    padding: 3px 5px;
-    border: 1px solid var(--black1);
-    top: 27px;
-    z-index: 1;
-    background: var(--white); 
-    cursor: pointer;
-}
-.mainProduct .tableProduct{
-    /* padding-top: 50px; */
-}
 .mainProduct .tableProduct table{
 
     width: 100%;
@@ -985,7 +1001,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: none;
+    display: block;
 }
 
 .diagramCustomer{
@@ -1093,8 +1109,10 @@ body{
     border-radius: 20px;
     position: relative;
     transition: 0.5s;
-    margin: auto;
-    
+    margin: auto;  
+}
+.cardCustomer a{
+    text-decoration: none;
 }
 .extendInfo{
     height: 0;
@@ -1111,12 +1129,13 @@ body{
     color: var(--black1);
     /* white-space: normal; */
 }
-.cardCustomer:hover .extendInfo{
-    /* top: 70px;
-    opacity: 100%;    */
+
+/* .cardCustomer:hover .extendInfo{
+    top: 70px;
+    opacity: 100%;   
     height: 150px;
     
-}
+} */
 
 .cardCustomer .extendInfo .mail span,.cardCustomer .extendInfo .address span{
     overflow-x: hidden;
@@ -1140,11 +1159,9 @@ body{
     
 }
 
-
-
-.cardCustomer .extendInfo .mail, .cardCustomer .extendInfo .address{
-    display: flex;
-
+.extendInfo .user, 
+.extendInfo .pass,.extendInfo .point, .extendInfo .address, .extendInfo .mail, .extendInfo .call{
+    display: none;
 }
 .cardCustomer .extendInfo .mail i, .cardCustomer .extendInfo .address i{
     transform: translateY(2px);
@@ -1182,12 +1199,14 @@ body{
     left: 50%;
     top: 40%;
     transform: translate(-50%,-50%);
-    width: 300px;
-    height: 300px;
+    min-width: 300px;
+    /* height: 400px; */
+    padding: 20px 5px;
     border-radius: 20px;
     background: #fff;
     z-index: 3;
     display: none;
+    box-shadow: 0 0 20px #222;
 }
 .mainCM .cardInforCM::after{
     content: "";
@@ -1195,7 +1214,7 @@ body{
     left: 0;
     top: 0;
     width: 100%;
-    height: 40%;
+    height: 25%;
     background: #7D29DF;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -1221,13 +1240,30 @@ body{
     border-radius: 50%;
     border: 1px solid #222;
 }
-
-                /* =====THÃ¡Â»ï¿½NG KÃƒÅ ===== */
-
-
-.mainStatistical{
-    display: none;
+.cardInforCM button{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    z-index: 3;
+    background: none;
+    border: none;
+    
 }
+.cardInforCM button i{
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+.filter{
+    filter: brightness(70%);
+}
+
+                /* =====Thong ke ===== */
+
+
+/* .mainStatistical{
+    display: block;
+} */
 /* ====================  Card  =================== */
 .cardBox{
     position: relative;

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My cart</title>
-    <link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
+    <link rel="title icon" href="<c:url value='/resources/my_png/Logo-byOanh.png'/>">
     <base href="${pageContext.servletContext.contextPath }/">
     <script src="https://kit.fontawesome.com/0e7ed669fa.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -20,16 +21,14 @@
 	<c:set var="totalPrice" value="${0}" />
 	<div class="shoppingCart">
 		<div class="productCart">
-			<h2>LIST YOUR PRODUCT:</h2>
+			<h2>GIỎ HÀNG:</h2>
 			<div class="items">
 				<c:forEach var="c" items="${account.products }">
 					<div class="item">
 						<img src="<c:url value='${c.productInCart.image }'/>">
 						<div class="nameItem">
 							<div class="typeItem">${c.productInCart.name }</div>
-							<div class="detailItem">${c.productInCart.desc }</div>
-							<div class="sizeItem">Size[L]</div>
-							<div class="productId" style="display: none;">${c.productInCart.id }</div>
+							<div class="detailItem">${c.productInCart.id }</div>
 						</div>
 						<div class="numberItem">
 							<button onclick="minusItem(this);">
@@ -62,7 +61,9 @@
 				<div class="totalItem">
 					<h4>ITEMS</h4>
 					<span>${fn:length(account.products) }</span> <span
-						class="total-price"><c:out value="${totalPrice }"></c:out></span>
+						class="total-price">
+						<c:out value="${totalPrice }"></c:out>
+						</span>
 				</div>
 			</div>
 			<div class="address">
@@ -71,14 +72,14 @@
 					value="${account.clientInfo.address }">
 			</div>
 			<div class="sale">
-				<h4>SALE:</h4>
+				<h4>ĐƯỢC GIẢM:</h4>
 				<span>0</span>
 			</div>
 			<div class="totalPrice">
-				<h4>TOTAL PRICE</h4>
+				<h4>THÀNH TIỀN:</h4>
 				<span><c:out value="${totalPrice }"></c:out></span>
 			</div>
-			<button onclick="checkOut();">CHECKOUT</button>
+			<button onclick="checkOut();">ĐẶT HÀNG</button>
 
 		</div>
 	</div>
@@ -87,7 +88,7 @@
 	<script>
 		function deleteProductInCart(e) {
 			var parent = $(e).parent();
-			var id = $($($(parent).children()[1]).children()[3]).text(); // Id mỗi sản phẩm
+			var id = $($($(parent).children()[1]).children()[1]).text(); // Id mỗi sản phẩm
 			var productPrice = $($($(parent).children()[2]).children()[1])
 					.text(); // Giá mỗi sản phẩm
 			var productAmount = $($(parent).children()[3]).text(); // Số lượng mỗi sản phẩm
@@ -124,12 +125,14 @@
 		}
 
 		function checkOut() {
-			var idArray = $('.productId').map(function() {
+			var idArray = $('.detailItem').map(function() {
 				return parseInt($.trim($(this).text()));
 			}).get();
 
-			if (idArray.length === 0)
+			if (idArray.length === 0) {
+				alert('Hãy thêm sản phẩm vào giỏ hàng để thanh toán nhé! <3');				
 				return;
+			}
 
 			var amountArray = $('.productAmount').map(function() {
 				return parseInt($.trim($(this).text()));
@@ -146,7 +149,7 @@
 					billAddress : address
 				},
 				success : function(data) {
-					alert('CHECKOUT SUCCESSFUL!');
+					alert('Đặt hàng thành công!');
 					location.reload(true);
 				},
 				error : function(xhr) {
