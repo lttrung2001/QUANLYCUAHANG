@@ -33,7 +33,7 @@ public class QLSanPhamDAO {
 		return listProduct;
 	}
 	
-	public List<Product> getTop10Product(){
+	public List<Product> getTop20Product(){
 		Session session = factory.getCurrentSession();
 		String hql="FROM Product as pro order by pro.insertDate desc";
 		Query query = session.createQuery(hql).setMaxResults(20);
