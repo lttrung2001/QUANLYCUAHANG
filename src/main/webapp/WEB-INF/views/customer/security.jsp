@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security</title>
+    <link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
     <base href="${pageContext.servletContext.contextPath }/">
     <link rel="title icon" href="<c:url value='/resources/my_png/Logo-byOanh.png'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/sercurity.css'/>"/>

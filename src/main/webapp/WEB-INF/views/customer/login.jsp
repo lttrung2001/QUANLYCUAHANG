@@ -51,6 +51,5 @@
 		
 	</div>
     <div class="filter-login"></div>
-    <script type="text/javascript" src="<c:url value='my_js/main_js.js'/>"></script>
 </body>
 </html>

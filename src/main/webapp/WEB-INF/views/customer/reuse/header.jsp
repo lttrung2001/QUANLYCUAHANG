@@ -40,7 +40,7 @@
             </c:if>
             <c:if test="${sessionScope.account != null }">
             <div class="iconLogged">
-                <button><ion-icon name="person"></ion-icon></button>
+                <button onclick="onMenuLogged()"><ion-icon name="person"></ion-icon></button>
                 <ul class="menuLogged hide">
                     <li class="changeInfor"><a href="security.htm">Thay đổi thông tin</a></li>
                     <li class="history"><a href="history.htm">Lịch sử</a></li>
@@ -65,6 +65,7 @@
             </div>
         </div>
     </nav>
+<!--     <script type="text/javascript" src="/resources/my_js/main_js.js" ></script> -->
 </div>
 <!-- Dynamic background -->
     <div class="dynamic_background">

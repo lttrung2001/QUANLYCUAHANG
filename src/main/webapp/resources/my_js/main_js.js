@@ -261,11 +261,11 @@ window.onload=function(){
 // end of icon account
 
 // =======Logged
-	iconLogged.addEventListener('click',function(){
-		document.querySelector('.menuLogged').classList.toggle('hide')
+	
+		function onMenuLogged(){
+			document.querySelector('.menuLogged').classList.toggle('hide')	
+		}
 		
-	})
-
 	
 // =======End of Logged
 
@@ -280,8 +280,7 @@ window.onload=function(){
 	let priceTemp=0
 	let totalPriceObject=document.querySelector('.price-object')
 	let descSelected=document.querySelector('.describe-object p')
-	for(let i=0; i<buyItem.length; i++){
-		
+	for(let i=0; i<document.querySelectorAll('.buy-item').length; i++){	
 		buyItem[i].addEventListener('click',function(){
 			totalTemp=0
 			totalPriceObject.innerHTML=''
