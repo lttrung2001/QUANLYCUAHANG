@@ -72,7 +72,7 @@ public class HomeController {
 	@RequestMapping(value = "new")
 	public String newArrival(ModelMap model) {
 		model.addAttribute("part", "new");
-		model.addAttribute("products", productDAO.getAllProduct());
+		model.addAttribute("products", productDAO.getTop20Product());
 		return "customer/customer_home";
 	}
 }
