@@ -51,7 +51,7 @@ public class QLKhachHangDAO {
 	
 	public List<Client> top6() {
 		Session session = factory.getCurrentSession();
-		String hql ="from Client as ac order by ac.clientAccount.createdDate desc";
+		String hql ="from Client as ac order by ac.clientAccount.point desc";
 		Query query = session.createQuery(hql).setMaxResults(6);
 		List<Client> listProduct = query.list();
 		return listProduct;

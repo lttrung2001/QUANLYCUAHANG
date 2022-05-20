@@ -76,14 +76,14 @@
         <!-- Recent Customer -->
         <div class="recentCustomers">
             <div class="cardHeader">
-                <h2>Recent Customer</h2>
+                <h2>Loyal Customers</h2>
             </div>
             <table>
             <c:forEach var="top" items="${listTop6 }">
                 <tr>
                     <td ><div class="imgBox"><img src="<c:url value='resources/my_image/Customer Images/e64ed0d383104b4e1201.jpg'/>"></div></td>
                     <td>
-                    <h4>${top.lastName } ${top.firstName }<br><span>${top.address }</span></h4></td>
+                    <h4>${top.lastName } ${top.firstName }<br><span>Point: ${top.clientAccount.point }</span></h4></td>
                 </tr>
             </c:forEach>
                 
