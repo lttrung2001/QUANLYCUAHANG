@@ -26,17 +26,6 @@ public class QLKhachHangController {
 		return "shop/QL_KhachHang";
 	}
 	
-	@RequestMapping(value = "/index/{id}.htm", params = "linkInfo")
-	public String clientInfo(ModelMap model,@PathVariable("id") String id) {
-		
-		/* model.addAttribute("btnStatus", "btnEdit"); */
-		Client client = new Client();
-		client =khachHangDAO.getClientByID(id);
-		model.addAttribute("client", client);
-		model.addAttribute("clients", khachHangDAO.getAllClient());
-		return "shop/QL_KhachHang";
-	}
-	
 	@RequestMapping(value = "index", params = "btnsearch")
 	public String searchPro(HttpServletRequest request, ModelMap model) {
 		String firstName = request.getParameter("searchInput");

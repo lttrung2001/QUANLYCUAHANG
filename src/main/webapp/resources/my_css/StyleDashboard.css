@@ -861,29 +861,39 @@ body{
     margin: auto;
     height: auto;
 }
-.mainProduct .tableProduct .menuTypeProduct{
-    width: 200px;
+.mainProduct .tableProduct .NotificationBox{
+    width: 100%;
     height: 28px;
     display: flex;
     justify-content: space-between;
     position: relative;
-
+    
+}
+.mainProduct .tableProduct .NotificationBox span:first-child{
+    /* width:  */
+    padding: 0 30px;
+    border: 2px solid rgb(251, 236, 97);
+    display: flex;
+    align-items: center;
+}
+.mainProduct .tableProduct .NotificationBox span:first-child i{
+    padding: 1px 8px;
+    background: rgb(251, 236, 97);
+    margin: 0 5px;
+}
+.mainProduct .tableProduct .NotificationBox span:last-child{
+    /* width:  */
+    padding: 0 30px;
+    border: 2px solid var(--blue);
+    display: flex;
+    align-items: center;
+}
+.mainProduct .tableProduct .NotificationBox span:last-child i{
+    padding: 1px 8px;
+    background: var(--blue);
+    margin: 0 5px;
 }
 
-
-.mainProduct .tableProduct .menuTypeProduct select{
-    outline: none;
-    width: 100%;
-    padding: 3px 5px;
-    border: 1px solid var(--black1);
-    top: 27px;
-    z-index: 1;
-    background: var(--white); 
-    cursor: pointer;
-}
-.mainProduct .tableProduct{
-    /* padding-top: 50px; */
-}
 .mainProduct .tableProduct table{
 
     width: 100%;
@@ -1189,9 +1199,9 @@ body{
     left: 50%;
     top: 40%;
     transform: translate(-50%,-50%);
-    width: 300px;
+    min-width: 300px;
     /* height: 400px; */
-    padding: 20px 0;
+    padding: 20px 5px;
     border-radius: 20px;
     background: #fff;
     z-index: 3;

@@ -5,33 +5,31 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="mainCM">
 	<div class="cardInforCM">
-		<form:form action="admin/customer/index.htm"  modelAttribute="client" >
 			<button>
 				<i class="fa-solid fa-circle-xmark"></i>
 			</button>
 			<div class="imgCardCM">
 				<img src="<c:url value='/resources/my_image/PicCats/Meo1.jpg'/>" alt="">
 			</div>
-			<h3>${client.lastName } ${client.firstName }</h3>
+			<h3></h3>
 			<div class="addressCard">
-				<i class="fa-solid fa-location-pin"></i> ${client.address }
+				<i class="fa-solid fa-location-pin"></i><span></span> 
 			</div>
 			<div class="phoneCard">
-				<i class="fa-solid fa-mobile-screen-button"></i> ${client.phoneNumber }
+				<i class="fa-solid fa-mobile-screen-button"></i><span></span>
 			</div>
 			<div class="mailCard">
-				<i class="fa-solid fa-envelope"></i> ${client.clientAccount.email }
+				<i class="fa-solid fa-envelope"></i><span></span>
 			</div>
 			<div class="userCard">
-				<i class="fa-solid fa-user"></i> ${client.clientAccount.username }
+				<i class="fa-solid fa-user"></i><span></span>
 			</div>
 			<div class="passwordCard">
-				<i class="fa-solid fa-lock"></i> ${client.clientAccount.password }
+				<i class="fa-solid fa-lock"></i><span></span>
 			</div>
 			<div class="pointCard">
-				<i class="fa-solid fa-star"></i>${client.clientAccount.point }
+				<i class="fa-solid fa-star"></i><span></span>
 			</div>
-		</form:form>
 	</div>
 	<div class="diagramCustomer">
 		<h4>SỐ LƯỢNG KHÁCH HÀNG ĐĂNG KÍ QUA CÁC THÁNG</h4>
@@ -130,12 +128,11 @@
 	<div class="listCardCustomer">
 		<c:forEach var="client" items="${ clients }">
 			<div class="cardCustomer">
-				<a href="admin/customer/index/${client.id }.htm?linkInfo">
 				<div class="mainNameCus">
 						<img
 							src="<c:url value='/resources/my_image/Customer Images/Meo5.jpg'/> ">
 						<span class="nameCus">
-							<h2>${client.firstName }</h2>
+							<h2>${client.lastName} ${client.firstName }</h2>
 							<div>${client.id }</div>
 						</span>
 					</div>
@@ -151,7 +148,6 @@
 							<i class="fa-solid fa-mobile-button"></i> <span>${client.phoneNumber }</span>
 						</div>
 						<div class="user">
-							<span>${client.clientAccount.username }</span>
 						</div>
 						<div class="pass">
 							<span>${client.clientAccount.password }</span>
@@ -160,8 +156,6 @@
 							<span>${client.clientAccount.point }</span>
 						</div>
 					</div>
-
-				</a>
 			</div>
 		</c:forEach>
 	</div>

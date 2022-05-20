@@ -20,7 +20,6 @@
 
 	</div>
 	<form:form modelAttribute="product" action="admin/product/index1.htm" method="POST" enctype="multipart/form-data">
-	${message }
 		<form:input path="id" type="hidden" />
 		<%-- <form:input path="insertDate" type="hidden" /> --%>
 		<div class="boxEditProduct">
@@ -69,8 +68,46 @@
 			<button class="saveEditProduct" type="submit" name="${btnStatus}">SAVE</button>
 		</div>
 	</form:form>
+	
 	<div class="tableProduct">
-
+		<div class="NotificationBox">
+			<%-- <c:if test="${not empty status}"> --%>
+			<c:choose>
+				<c:when test="${status == 0 }">
+				<c:choose>
+					<c:when test="${message == 1 }">
+						<span><i class="fa-solid fa-check"></i>Thêm sản phẩm thành công</span>
+					</c:when>
+					<c:when test="${message == 0 }">
+						<span><i class="fa-solid fa-exclamation"></i>Thêm sản phẩm thất bại</span>
+					</c:when>
+				</c:choose>
+				</c:when>
+				<c:when test="${status == 1 }">
+				<c:choose>
+					<c:when test="${message == 1 }">
+						<span><i class="fa-solid fa-check"></i>Cập nhật sản phẩm thành công</span>
+					</c:when>
+					<c:when test="${message == 0 }">
+						<span><i class="fa-solid fa-exclamation"></i>Cập nhật sản phâm thất bại</span>
+					</c:when>
+					</c:choose>
+				</c:when>
+				<c:when test="${status == 2 }">
+				<c:choose>
+					<c:when test="${message == 1 }">
+						<span><i class="fa-solid fa-check"></i>Xóa sản phẩm thành công</span>
+					</c:when>
+					<c:when test="${message == 0 }">
+						<span><i class="fa-solid fa-exclamation"></i>Xóa sản phẩm thất bại</span>
+					</c:when>
+					</c:choose>
+				</c:when>
+			</c:choose>
+			<%-- </c:if> --%>
+			<%-- <span><i class="fa-solid fa-exclamation"></i>${message }</span>
+			<span><i class="fa-solid fa-check"></i>${message }</span> --%>
+		</div>
 		<table>
 			<thead>
 				<tr>

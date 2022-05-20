@@ -62,13 +62,14 @@ public class QLSanPhamController {
 			product.setImage(fileName); 
 		}
 		 product.setInsertDate(new Date()); 
+		 model.addAttribute("status", 0);
 		int temp = sanPhamDAO.insertProduct(product);
 		if (temp != 0) {
-			model.addAttribute("message", "Them thanh cong");
+			model.addAttribute("message", temp);
 			model.addAttribute("btnStatus", "btnAdd");
 			model.addAttribute("product", new Product());
 		} else {
-			model.addAttribute("message", "Them that bai");
+			model.addAttribute("message", temp);
 			model.addAttribute("btnStatus", "btnAdd");
 		}
 		 model.addAttribute("products", sanPhamDAO.getAllProduct()); 
@@ -79,12 +80,12 @@ public class QLSanPhamController {
 	public String deleteProduct( ModelMap model,
 
 			@ModelAttribute("product") Product product, @PathVariable("id") int id) {
-
+		model.addAttribute("status", 2);
 		int temp = sanPhamDAO.deleteProduct(product);
 		if (temp != 0) {
-			model.addAttribute("message", "Xoa thanh cong");
+			model.addAttribute("message", temp);
 		} else {
-			model.addAttribute("message", "Xoa that bai");
+			model.addAttribute("message", temp);
 		}
 		model.addAttribute("products", sanPhamDAO.getAllProduct());
 		return "shop/QL_SanPham";
@@ -110,12 +111,13 @@ public class QLSanPhamController {
 			product.setImage(fileName);
 		}
 		product.setInsertDate(proTam.getInsertDate());
+		model.addAttribute("status", 1);
 		int temp = sanPhamDAO.updateProduct(product);
 		if (temp != 0) {
-			model.addAttribute("message", "Sua thanh cong");
+			model.addAttribute("message", temp);
 		} else {
 
-			model.addAttribute("message", "Sua that bai");
+			model.addAttribute("message", temp);
 		}
 		// model.addAttribute("products", this.getProducts());
 		model.addAttribute("products", sanPhamDAO.getAllProduct());
