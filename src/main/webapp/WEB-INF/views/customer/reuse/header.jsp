@@ -42,7 +42,7 @@
             <div class="iconLogged">
                 <button onclick="onMenuLogged()"><ion-icon name="person"></ion-icon></button>
                 <ul class="menuLogged hide">
-                    <li class="changeInfor"><a href="security.htm">Thay đổi thông tin</a></li>
+                    <li class="changeInfor"><a href="account/info.htm">Thay đổi thông tin</a></li>
                     <li class="history"><a href="history.htm">Lịch sử</a></li>
                     <li class="logOut"><a href="logout.htm">Đăng xuất</a></li>
                 </ul>
