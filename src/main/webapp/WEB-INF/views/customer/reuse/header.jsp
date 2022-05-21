@@ -52,7 +52,7 @@
                 <button id="icon-search-btn" ><ion-icon name="search-outline" ></ion-icon></button>
                 <div class="search-input hide" >
                     <form class="search-form" action="${part }.htm">
-                        <input  type="text" placeholder="Search.." name="search">
+                        <input autocomplete="off" class="search-input-box" type="text" placeholder="Search.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>

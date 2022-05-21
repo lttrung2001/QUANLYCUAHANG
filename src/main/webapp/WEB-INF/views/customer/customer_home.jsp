@@ -53,7 +53,6 @@
 	
 	<%@include file="/WEB-INF/views/customer/reuse/footer.jsp" %>
 
-<script type="text/javascript" src="/resources/my_js/main_js.js" ></script>
 <script type="text/javascript">
 	
 	function test(e) {
@@ -69,10 +68,37 @@
 				alert('Đã thêm vào giỏ hàng!');				
 			},
 			error : function(xhr) {
-				alert("Sản phẩm này đã có trong giỏ hàng của bạn!");
+				console.log(xhr);
+				if (xhr.status === 404) {
+					alert('Hãy đăng nhập để mua hàng bạn nhé!');
+				}
+				else if (xhr.status === 501) {
+					alert("Sản phẩm này đã có trong giỏ hàng của bạn!");
+				}
 			}
 		});
 	}
+
+	$('.search-input-box').keyup(function() {
+		setTimeout(function() {
+			var value = $('.search-input-box').val();
+			$.ajax({
+				url : "/QUANLYCUAHANG/Search",
+				type : "get",
+				data : {
+					searchKey : value
+				},
+				success : function(data) {
+					var b = document.querySelector('.container-object');
+					b.innerHTML = "";
+					b.innerHTML += data;
+				},
+				error : function(xhr) {
+					console.log("Xảy ra lỗi khi tìm kiếm bằng ajax!")
+				}
+			});
+		}, 1000);
+	});
 </script>
 </body>
 </html>	
