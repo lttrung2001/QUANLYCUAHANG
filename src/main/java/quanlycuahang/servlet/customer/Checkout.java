@@ -50,6 +50,7 @@ public class Checkout extends HttpServlet {
 		String ids = request.getParameter("ids");
 		String amounts = request.getParameter("amounts");
 		String address = request.getParameter("billAddress");
+		int point = Integer.parseInt(request.getParameter("total")) / 1000;
 		ids = ids.replace("[", "");
 		ids = ids.replace("]", "");
 		amounts = amounts.replace("[", "");
@@ -91,6 +92,7 @@ public class Checkout extends HttpServlet {
             }
             // Delete products in cart
             statement.executeUpdate(String.format("DELETE FROM CART WHERE ACCOUNT_ID = N'%s'", account.getUsername()));
+            statement.executeUpdate(String.format("UPDATE CLIENT_ACCOUNT SET POINT = POINT + %d WHERE USERNAME = '%s'", point, account.getUsername()));
             conn.commit();
             conn.close();
         } catch (SQLException e) {
