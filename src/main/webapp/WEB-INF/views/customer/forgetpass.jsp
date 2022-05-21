@@ -31,7 +31,7 @@
 </head>
 <body>
 	<%@include file="/WEB-INF/views/customer/reuse/header.jsp" %>	
-	 <form:form class="forgotPassword" modelAttribute="account" method="post" action="account/forgot.htm">
+	 <form:form class="forgotPassword" modelAttribute="account" method="post" action="forgot.htm">
         <button class="closeFP">x</button>
         <h1>QUÊN MẬT KHẨU</h1>    
         <div>
