@@ -15,11 +15,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "PRODUCT_ID", nullable = false)
@@ -40,10 +46,10 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name = "PRODUCT_TYPE", nullable = false)
 	private ProductType proType;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productInBill")
 	private Set<BillDetail> inBill = new HashSet<BillDetail>();
-	
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productInCart")
 	private Set<Cart> inCart = new HashSet<Cart>();
 
@@ -146,5 +152,4 @@ public class Product {
 		super();
 	}
 
-	
 }

@@ -26,7 +26,7 @@
     <div class="header">
         <div class="logo">
             
-            <img src="<c:url value='/resources/my_png/Logo-byOanh.png'/>" >
+            <a href="home.htm"><img src="<c:url value='/resources/my_png/Logo-byOanh.png'/>"></a>
             <h2>Acount Center</h2>
         </div>
         <div class="loginName">

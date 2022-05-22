@@ -778,9 +778,13 @@ body{
     
 }
 .mainProduct .nameProduct,
+.mainProduct .numProduct {
+	width: 54%;
+    display: flex;
+    justify-content: start;
+}
 .mainProduct .choooseTypeProduct,
 .mainProduct .descProduct,
-.mainProduct .numProduct,
 .mainProduct .priceProduct{
     width: 45%;
     display: flex;
