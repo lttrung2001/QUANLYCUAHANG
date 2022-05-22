@@ -4,11 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<base href="${pageContext.servletContext.contextPath }/">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="title icon" href="/resources/my_png/Logo-byOanh.png">
-    <link rel="stylesheet" type="text/css" href="/resources/my_css/StyleDashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/StyleDashboard.css'/>"/>
     <!-- <script src="https://kit.fontawesome.com/0e7ed669fa.js" crossorigin="anonymous"></script>     -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/0e7ed669fa.js" crossorigin="anonymous"></script>
@@ -20,7 +21,7 @@
     <div id="facePage">
         <div class="mainMenu">
             <div class="logoManagement">
-                <img class="imgLogoManagement" src="/resources/my_png/Logo-byOanh.png" alt="CAB Shop">
+                <img class="imgLogoManagement" src="my_png/Logo-byOanh.png" alt="CAB Shop">
                 <h2>Management</h2>
             </div>
             <div class="container">

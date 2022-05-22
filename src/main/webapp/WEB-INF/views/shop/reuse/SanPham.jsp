@@ -26,8 +26,13 @@
 			<div class="topBoxEditProduct">
 				<div class="nameProduct">
 					<span>Tên sản phẩm</span>
+					<div style="margin-left: 40px;">
 					<form:input path="name" type="text" 
 						placeholder="Vui lòng nhập tên sản phẩm" />
+					<%-- <form:input path="insertDate" type="hidden" 
+						placeholder="Vui lòng nhập tên sản phẩm" /> --%>
+					</div>
+					<form:errors cssClass="error-msg" path="name" element="div" style ="margin-left:10px;"/>
 				</div>
 				<div class="choooseTypeProduct">
 					<span>Loại sản phẩm</span> 
@@ -43,14 +48,20 @@
 			</div>
 			<div class="botBoxEditProduct">
 				<div class="numProduct">
-					<span>Số lượng</span>
-					<form:input path="qttInStock" type="text"
-						placeholder="Vui lòng nhập số lượng sản phẩm" />
+					<span>Số lượng</span> 
+					<div style="margin-left: 74px;">
+					<form:input path="qttInStock" type="text"  
+						placeholder="Vui lòng nhập số lượng sản phẩm" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+					</div>
+					<form:errors cssClass="error-msg" path="qttInStock" element="div" style ="margin-left:10px;" />
 				</div>
 				<div class="priceProduct">
 					<span>Giá tiền</span>
-					<form:input path="price" type="text"
-						placeholder="Vui lòng nhập giá của sản phẩm" />
+					<div>
+					<form:input path="price" type="text" 
+						placeholder="Ví dụ: 200 <-> Hai trăm nghìn đồng" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+					</div>
+					<form:errors cssClass="error-msg" path="price" element="div" style ="margin-left:10px;" />
 				</div>
 
 			</div>
@@ -95,6 +106,9 @@
 				</c:when>
 				<c:when test="${status == 2 }">
 				<c:choose>
+					<c:when test="${message == 2 }">
+						<span><i class="fa-solid fa-exclamation"></i>Sảm phẩm cần xóa đang có khách hàng đặt mua, không thể xóa</span>
+					</c:when>
 					<c:when test="${message == 1 }">
 						<span><i class="fa-solid fa-check"></i>Xóa sản phẩm thành công</span>
 					</c:when>
