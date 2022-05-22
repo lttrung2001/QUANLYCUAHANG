@@ -7,10 +7,11 @@
 		<div class="orderList">
 			<div class="searchBoxOrderList">
 				<form action="">
-					<i class="fa-solid fa-magnifying-glass"></i> <input
-						name="searchInput" type="text" placeholder="Mã đơn hàng">
+					<input name="searchInput" type="text" placeholder="Mã đơn hàng">
+					<button name="btnsearch" type="submit">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</button>
 
-					<button name="btnsearch" type="submit">save</button>
 				</form>
 			</div>
 			<table>
@@ -30,23 +31,23 @@
 							<td>${bill.staffCreate }</td>
 							<td>${bill.createDate}</td>
 							<td>${bill.address}</td>
-							<c:set var="status" scope = "session" value="${bill.status}" />							
-							<td>
-							<c:choose>
-								<c:when test = "${status == 78}">
-										<a href="admin/donhang/index/${bill.id}.htm?linkConfirm"><button
-										 >Xác nhận</button></a>
-										
-									
-								</c:when>
-								<c:when test = "${status == 89}">
-									
-										<a href="admin/donhang/index/${bill.id}.htm?linkView"><button
-										 >Xem</button></a>
-									
-								</c:when>
-							</c:choose>
-							</td>
+							<c:set var="status" scope="session" value="${bill.status}" />
+							<td><c:choose>
+									<c:when test="${status == 78}">
+										<a href="admin/donhang/index/${bill.id}.htm?linkView">
+											<button>Xác nhận</button>
+										</a>
+
+
+									</c:when>
+									<c:when test="${status == 89 ||status == 72}">
+
+										<a href="admin/donhang/index/${bill.id}.htm?linkView">
+											<button>Xem</button>
+										</a>
+
+									</c:when>
+								</c:choose></td>
 						</tr>
 					</c:forEach>
 				</tbody>
