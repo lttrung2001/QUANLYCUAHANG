@@ -5,7 +5,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="mainCM">
 	<div class="cardInforCM">
-			<button>
+			<button onclick="closeCardInfo()">
 				<i class="fa-solid fa-circle-xmark"></i>
 			</button>
 			<div class="imgCardCM">

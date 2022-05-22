@@ -1,8 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/main/java/quanlycuahang/bean/Admin.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/customer/ChangeInfoController.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/customer/ForgotPassWordController.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/customer/LoginController.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/customer/RegisterController.java=UTF-8
+encoding//src/main/java/quanlycuahang/controller/shop/AdminLoginController.java=UTF-8
 encoding//src/main/java/quanlycuahang/dao/customer/ClientAccountDAO.java=UTF-8
 encoding//src/main/java/quanlycuahang/dao/customer/ClientDAO.java=UTF-8
 encoding//src/main/java/quanlycuahang/entity/Client.java=UTF-8

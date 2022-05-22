@@ -1,7 +1,14 @@
 package quanlycuahang.bean;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Admin {
+	@NotBlank(message = "Không để trống username")
+	@NotEmpty(message = "Không để trống username")
 	private String username;
+	@NotBlank(message = "Không để trống password")
+	@NotEmpty(message = "Không để trống password")
 	private String password;
 	private String fullname;
 	public String getUsername() {

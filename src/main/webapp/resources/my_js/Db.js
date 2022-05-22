@@ -29,27 +29,18 @@ listMenu.forEach((item)=>
 
 
 // Login admin
-let login=document.querySelector('#data .admin button')
-let formLogin=document.querySelector('.formLogin')
-
-login.addEventListener('click',function(){
-    login.style.display='none'
-    formLogin.style.display='flex'
-    let accountLogin=document.getElementById('accountLogin')
-    let user=document.getElementById('user')
-    let pass=document.getElementById('pass')
-    let loginButton=document.querySelector('.formLogin form button')
-        loginButton.addEventListener('click',function(e){
-            if(user.value=='admin' && pass.value=='123'){
-                e.preventDefault()
-                accountLogin.style.display='flex'
-                formLogin.style.display='none'
-            }
-            else{
-                alert('cas')
-            }
-        })
-})
+	
+	function showPass(){
+		var x=document.getElementById('pass')
+		console.log('askljdjhaskldjsa;')
+		if (x.type === "password") {
+	    	x.type = "text";
+		} 
+		else {
+	    	x.type = "password";
+  		}
+		
+	}
 // End of login admin
 
 // Order Managerment
@@ -114,54 +105,54 @@ login.addEventListener('click',function(){
             document.querySelector('.pointCard span').innerHTML=pointMemberListCM[i].textContent
         })
     }
-    document.querySelector('.cardInforCM button i').addEventListener('click',function(){
-        cardDetailCM.style.display='none'
-    })
+    function closeCardInfo(){
+	cardDetailCM.style.display='none'
+	}
 // End o fCustomer Managerment
 
 // Statistical : Thống kê
 
-    let mainStatistical=document.querySelector('.mainStatistical')
-    let mainCustomerManagement=document.querySelector('.mainCM')
-    let mainProduct=document.querySelector('.mainProduct')
-    let mainOrder=document.querySelector('.mainOrder')
-    let mainTypeProduct=document.querySelector('.mainTypeProduct')
-    for(let i=0; i<listMenu.length; i++){
-        listMenu[i].addEventListener('click',function(){
-            if(i==5){
-                mainStatistical.style.display='block'    
-            }
-            else{
-                mainStatistical.style.display='none'
-            }
-            if(i==4){
-                mainCustomerManagement.style.display='flex'
-                
-            }
-            else{
-                mainCustomerManagement.style.display='none'
-            }
-            if(i==3){
-                mainProduct.style.display='block'
-            }
-            else{
-                mainProduct.style.display='none'
-            }
-            if(i==2){
-                mainTypeProduct.style.display='block'
-            }
-            else{
-                mainTypeProduct.style.display='none'
-            }
-            if(i==1){
-                mainOrder.style.display='block'
-            }
-            else{
-                mainOrder.style.display='none'
-            }
-
-        })
-    }
+//    let mainStatistical=document.querySelector('.mainStatistical')
+//    let mainCustomerManagement=document.querySelector('.mainCM')
+//    let mainProduct=document.querySelector('.mainProduct')
+//    let mainOrder=document.querySelector('.mainOrder')
+//    let mainTypeProduct=document.querySelector('.mainTypeProduct')
+//    for(let i=0; i<listMenu.length; i++){
+//        listMenu[i].addEventListener('click',function(){
+//            if(i==5){
+//                mainStatistical.style.display='block'    
+//            }
+//            else{
+//                mainStatistical.style.display='none'
+//            }
+//            if(i==4){
+//                mainCustomerManagement.style.display='flex'
+//                
+//            }
+//            else{
+//                mainCustomerManagement.style.display='none'
+//            }
+//            if(i==3){
+//                mainProduct.style.display='block'
+//            }
+//            else{
+//                mainProduct.style.display='none'
+//            }
+//            if(i==2){
+//                mainTypeProduct.style.display='block'
+//            }
+//            else{
+//                mainTypeProduct.style.display='none'
+//            }
+//            if(i==1){
+//                mainOrder.style.display='block'
+//            }
+//            else{
+//                mainOrder.style.display='none'
+//            }
+//
+//        })
+//    }
     // hoverStatistical.addEventListener('mouseover',function(){
     //     mainStatistical.style.display='block'
     // })
