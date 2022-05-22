@@ -12,9 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import quanlycuahang.entity.ClientAccount;
 import quanlycuahang.entity.Bill;
+import quanlycuahang.entity.Client;
 import quanlycuahang.entity.ProductType;
 
 @Transactional
@@ -29,7 +32,7 @@ public class QL_DonHangController {
 	public String index(ModelMap model) {
 
 		List<Bill> Bill = this.getBill();
-		/* model.addAttribute("btnStatus", "btnAdd"); */
+
 		model.addAttribute("Bill", Bill);
 		return "shop/QL_DonHang";
 	}
@@ -42,21 +45,36 @@ public class QL_DonHangController {
 		return list;
 	}
 
-	public List<Bill> searchBill(int maBill) {
+	public List<Bill> searchBill(String maBill) {
+		int maBillInt;
 		Session session = factory.getCurrentSession();
-		String hql = "FROM Bill where id = :maBill";
-		Query query = session.createQuery(hql);
-		query.setParameter("maBill", maBill);
-		List<Bill> list = query.list();
-		return list;
+		String hql;
+		if (maBill == "") {
+			hql = "FROM Bill";
+			Query query = session.createQuery(hql);
+			List<Bill> list = query.list();
+			return list;
+		} else {
+			maBillInt = Integer.parseInt(maBill);
+			hql = "FROM Bill where id = :maBill";
+			Query query = session.createQuery(hql);
+			query.setParameter("maBill", maBillInt);
+			List<Bill> list = query.list();
+			return list;
+		}
+
+		
 	}
 
 	@RequestMapping(value = "index", params = "btnsearch")
-	public String search(HttpServletRequest request, ModelMap model){
-		List<Bill> Bill = this.searchBill(Integer.parseInt(request.getParameter("searchInput")));
-		model.addAttribute("Bill", Bill);
-		
-		return "shop/QL_DonHang";
-	}
+	public String search(HttpServletRequest request, ModelMap model) {
 
+		List<Bill> Bill;
+		Bill = this.searchBill(request.getParameter("searchInput"));
+		model.addAttribute("Bill", Bill);
+		return "shop/QL_DonHang";
+
+	}
+	
+	
 }
