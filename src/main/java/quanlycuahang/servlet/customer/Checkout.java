@@ -46,10 +46,12 @@ public class Checkout extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		ClientAccount account = (ClientAccount) session.getAttribute("account");
+		if (account == null) return;
 		
 		String ids = request.getParameter("ids");
 		String amounts = request.getParameter("amounts");
 		String address = request.getParameter("billAddress");
+		int point = Integer.parseInt(request.getParameter("total")) / 1000;
 		ids = ids.replace("[", "");
 		ids = ids.replace("]", "");
 		amounts = amounts.replace("[", "");
@@ -65,8 +67,8 @@ public class Checkout extends HttpServlet {
         try {
 			conn = DriverManager.getConnection(dbURL, user, pass);
 			String now = getToday(); // Get current date time
-			String createBillStatement = String.format("INSERT INTO BILL (CREATE_AT, DELIVER_ADDRESS) VALUES (N'%s', N'%s')", now, address);
-			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CREATE_AT = N'%s'", now);
+			String createBillStatement = String.format("INSERT INTO BILL (CREATE_AT, DELIVER_ADDRESS,CUSTOMER) VALUES (N'%s', N'%s', N'%s')", now, address,account.getUsername());
+			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CUSTOMER = '%s'", account.getUsername());
 			Statement statement = conn.createStatement();
 			conn.setAutoCommit(false);
 			// Create bill
@@ -91,6 +93,7 @@ public class Checkout extends HttpServlet {
             }
             // Delete products in cart
             statement.executeUpdate(String.format("DELETE FROM CART WHERE ACCOUNT_ID = N'%s'", account.getUsername()));
+            statement.executeUpdate(String.format("UPDATE CLIENT_ACCOUNT SET POINT = POINT + %d WHERE USERNAME = '%s'", point, account.getUsername()));
             conn.commit();
             conn.close();
         } catch (SQLException e) {

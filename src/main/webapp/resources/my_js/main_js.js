@@ -315,25 +315,25 @@ window.onload=function(){
 	// select size object
 	
 	// add and subtract total object
-	var addTotalObject=document.querySelector('.add-total')
-	var subTotalObject=document.querySelector('.subtract-total')
-	
-	addTotalObject.addEventListener('click',function(){
-		totalTemp=totalTemp+1
-		totalObject.innerHTML=totalTemp
-		console.log(priceTemp)
-		// Sum Price of Object
-		totalPriceObject.innerHTML=priceTemp*totalTemp
-	})
-	subTotalObject.addEventListener('click',function(){
-		if(totalTemp>0){
-			totalTemp=totalTemp-1
-			totalObject.innerHTML=totalTemp
-			console.log(priceTemp)
-			// Sum Price of Object
-			totalPriceObject.innerHTML=priceTemp*totalTemp
-		}
-	})
+//	var addTotalObject=document.querySelector('.add-total')
+//	var subTotalObject=document.querySelector('.subtract-total')
+//	
+//	addTotalObject.addEventListener('click',function(){
+//		totalTemp=totalTemp+1
+//		totalObject.innerHTML=totalTemp
+//		console.log(priceTemp)
+//		// Sum Price of Object
+//		totalPriceObject.innerHTML=priceTemp*totalTemp
+//	})
+//	subTotalObject.addEventListener('click',function(){
+//		if(totalTemp>0){
+//			totalTemp=totalTemp-1
+//			totalObject.innerHTML=totalTemp
+//			console.log(priceTemp)
+//			// Sum Price of Object
+//			totalPriceObject.innerHTML=priceTemp*totalTemp
+//		}
+//	})
 	
 	// Total in cart
 //	let totalCart=document.querySelector('#icon-cart')
@@ -347,15 +347,15 @@ window.onload=function(){
 	
 	// Load more
 	// $('#home .items').slice(0,8).show()
-	let loadMore=document.getElementById('loadMore')
-	loadMore.addEventListener('click',function(e){
-		e.preventDefault()
-		$('#home .items:hidden').slice(0,4).slideDown()
-		if($('#home .items:hidden').length==0){
-			loadMore.style.display='none'
-		}
-		
-	})
+//	let loadMore=document.getElementById('loadMore')
+//	loadMore.addEventListener('click',function(e){
+//		e.preventDefault()
+//		$('#home .items:hidden').slice(0,4).slideDown()
+//		if($('#home .items:hidden').length==0){
+//			loadMore.style.display='none'
+//		}
+//		
+//	})
 	// let allImages=['my_image/']
 	// let image=document.createElement('img')
 	// let listImages=document.getElementById('listImages')

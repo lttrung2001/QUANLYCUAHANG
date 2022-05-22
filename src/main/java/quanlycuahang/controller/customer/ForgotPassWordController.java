@@ -22,7 +22,6 @@ import quanlycuahang.entity.ClientAccount;
 
 @Controller
 @Transactional
-@RequestMapping(value = "account")
 public class ForgotPassWordController {
 	@Autowired
 	private ClientAccountDAO clientAccountDAO;
@@ -66,7 +65,7 @@ public class ForgotPassWordController {
 
 				helper.setFrom("no-reply-email");
 				helper.setTo(tmp.getEmail());
-				helper.setSubject("ĐẶT LẠI MẬT KHẨU CHO TÀI KHOẢN: " + tmp.getUsername());
+				helper.setSubject("CAB STORE: ĐẶT LẠI MẬT KHẨU CHO TÀI KHOẢN: " + tmp.getUsername());
 				helper.setText("Mật khẩu của bạn là: " + num);
 				mailSender.send(message);
 				

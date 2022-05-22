@@ -2,14 +2,20 @@ package quanlycuahang.controller.customer;
 
 import java.util.Date;
 
+
 import java.util.Random;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +29,9 @@ import quanlycuahang.entity.ClientAccount;
 public class RegisterController {
 	@Autowired
 	private ClientAccountDAO clientAccountDAO;
+	
+	@Autowired
+	private JavaMailSender mailSender;
 	
 	@SuppressWarnings("removal")
 	private ClientAccount correctInfomation(ClientAccount account) {
@@ -43,7 +52,7 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public String register(ModelMap model, @ModelAttribute("account") ClientAccount account, BindingResult errors) {
+	public String register(ModelMap model, @ModelAttribute("account") ClientAccount account, BindingResult errors) throws MessagingException {
 		Client info = account.getClientInfo();
 		info.setId(account.getUsername());
 		account.setClientInfo(info);
@@ -65,22 +74,38 @@ public class RegisterController {
 		}
 		else {
 			clientAccountDAO.createAccount(account);
-			model.addAttribute("account", account);
 			// Gửi code về email
+			MimeMessage message = mailSender.createMimeMessage();
+			MimeMessageHelper helper = new MimeMessageHelper(message);
+			helper.setFrom("no-reply-email");
+			helper.setTo(account.getEmail());
+			helper.setSubject("CAB STORE: MÃ KÍCH HOẠT TÀI KHOẢN: " + account.getUsername());
+			helper.setText("Mã của bạn là: "+account.getCode());
+			mailSender.send(message);
+			account.setCode("");
+			model.addAttribute("account", account);
 			return "customer/verify-email";
 		}
 	}
 	
 	@RequestMapping(value = "verify", method = RequestMethod.POST)
-	public String verify(ModelMap model, @RequestParam("username") String username, HttpServletRequest request) {
-		String code = request.getParameter("code");
-		ClientAccount account = clientAccountDAO.getClientAccountByUsername(username);
+	public String verify(ModelMap model, @RequestParam("username") String username, HttpServletRequest request,
+						@Validated @ModelAttribute("account") ClientAccount account, BindingResult errors) {
+		if (errors.hasFieldErrors("code")) {
+			account.setUsername(username);
+			model.addAttribute("account", account);
+			return "customer/verify-email";
+		}
+		String code = account.getCode().toString();
+		account = clientAccountDAO.getClientAccountByUsername(username);
 		if (account.getCode().equals(code)) {
 			account.setCode("");
 			clientAccountDAO.updateAccount(account);
 			return "customer/verify-success";
 		}
 		else {
+			errors.rejectValue("code", "account", "Mã code không đúng!");
+			account.setCode(code);
 			model.addAttribute("account", account);
 			return "customer/verify-email";
 		}

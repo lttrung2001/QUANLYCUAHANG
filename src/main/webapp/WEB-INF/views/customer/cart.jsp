@@ -133,6 +133,9 @@
 				alert('Hãy thêm sản phẩm vào giỏ hàng để thanh toán nhé! <3');				
 				return;
 			}
+			
+			var total = parseInt($('.totalPrice > span').text());
+			console.log(total);
 
 			var amountArray = $('.productAmount').map(function() {
 				return parseInt($.trim($(this).text()));
@@ -146,7 +149,8 @@
 				data : {
 					ids : JSON.stringify(idArray),
 					amounts : JSON.stringify(amountArray),
-					billAddress : address
+					billAddress : address,
+					total: total
 				},
 				success : function(data) {
 					alert('Đặt hàng thành công!');

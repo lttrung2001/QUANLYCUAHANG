@@ -46,8 +46,8 @@
 			<form:errors cssClass="error-msg" path="password"></form:errors>
 			<div class="login-button"><button style="width: 100%; height: 100%; color: #fff;">Login</button></div>
 		</form:form>
-		<a href="account/forgot.htm">Lost your password?</a>
-		<a href="account/register.htm">Don't have an account?</a>
+		<a href="forgot.htm">Lost your password?</a>
+		<a href="register.htm">Don't have an account?</a>
 		
 	</div>
     <div class="filter-login"></div>

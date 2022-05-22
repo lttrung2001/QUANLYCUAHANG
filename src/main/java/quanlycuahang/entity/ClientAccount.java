@@ -42,9 +42,13 @@ public class ClientAccount {
 	@Email(message = "Email không đúng định dạng!")
 	private String email;
 	@Column(name = "CODE")
+	@NotBlank(message = "Không để trống mã code!")
+	@NotEmpty(message = "Không để trống mã code!")
 	private String code;
 	@OneToOne(mappedBy = "clientAccount")
 	private Client clientInfo;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customerAcc")
+	private Set<Bill> bills = new HashSet<Bill>();
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "accountInCart")
 	private Set<Cart> products = new HashSet<Cart>();
 	public String getUsername() {
@@ -77,11 +81,23 @@ public class ClientAccount {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 	public Client getClientInfo() {
 		return clientInfo;
 	}
 	public void setClientInfo(Client clientInfo) {
 		this.clientInfo = clientInfo;
+	}
+	public Set<Bill> getBills() {
+		return bills;
+	}
+	public void setBills(Set<Bill> bills) {
+		this.bills = bills;
 	}
 	public Set<Cart> getProducts() {
 		return products;
@@ -89,8 +105,8 @@ public class ClientAccount {
 	public void setProducts(Set<Cart> products) {
 		this.products = products;
 	}
-	public ClientAccount(String username, String password, int point, Date createdDate, String email, String code, Client clientInfo,
-			Set<Cart> products) {
+	public ClientAccount(String username, String password, int point, Date createdDate, String email, String code,
+			Client clientInfo, Set<Bill> bills, Set<Cart> products) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -99,17 +115,12 @@ public class ClientAccount {
 		this.email = email;
 		this.code = code;
 		this.clientInfo = clientInfo;
+		this.bills = bills;
 		this.products = products;
 	}
-	
 	public ClientAccount() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
+	
 }
