@@ -20,7 +20,6 @@
 			<mvc:mapping path="/checkout.htm"/>
 			<mvc:mapping path="/account/**"/>
 			<mvc:mapping path="/logout.htm"/>
-			<mvc:mapping path="/verify.htm"/>
 			<bean class="quanlycuahang.interceptor.CustomerInterceptor" />
 		</mvc:interceptor>
 		<bean class="quanlycuahang.interceptor.HomeInterceptor" />
