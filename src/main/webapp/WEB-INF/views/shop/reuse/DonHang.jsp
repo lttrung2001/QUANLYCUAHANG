@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix = "form" %>
+<base href="${pageContext.servletContext.contextPath }/">
 <div class="mainOrder">
 	<div class="orderBoxs">
 		<div class="orderList">
 			<div class="searchBoxOrderList">
-				<form action="">
+				<form:form action = "admin/donhang/index.htm">  
 					<input name="searchInput" type="text" placeholder="Mã đơn hàng">
 					<button name="btnsearch" type="submit">
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>
+			 	 	 </form:form>    
 
 				</form>
 			</div>
@@ -25,6 +27,7 @@
 					</tr>
 				</thead>
 				<tbody>
+				  
 					<c:forEach var="bill" items="${Bill}">
 						<tr>
 							<td>${bill.id}</td>
@@ -34,18 +37,18 @@
 							<c:set var="status" scope="session" value="${bill.status}" />
 							<td><c:choose>
 									<c:when test="${status == 78}">
-										<a href="admin/donhang/index/${bill.id}.htm?linkView">
-											<button>Xác nhận</button>
+										<a href="admin/donhang/index/${bill.id}.htm?btnConfirm">
+											<button name ="btnConfirm" type = "submit">Xác nhận</button>
 										</a>
-
+											
 
 									</c:when>
 									<c:when test="${status == 89 ||status == 72}">
 
-										<a href="admin/donhang/index/${bill.id}.htm?linkView">
-											<button>Xem</button>
+										<a href="admin/donhang/index/${bill.id}.htm?btnView">
+											<button name ="btnView" type = "submit">Xem</button>
 										</a>
-
+											
 									</c:when>
 								</c:choose></td>
 						</tr>
@@ -59,6 +62,7 @@
 			<h3>CHI TIẾT HÓA ĐƠN</h3>
 			<div class="boxDetailOrder">
 				<div class="name-order">
+				${message }
 					Tên khách hàng:
 					<p>Nguyễn Đăng Bắc</p>
 				</div>

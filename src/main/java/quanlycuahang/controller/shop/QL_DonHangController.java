@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -40,6 +41,15 @@ public class QL_DonHangController {
 		return "shop/QL_DonHang";
 	}
 
+	public Bill getBill(int id) {
+		Session session = factory.getCurrentSession();
+		String hql = "FROM Bill where id = :id";
+		Query query = session.createQuery(hql);
+		query.setParameter("id", id);
+		Bill list = (Bill) query.list().get(0);
+		return list;
+	}
+	
 	public List<Bill> getBill() {
 		Session session = factory.getCurrentSession();
 		String hql = "FROM Bill";
@@ -79,8 +89,40 @@ public class QL_DonHangController {
 
 	}
 	
+	public int updateConfirm(Bill bill) {
+		Session session = factory.openSession();
+		Transaction t = session.beginTransaction();
+		try {
+			session.update(bill);
+			t.commit();
+		} catch (Exception ex) {
+			t.rollback();
+			return 0;
+		} finally {
+			session.close();
+		}
+		return 1;
+	}
 	
-	
-	
-	
+	@RequestMapping(value = "index/{id}.htm", params = "btnConfirm")
+	public String confirm(ModelMap model,
+			//@ModelAttribute("Bill") Bill Bill,
+			@PathVariable("id") int id) {
+		Bill tempBill = this.getBill(id);
+		tempBill.setStatus('Y');
+		int temp = this.updateConfirm(tempBill);
+		List<Bill> Bill = this.getBill();
+		model.addAttribute("Bill", Bill);
+		model.addAttribute("message", "Bắc đẹp trai");
+		return "shop/QL_DonHang";
+	}
+	@RequestMapping(value = "index/{id}.htm", params = "btnView")
+	public String view(ModelMap model,
+			//@ModelAttribute("Bill") Bill Bill,
+			@PathVariable("id") int id) {
+		List<Bill> Bill = this.getBill();
+		model.addAttribute("Bill", Bill);
+		return "shop/QL_DonHang";
+	}
+
 }

@@ -3,7 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="mainTypeProduct">
 	<div class="searchTypePro">
-		<form action="">
+		<form:form action="admin/product/productType.htm">
 			<span> <input name="searchInput" type="text"
 				placeholder="Search" aria-label="Search" class="">
 			</span> <span>
@@ -11,7 +11,7 @@
 					<i class="fa-solid fa-magnifying-glass"></i>
 				</button>
 			</span>
-		</form>
+		</form:form>
 	</div>
 	<form:form modelAttribute="productType" method="POST" action = "admin/product/productType.htm">
 
