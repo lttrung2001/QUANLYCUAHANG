@@ -23,6 +23,11 @@
 			<mvc:mapping path="/verify.htm"/>
 			<bean class="quanlycuahang.interceptor.CustomerInterceptor" />
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**"/>
+			<mvc:exclude-mapping path="/admin/login/index.htm"/>
+			<bean class="quanlycuahang.interceptor.AdminLoginInterceptor" />
+		</mvc:interceptor>
 		<bean class="quanlycuahang.interceptor.HomeInterceptor" />
 	</mvc:interceptors>
 
