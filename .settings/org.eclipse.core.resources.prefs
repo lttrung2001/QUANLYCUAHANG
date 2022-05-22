@@ -3,10 +3,12 @@ encoding//src/main/java/quanlycuahang/controller/customer/ChangeInfoController.j
 encoding//src/main/java/quanlycuahang/controller/customer/ForgotPassWordController.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/customer/LoginController.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/customer/RegisterController.java=UTF-8
+encoding//src/main/java/quanlycuahang/controller/shop/QLSanPhamController.java=UTF-8
 encoding//src/main/java/quanlycuahang/dao/customer/ClientAccountDAO.java=UTF-8
 encoding//src/main/java/quanlycuahang/dao/customer/ClientDAO.java=UTF-8
 encoding//src/main/java/quanlycuahang/entity/Client.java=UTF-8
 encoding//src/main/java/quanlycuahang/entity/ClientAccount.java=UTF-8
+encoding//src/main/java/quanlycuahang/entity/Product.java=UTF-8
 encoding//src/main/java/quanlycuahang/servlet/customer/Checkout.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/customer/forgetpass.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/customer/register.jsp=UTF-8
