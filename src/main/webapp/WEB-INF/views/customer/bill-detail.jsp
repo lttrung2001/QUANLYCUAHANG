@@ -12,12 +12,13 @@
 </head>
 <body>
 <h1 class="card-title">CHI TIẾT HÓA ĐƠN</h1>
-	<h3 class="card-title">Mã hóa đơn: ${bill.id }</h3>
+	<h2 class="card-title">Mã hóa đơn: ${bill.id }</h2>
 	<c:set var="total" value="${0 }"></c:set>
 	<table class="table">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
+				<th scope="col">Mã sản phẩm</th>
 				<th scope="col">Tên sản phẩm</th>
 				<th scope="col">Số lượng</th>
 				<th scope="col">Đơn giá</th>
@@ -28,6 +29,7 @@
 			<c:forEach varStatus="i" var="bd" items="${bill.billDetails }">
 				<tr>
 					<th scope="row">${i.index+1 }</th>
+					<td>${bd.productInBill.id }</td>
 					<td>${bd.productInBill.name }</td>
 					<td>${bd.amount }</td>
 					<td><fmt:formatNumber currencyCode="VND" currencySymbol="đ" value="${bd.productInBill.price }" minFractionDigits="0"></fmt:formatNumber></td>

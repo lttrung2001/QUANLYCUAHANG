@@ -10,7 +10,7 @@
 <base href="${pageContext.servletContext.contextPath }/">
 </head>
 <body>
-	<h5 class="card-title">DANH SÁCH ĐƠN HÀNG ĐÃ ĐẶT</h5>
+	<h1 class="card-title">DANH SÁCH ĐƠN HÀNG ĐÃ ĐẶT</h1>
 	<table class="table">
 		<thead>
 			<tr>
@@ -33,6 +33,7 @@
 					<td>
 					<c:if test="${b.status eq 'Y'.charAt(0) }">Đã duyệt</c:if>
 					<c:if test="${b.status eq 'N'.charAt(0) }">Đang chờ</c:if>
+					<c:if test="${b.status eq 'H'.charAt(0) }">Đã hủy</c:if>
 					</td>
 					<td>${b.address }</td>
 					<td>${b.staffCreate }</td>
