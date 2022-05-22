@@ -6,12 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>CHI TIẾT ĐƠN HÀNG</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <base href="${pageContext.servletContext.contextPath }/">
 </head>
 <body>
-<h1 class="card-title">CHI TIẾT HÓA ĐƠN</h1>
+<h1 class="card-title">CHI TIẾT ĐƠN HÀNG</h1>
+<a href="home.htm" type="button" class="btn btn-secondary btn-lg">Quay về trang chủ</a>
+<a href="account/history.htm" type="button" class="btn btn-outline-dark btn-lg">Lùi lại</a>
 	<h2 class="card-title">Mã hóa đơn: ${bill.id }</h2>
 	<c:set var="total" value="${0 }"></c:set>
 	<table class="table">
