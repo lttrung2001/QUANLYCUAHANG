@@ -63,23 +63,26 @@ public class HistoryController {
 		Query query = session.createQuery("from Bill where id = :id");
 		query.setParameter("id", id);
 		Bill bill = (Bill) query.list().get(0);
-		bill.setStatus('H');
-		Product p = null;
-		Query query2 = session.createQuery("from Product where id = :id");
-		try {
-			for (BillDetail bd : bill.getBillDetails()) {
-				query2.setParameter("id", bd.getProductInBill().getId());
-				p = (Product) query2.list().get(0);
-				p.setQttInStock(p.getQttInStock()+bd.getAmount());
-				session.update(p);
+		if (bill.getStatus() == 'N') {
+			bill.setStatus('H');
+			Product p = null;
+			Query query2 = session.createQuery("from Product where id = :id");
+			try {
+				for (BillDetail bd : bill.getBillDetails()) {
+					query2.setParameter("id", bd.getProductInBill().getId());
+					p = (Product) query2.list().get(0);
+					p.setQttInStock(p.getQttInStock()+bd.getAmount());
+					session.update(p);
+				}
+				session.save(bill);
+				t.commit();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				t.rollback();
+			} finally {
+				session.close();
 			}
-			session.save(bill);
-			t.commit();
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} finally {
-			session.close();
 		}
 		HttpSession session1 = request.getSession();
 		String username = ((ClientAccount)session1.getAttribute("account")).getUsername();
