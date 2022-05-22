@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -60,10 +61,17 @@ public class ClientAccountDAO {
 	}
 	public int checkAccountExists(ClientAccount account) {
 		Session session = factory.getCurrentSession();
-		ClientAccount acc = (ClientAccount) session.get(ClientAccount.class, account.getUsername());
-		if (acc == null ) return 0;
-		else if (acc.getEmail().equalsIgnoreCase(account.getEmail()))
+		Query query = session.createQuery("from ClientAccount where username = :username and email = :email");
+		query.setParameter("username", account.getUsername());
+		query.setParameter("email", account.getEmail());
+		List<ClientAccount> list = query.list();
+		if (list.isEmpty())  {
+			return 0;
+		}
+		ClientAccount acc = list.get(0);
+		if (acc.getEmail().equalsIgnoreCase(account.getEmail()))
 			return -2; // Trùng email
-		else return -1; // Trùng tên tài khoản
+		else 
+			return -1; // Trùng tên tài khoản
 	}
 }

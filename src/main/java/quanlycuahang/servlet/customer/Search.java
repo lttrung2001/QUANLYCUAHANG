@@ -55,7 +55,7 @@ public class Search extends HttpServlet {
             	response.getWriter().print(String.format("<div class=\"items\">\r\n"
             			+ "				<figure>\r\n"
             			+ "					<img src=\".%s\" alt=\"\" class=\"img-items\">\r\n"
-            			+ "					<p class=\"price-item\">%f</p>\r\n"
+            			+ "					<p class=\"price-item\">%d</p>\r\n"
             			+ "					<p style=\"display: none;\" class=\"describe-item\">%s</p>\r\n"
             			+ "					<a href=\"#\"><p>%s</p></a>\r\n"
             			+ "					<p style=\"display: none;\" class=\"id-item\">%d</p>\r\n"
@@ -63,7 +63,7 @@ public class Search extends HttpServlet {
             			+ "				<div onclick=\"test(this);\" class=\"buy-item\">\r\n"
             			+ "					<h2>BUY NOW</h2>\r\n"
             			+ "				</div>\r\n"
-            			+ "			</div>", rs.getString(5),rs.getDouble(4),rs.getString(3),rs.getString(2),rs.getInt(1)));
+            			+ "			</div>", rs.getString(5),rs.getInt(4),rs.getString(3),rs.getString(2),rs.getInt(1)));
             }
             conn.close();
 		} catch (SQLException e) {

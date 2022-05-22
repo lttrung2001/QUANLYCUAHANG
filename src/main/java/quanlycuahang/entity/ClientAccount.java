@@ -42,6 +42,8 @@ public class ClientAccount {
 	@Email(message = "Email không đúng định dạng!")
 	private String email;
 	@Column(name = "CODE")
+	@NotBlank(message = "Không để trống mã code!")
+	@NotEmpty(message = "Không để trống mã code!")
 	private String code;
 	@OneToOne(mappedBy = "clientAccount")
 	private Client clientInfo;
