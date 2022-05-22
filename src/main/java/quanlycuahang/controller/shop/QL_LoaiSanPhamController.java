@@ -104,7 +104,6 @@ public class QL_LoaiSanPhamController {
 		List<ProductType> ProductType = this.getProductType();
 		model.addAttribute("ProductType", ProductType);
 		model.addAttribute("productType", this.getProductType(id));
-		System.out.println( this.getProductType(id));
 		model.addAttribute("btnStatus", "btnEdit");
 		return "shop/QL_LoaiSanPham";
 	}
@@ -112,7 +111,6 @@ public class QL_LoaiSanPhamController {
 	@RequestMapping(value = "productType", params = "btnEdit")
 	public String edit(ModelMap model, 
 			@ModelAttribute("productType") ProductType productType) {
-		System.out.println(productType);
 		int temp = this.updateProductType(productType);
 		if (temp != 0) {
 			model.addAttribute("message", "Sửa thành công");
