@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +19,9 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
+	
 	@Id
+	@GeneratedValue
 	@Column(name = "PRODUCT_ID", nullable = false)
 	private int id;
 	@Column(name = "PRODUCT_NAME", nullable = false)

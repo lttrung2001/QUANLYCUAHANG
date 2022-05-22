@@ -22,11 +22,15 @@
 <!-- 	</bean> -->
 <!-- 	Chứa 8 ảnh mặc định -->
 <!-- 	Thông tin tài khoản admin -->
-		<bean id="admin" class="quanlycuahang.entity.Admin">
+		<bean id="admin" class="quanlycuahang.bean.Admin">
 			<property name="username" value="admin"/>
 			<property name="password" value="quanlycuahang"/>
 			<property name="fullname" value="Lê Thành Trung"/>
 		</bean>
-	
+	<bean id="uploadfile" class="quanlycuahang.bean.UploadFile">
+		<property name="basePath"
+			value="C:\\Users\\sondi\\Desktop\\QUANLYCUAHANG\\src\\main\\webapp\\resources\\my_image\" />
+			
+	</bean>
 
 </beans>

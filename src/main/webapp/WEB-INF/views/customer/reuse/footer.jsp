@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!-- Load More -->
-<div href="#" id="loadMore">
-    <a href="#">Load More</a>
-</div>
+<!-- <div href="#" id="loadMore"> -->
+<!--     <a href="#">Load More</a> -->
+<!-- </div> -->
 <!-- End of Load More -->
 <!---------------------------------------------Contact-->
 <footer id="contact">
@@ -12,7 +14,7 @@
         </ul>
     </div>
     <div class="footer-center">
-        <span>©2022 CAB, LLC. All Rights Reserved.</span>
+        <span>Â©2022 CAB, LLC. All Rights Reserved.</span>
     </div>
     <div class="footer-right">
         <ul>

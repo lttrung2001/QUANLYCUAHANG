@@ -1,38 +1,49 @@
 package quanlycuahang.entity;
 
 import javax.persistence.Column;
+
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "CLIENT")
 public class Client {
 	@Id
 	@Column(name = "CLIENT_ID", nullable = false)
-	private int id;
+	private String id;
 	@Column(name = "LAST_NAME", nullable = false)
+	@NotBlank(message = "Không để trống họ!")
+	@NotEmpty(message = "Không để trống họ!")
 	private String lastName;
 	@Column(name = "FIRST_NAME", nullable = false)
+	@NotBlank(message = "Không để trống tên!")
+	@NotEmpty(message = "Không để trống tên!")
 	private String firstName;
 	@Column(name = "ADDRESS", nullable = false)
+	@NotBlank(message = "Không để trống địa chỉ!")
+	@NotEmpty(message = "Không để trống địa chỉ!")
 	private String address;
 	@Column(name = "PHONE_NUMBER", nullable = false)
+	@NotBlank(message = "Không để trống số điện thoại!")
+	@NotEmpty(message = "Không để trống số điện thoại!")
 	private String phoneNumber;
-	@Column(name = "EMAIL", nullable = false)
-	private String email;
 	
 	@OneToOne
-	@JoinColumn(name = "CLIENT_ID", referencedColumnName = "ID")
+	@JoinColumn(name = "CLIENT_ID", referencedColumnName = "USERNAME")
 	private ClientAccount clientAccount;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -68,14 +79,6 @@ public class Client {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public ClientAccount getClientAccount() {
 		return clientAccount;
 	}
@@ -84,7 +87,7 @@ public class Client {
 		this.clientAccount = clientAccount;
 	}
 
-	public Client(int id, String lastName, String firstName, String address, String phoneNumber, String email,
+	public Client(String id, String lastName, String firstName, String address, String phoneNumber,
 			ClientAccount clientAccount) {
 		super();
 		this.id = id;
@@ -92,12 +95,12 @@ public class Client {
 		this.firstName = firstName;
 		this.address = address;
 		this.phoneNumber = phoneNumber;
-		this.email = email;
 		this.clientAccount = clientAccount;
 	}
 
 	public Client() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 }
