@@ -11,6 +11,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -31,6 +33,9 @@ public class Bill {
 	private String address;
 	@Column(name = "STAFF_CREATE")
 	private String staffCreate;
+	@ManyToOne
+	@JoinColumn(name = "CUSTOMER")
+	private ClientAccount customerAcc;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "bill")
 	Set<BillDetail> billDetails = new HashSet<BillDetail>();
 	public int getId() {
@@ -63,19 +68,27 @@ public class Bill {
 	public void setStaffCreate(String staffCreate) {
 		this.staffCreate = staffCreate;
 	}
+	public ClientAccount getCustomerAcc() {
+		return customerAcc;
+	}
+	public void setCustomerAcc(ClientAccount customerAcc) {
+		this.customerAcc = customerAcc;
+	}
 	public Set<BillDetail> getBillDetails() {
 		return billDetails;
 	}
 	public void setBillDetails(Set<BillDetail> billDetails) {
 		this.billDetails = billDetails;
 	}
-	public Bill(int id, Date createDate, char status, String address, String staffCreate, Set<BillDetail> billDetails) {
+	public Bill(int id, Date createDate, char status, String address, String staffCreate, ClientAccount customerAcc,
+			Set<BillDetail> billDetails) {
 		super();
 		this.id = id;
 		this.createDate = createDate;
 		this.status = status;
 		this.address = address;
 		this.staffCreate = staffCreate;
+		this.customerAcc = customerAcc;
 		this.billDetails = billDetails;
 	}
 	public Bill() {

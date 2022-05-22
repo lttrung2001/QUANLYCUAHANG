@@ -46,6 +46,7 @@ public class Checkout extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		ClientAccount account = (ClientAccount) session.getAttribute("account");
+		if (account == null) return;
 		
 		String ids = request.getParameter("ids");
 		String amounts = request.getParameter("amounts");
@@ -66,8 +67,8 @@ public class Checkout extends HttpServlet {
         try {
 			conn = DriverManager.getConnection(dbURL, user, pass);
 			String now = getToday(); // Get current date time
-			String createBillStatement = String.format("INSERT INTO BILL (CREATE_AT, DELIVER_ADDRESS) VALUES (N'%s', N'%s')", now, address);
-			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CREATE_AT = N'%s'", now);
+			String createBillStatement = String.format("INSERT INTO BILL (CREATE_AT, DELIVER_ADDRESS,CUSTOMER) VALUES (N'%s', N'%s', N'%s')", now, address,account.getUsername());
+			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CUSTOMER = '%s'", account.getUsername());
 			Statement statement = conn.createStatement();
 			conn.setAutoCommit(false);
 			// Create bill
