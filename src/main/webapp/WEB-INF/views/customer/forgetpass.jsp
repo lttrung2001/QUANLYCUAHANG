@@ -32,7 +32,7 @@
 <body>
 	<%@include file="/WEB-INF/views/customer/reuse/header.jsp" %>	
 	 <form:form class="forgotPassword" modelAttribute="account" method="post" action="forgot.htm">
-        <button class="closeFP">x</button>
+        <span class="closeFP" onclick="closeForgotForm()">x</span>
         <h1>QUÊN MẬT KHẨU</h1>    
         <div>
 			<form:input type="text" placeholder="Enter username" path="username"/>
@@ -51,6 +51,12 @@
         <form:button class="submitFP">TIẾP TỤC</form:button>
     </form:form>
     <div class="filter-login"></div>
+    <script>
+	    function closeForgotForm(){
+			document.querySelector('.forgotPassword').style.display='none'
+			document.querySelector('.filter-login').style.width="0"
+		}
+    </script>
     <script type="text/javascript" src="<c:url value='/resources/my_js/foget_password.js'/>"></script>
 </body>
 </html>
