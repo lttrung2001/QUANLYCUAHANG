@@ -93,12 +93,8 @@ public class RegisterController {
 	
 	@RequestMapping(value = "verify", method = RequestMethod.POST)
 	public String verify(ModelMap model, @RequestParam("username") String username, HttpServletRequest request,
-						@Validated @ModelAttribute("account") ClientAccount account, BindingResult errors) {
-		if (errors.hasFieldErrors("code")) {
-			account.setUsername(username);
-			model.addAttribute("account", account);
-			return "customer/verify-email";
-		}
+						@ModelAttribute("account") ClientAccount account, BindingResult errors) {
+		account.setUsername(username);
 		String code = account.getCode().toString();
 		System.out.println(code);
 		account = clientAccountDAO.getClientAccountByUsername(username);
@@ -107,11 +103,13 @@ public class RegisterController {
 			clientAccountDAO.updateAccount(account);
 			return "customer/verify-success";
 		}
+		else if (code.equals("")) {
+			errors.rejectValue("code", "account", "Không để trống mã code!");
+		}
 		else {
 			errors.rejectValue("code", "account", "Mã code không đúng!");
-			account.setCode(code);
-			model.addAttribute("account", account);
-			return "customer/verify-email";
 		}
+		model.addAttribute("account", account);
+		return "customer/verify-email";
 	}
 }

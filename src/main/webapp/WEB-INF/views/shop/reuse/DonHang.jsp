@@ -13,8 +13,6 @@
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>
 			 	 	 </form:form>    
-
-				</form>
 			</div>
 			<table>
 				<thead>
@@ -68,7 +66,7 @@
                 </div>
 				<div class="name-order">			
 					Tên khách hàng:
-					<p>${b.customerAcc.clientInfo.lastName } ${b.customerAcc.clientInfo.lastName }</p>
+					<p>${b.customerAcc.clientInfo.lastName } ${b.customerAcc.clientInfo.firstName }</p>
 				</div>
 				<div class="phone-order">
 					Số điện thoại:
