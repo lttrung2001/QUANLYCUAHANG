@@ -42,6 +42,7 @@ public class ChangeInfoController {
 	
 	@RequestMapping(value = "info", method = RequestMethod.POST)
 	public String info(ModelMap model, @Validated @ModelAttribute("info") Client info, BindingResult errors) {
+		if (info.getPhoneNumber().length() < 10 && !info.getPhoneNumber().matches("[0-9]")) {
 			errors.rejectValue("phoneNumber", "info", "Số điện thoại có độ dài là 10 và chỉ chứa các ký tự số!");
 		}
 		if (errors.hasErrors()) {

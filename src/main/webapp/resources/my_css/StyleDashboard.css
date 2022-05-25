@@ -1217,6 +1217,7 @@ body{
 }
 .cardCustomer .mainNameCus span div{
     font-size: 14px;
+    display: flex;
 }
 
         /* CARD INFO  */

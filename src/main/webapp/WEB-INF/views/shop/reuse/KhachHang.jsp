@@ -141,8 +141,8 @@
 							<i class="fa-solid fa-location-pin"></i> <span>${client.address }</span>
 						</div>
 						<div class="mail">
-							<i class="fa-solid fa-envelope"></i>${client.clientAccount.email }
-							<span> <small class="detailMail"></small></span>
+							<i class="fa-solid fa-envelope"></i>
+							<span>${client.clientAccount.email }<small class="detailMail"></small></span>
 						</div>
 						<div class="call">
 							<i class="fa-solid fa-mobile-button"></i> <span>${client.phoneNumber }</span>
