@@ -169,7 +169,7 @@ body{
 #accountLogin{
     position: absolute;
     bottom: 10px;
-    display: none;
+/*     display: none; */
 }
 #accountLogin img{
     margin: 0 20px;
@@ -222,12 +222,11 @@ body{
     width: 500px;
     height: 300px;
     background: transparent;
-    align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: none;
+    
 }
 
 #data .formLogin .loginBox{
@@ -240,6 +239,7 @@ body{
     position: relative;
     margin-bottom: 20px;
     display: flex;
+    
 }
 #data .formLogin .loginBox input{
     outline: none;
@@ -247,19 +247,32 @@ body{
     background: var(--black2);
     padding: 8px 10px;
     font-size: 18px;
+    width: 220px;
 }
-#data .formLogin .loginBox span{
+#data .formLogin .loginBox span:first-child{
     background: var(--black2);
     padding: 8px;
+    width: 30px;
+}
+#data .formLogin .btnLogin{
+	width: 100%;
+	
+}
+#iconEye{
+	position: absolute;
+	left: 225px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
 }
 #data .formLogin button{
     background: rgba(188, 18, 18, 0.67);
     padding: 10px ;
     border: none;
-    width: 100%;
     font-size: 16px;
     margin-bottom: 10px;
     cursor: pointer;
+    width:250px;
 }
 #data .formLogin button:hover{
     background: rgba(226, 21, 21, 0.67);
@@ -267,7 +280,13 @@ body{
 #data .formLogin .remember {
     font-weight: 500;
 }
-
+.errorAdminLogin{
+	display:block;
+	font-size: 14px;
+	margin-left: 5px;
+	color: red;
+	font-weight: 600;
+}
 /* =================Menu and search */
 .main{
     position: absolute;
@@ -406,7 +425,7 @@ body{
     height: 100%;
     /* display: table; */
     display: block;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     padding-left: 5px;
 }
@@ -472,6 +491,7 @@ body{
     font-weight: bold;
     margin: 7px 5px ;
 }
+
 .detailOrder .boxDetailOrder div p, .detailOrder .boxDetailOrder div li{
     font-weight: 400;
 }
@@ -1008,7 +1028,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: block;
+    
 }
 
 .diagramCustomer{
