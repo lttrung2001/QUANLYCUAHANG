@@ -425,7 +425,7 @@ body{
     height: 100%;
     /* display: table; */
     display: block;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     padding-left: 5px;
 }
@@ -491,6 +491,7 @@ body{
     font-weight: bold;
     margin: 7px 5px ;
 }
+
 .detailOrder .boxDetailOrder div p, .detailOrder .boxDetailOrder div li{
     font-weight: 400;
 }

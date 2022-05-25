@@ -58,13 +58,17 @@
 		</div>
 
 		<div class="detailOrder">
-			<img src="my_png/WriteText.png">
+			<img src='<c:url value="/resources/my_png/WriteText.png"/>'>
 			<h3>CHI TIẾT HÓA ĐƠN</h3>
 			<div class="boxDetailOrder">
-				<div class="name-order">
-				${message }
+				<div style=" color: #e0412c;
+                            font-size: 14px;
+                            font-weight: bold;">
+                    ${message }
+                </div>
+				<div class="name-order">			
 					Tên khách hàng:
-					<p>Nguyễn Đăng Bắc</p>
+					<p>${client }</p>
 				</div>
 				<div class="phone-order">
 					Số điện thoại:

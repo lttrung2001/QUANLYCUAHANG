@@ -5,6 +5,7 @@ encoding//src/main/java/quanlycuahang/controller/customer/ForgotPassWordControll
 encoding//src/main/java/quanlycuahang/controller/customer/LoginController.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/customer/RegisterController.java=UTF-8
 encoding//src/main/java/quanlycuahang/controller/shop/AdminLoginController.java=UTF-8
+encoding//src/main/java/quanlycuahang/controller/shop/QL_DonHangController.java=UTF-8
 encoding//src/main/java/quanlycuahang/dao/customer/ClientAccountDAO.java=UTF-8
 encoding//src/main/java/quanlycuahang/dao/customer/ClientDAO.java=UTF-8
 encoding//src/main/java/quanlycuahang/entity/Client.java=UTF-8
