@@ -108,14 +108,6 @@ public class QL_DonHangController {
 		return 1;
 	}
 	
-	public BillDetail getBillDetail(int id) {
-		Session session = factory.getCurrentSession();
-		String hql = "FROM BillDetail where productInBill.id = :id";
-		Query query = session.createQuery(hql);
-		query.setParameter("id", id);
-		BillDetail list =(BillDetail) query.list().get(0);
-		return list;
-	}
 	
 	
 	@Autowired
