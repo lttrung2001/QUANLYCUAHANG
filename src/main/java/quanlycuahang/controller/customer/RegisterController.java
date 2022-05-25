@@ -38,7 +38,7 @@ public class RegisterController {
 		account.setEmail(account.getEmail().toLowerCase());
 		Client info = account.getClientInfo();
 		info.setLastName(info.getLastName().toUpperCase());
-		info.setFirstName(info.getLastName().toUpperCase());
+		info.setFirstName(info.getFirstName().toUpperCase());
 		info.setAddress(info.getAddress().toUpperCase());
 		account.setClientInfo(info);
 		account.setCode(new Integer(new Random().nextInt(100000, 999999)).toString()); 
@@ -67,6 +67,9 @@ public class RegisterController {
 		// Trùng email
 		else if (res == -2) {
 			errors.rejectValue("email", "account", "Email đã tồn tại!");
+		}
+		if (account.getClientInfo().getPhoneNumber().length() < 10 && !account.getClientInfo().getPhoneNumber().matches("[0-9]")) {
+			errors.rejectValue("clientInfo.phoneNumber", "account", "Số điện thoại có độ dài là 10 và chỉ chứa các ký tự số!");
 		}
 		if (errors.hasErrors()) {
 			model.addAttribute("account", account);
@@ -97,6 +100,7 @@ public class RegisterController {
 			return "customer/verify-email";
 		}
 		String code = account.getCode().toString();
+		System.out.println(code);
 		account = clientAccountDAO.getClientAccountByUsername(username);
 		if (account.getCode().equals(code)) {
 			account.setCode("");

@@ -51,6 +51,7 @@
         <form:button class="submitFP">TIẾP TỤC</form:button>
     </form:form>
     <div class="filter-login"></div>
+    <%@include file="/WEB-INF/views/customer/reuse/home.jsp" %>
     <script>
 	    function closeForgotForm(){
 			document.querySelector('.forgotPassword').style.display='none'

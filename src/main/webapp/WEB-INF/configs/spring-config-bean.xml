@@ -29,7 +29,7 @@
 		</bean>
 	<bean id="uploadfile" class="quanlycuahang.bean.UploadFile">
 		<property name="basePath"
-			value="C:\\Users\\sondi\\Desktop\\QUANLYCUAHANG\\src\\main\\webapp\\resources\\my_image\" />
+			value="C:\\Users\\THANHTRUNG\\OneDrive - student.ptithcm.edu.vn\\Desktop\\eclipse_workspace\\QUANLYCUAHANG\\src\\main\\webapp\\resources\\my_image\" />
 			
 	</bean>
 
