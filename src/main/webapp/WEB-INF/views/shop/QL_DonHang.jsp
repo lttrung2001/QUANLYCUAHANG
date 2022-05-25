@@ -22,7 +22,7 @@
     <div id="facePage">
         <div class="mainMenu">
             <div class="logoManagement">
-                <img class="imgLogoManagement" src="my_png/Logo-byOanh.png" alt="CAB Shop">
+                <img class="imgLogoManagement" src="<c:url value='/resources/my_png/Logo-byOanh.png'/>" alt="CAB Shop">
                 <h2>Management</h2>
             </div>
             <div class="container">
@@ -35,13 +35,13 @@
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="#">
+                            <a href="admin/donhang/index.htm">
                                 <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
                                 <span class="title">Quản lý đơn hàng</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="#">
+                            <a href="admin/product/productType.htm">
                                 <span class="icon"><i class="fa-solid fa-clipboard-list"></i></span>
                                 <span class="title">Quản lý loại sản phẩm</span>
                             </a>
@@ -75,7 +75,7 @@
             </div>
 
             <div id="accountLogin">
-                <img src="my_image/Customer Images/IMGcab.jpg" alt="" >
+                <img src="<c:url value='/resources/my_image/Customer Images/IMGcab.jpg'/>" alt="" >
                 <a href="#">${sessionScope.admin.fullname }</a>
             </div>
         </div>
@@ -124,6 +124,6 @@
     </div>
 
     
-    <script type="text/javascript" src="/resources/my_js/Db.js"></script>
+    <script type="text/javascript" src="<c:url value='/resources/my_js/Db.js'/>"></script>
 </body>
 </html>
