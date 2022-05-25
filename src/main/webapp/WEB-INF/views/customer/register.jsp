@@ -32,8 +32,8 @@
 <body>
 	<%@include file="/WEB-INF/views/customer/reuse/header.jsp" %>
     <div id="signup-form">
-		<button id="close-signup" >
-			<span><i class="fa-solid fa-xmark"></i></span>
+		<button id="close-signup" onclick="closeRegisterForm()">
+			<i class="fa-solid fa-xmark"></i>
 		</button>
 		<form:form action="register.htm" method="post" modelAttribute="account">
 			<h1>Register</h1>
@@ -93,5 +93,11 @@
 		</form:form>
 	</div>
     <div class="filter-login"></div>
+    <script>
+	    function closeRegisterForm(){
+			document.getElementById('signup-form').style.display="none"
+			document.querySelector('.filter-login').style.width="0"
+		}
+    </script>
 </body>
 </html>

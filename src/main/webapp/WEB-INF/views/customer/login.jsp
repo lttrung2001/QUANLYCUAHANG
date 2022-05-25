@@ -32,8 +32,8 @@
 <body>
 	<%@include file="/WEB-INF/views/customer/reuse/header.jsp" %>
     <div id="login-form">
-		<button id="close-login">
-			<span><i class="fa-solid fa-xmark"></i></span>
+		<button id="close-login" >
+			<i class="fa-solid fa-xmark" onclick="closeLoginForm()"></i>
 		</button>
 		<img class="avtLogin" src="<c:url value='/resources/my_png/avatar.png'/>" >
 		<h1>LOGIN</h1>
@@ -51,5 +51,12 @@
 		
 	</div>
     <div class="filter-login"></div>
+    <script>
+	    function closeLoginForm(){
+			document.getElementById('login-form').style.display="none"
+			document.querySelector('.filter-login').style.width="0"
+		}
+    </script>
+    
 </body>
 </html>
