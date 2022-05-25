@@ -4,10 +4,12 @@
 <div class="mainTypeProduct">
 	<div class="searchTypePro">
 		<form:form action="admin/product/productType.htm">
-			<span> <input name="searchInput" type="text"
-				placeholder="Search" aria-label="Search" class="">
-			</span> <span>
-				<button name="btnsearch" id="searchTypePro" type="submit" class="">
+			<span> 
+				<input name="searchInput" type="text"
+					placeholder="Search" aria-label="Search" class="">
+			</span> 
+			<span>
+				<button name="btnsearch" type="submit" class="btnSearchTypePro">
 					<i class="fa-solid fa-magnifying-glass"></i>
 				</button>
 			</span>

@@ -168,8 +168,10 @@ body{
 
 #accountLogin{
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
 /*     display: none; */
+	display: flex;
+	align-items: center;
 }
 #accountLogin img{
     margin: 0 20px;
@@ -543,10 +545,21 @@ body{
     font-size: 20px;
     outline: none;
 }
+
 .searchTypePro span{
     font-size: 22px;
-    padding: 6px 10px;
-    cursor: pointer;
+/*     padding: 6px 10px; */
+    
+}
+.searchTypePro span .btnSearchTypePro{
+	background: #ccc;
+	border: none;
+	height:39.2px;
+	transform: translateY(-3px);
+	width: 40px;
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	cursor: pointer;
 }
 .editTypePro{
     width: 95%;
@@ -670,6 +683,8 @@ body{
 }
 .tableTypePro table tr td:nth-child(4) i{
     margin: 0 2px;
+    color: #333;
+    
 }
 .tableTypePro table tr td:nth-child(4) i:hover{
     cursor: pointer;
@@ -1296,7 +1311,7 @@ body{
 .cardBox{
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 30px;
@@ -1304,18 +1319,23 @@ body{
 .cardBox .card{
     position: relative;
     background: var(--white);
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0 7px 25px rgba(0,0,0,0.1);
-    grid-gap: 30px;
+/*     grid-gap: 30px; */
+    height:160px;
 }
 .cardBox .card .numbers{
     position: relative;
     font-weight: 500;
-    font-size: 2.5em;
+    font-size: 2em;
     color: var(--blue);
+}
+.cardBox .card .nameProMax{
+	font-size: 1.5em;
 }
 .cardBox .card .cardName{
     color: var(--black2);

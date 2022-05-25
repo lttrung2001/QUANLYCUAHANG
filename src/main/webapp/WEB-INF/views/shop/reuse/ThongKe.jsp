@@ -16,7 +16,7 @@
         </div>
         <div class="card">
             <div>
-                <div class="numbers">${max }</div>
+                <div class="numbers nameProMax">${max }</div>
                 <div class="cardName">Sản phẩm bán chạy nhất</div>
             </div>
             <div class="iconBox">
