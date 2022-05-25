@@ -68,29 +68,29 @@
                 </div>
 				<div class="name-order">			
 					Tên khách hàng:
-					<p>${client }</p>
+					<p>${b.customerAcc.clientInfo.lastName } ${b.customerAcc.clientInfo.lastName }</p>
 				</div>
 				<div class="phone-order">
 					Số điện thoại:
-					<p>0982777935</p>
+					<p>${b.customerAcc.clientInfo.phoneNumber }</p>
 				</div>
 				<div class="address-order">
 					Địa chỉ:
-					<p>Q9, TPHCM</p>
+					<p>${b.customerAcc.clientInfo.address }</p>
 				</div>
 				<div class="products-order">
 					Chi tiết:
 					<ul>
-						<li><span>Hoodie1</span> <span>100$</span> <span>x1</span></li>
-						<li><span>T-shirt1</span> <span>60$</span> <span>x2</span></li>
-						<li><span>T-shirt1</span> <span>60$</span> <span>x3</span></li>
-
-						</li>
+						<c:set var="total" value="${0 }"></c:set>
+						<c:forEach var="bd" items="${b.billDetails }">
+						<li><span>${bd.productInBill.name }</span> <span>${bd.productInBill.price }$</span> <span>x${bd.amount }</span></li>
+						<c:set var="total" value="${total + bd.productInBill.price*bd.amount }"></c:set>
+						</c:forEach>
 					</ul>
 				</div>
 				<div class="totalPrice-order">
 					Tổng:
-					<p style="display: inline;">1000$</p>
+					<p style="display: inline;">${total }</p>
 				</div>
 				<div class="sale-order">
 					Giảm :
@@ -98,7 +98,7 @@
 				</div>
 				<div class="finalPrice-order">
 					Thành tiền:
-					<p style="text-align: end; display: inline;">1000$</p>
+					<p style="text-align: end; display: inline;">${total }</p>
 				</div>
 			</div>
 			<div class="statusDetailOrder">

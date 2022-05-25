@@ -43,6 +43,7 @@ public class QL_DonHangController {
 		List<Bill> Bill = this.getBill();
 
 		model.addAttribute("Bill", Bill);
+		model.addAttribute("b", Bill.get(1));
 		return "shop/QL_DonHang";
 	}
 
@@ -127,6 +128,7 @@ public class QL_DonHangController {
 			@PathVariable("id") int id) {
 		Bill tempBill = this.getBill(id);
 		tempBill.setStatus('Y');
+		model.addAttribute("b", tempBill);
 		int temp = this.updateConfirm(tempBill);
 		List<Bill> Bill = this.getBill();
 		model.addAttribute("Bill", Bill);
@@ -166,13 +168,13 @@ public class QL_DonHangController {
 	}
 	@RequestMapping(value = "index/{id}.htm", params = "btnView")
 	public String view(ModelMap model,
-			//@ModelAttribute("Bill") Bill Bill,
 			@PathVariable("id") int id) {
 		List<Bill> Bill = this.getBill();
 		model.addAttribute("Bill", Bill);
-		Bill tempBill = this.getBill(id);
-		ClientAccount client= tempBill.getCustomerAcc();
-		model.addAttribute("client",client.getUsername());
+		model.addAttribute("b", this.getBill(id));
+//		Bill tempBill = this.getBill(id);
+//		ClientAccount client= tempBill.getCustomerAcc();
+//		model.addAttribute("client",client.getUsername());
 		
 		return "shop/QL_DonHang";
 	}
