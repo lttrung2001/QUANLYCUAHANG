@@ -88,11 +88,12 @@
 			<button class="loading-login"></button>
 			<form:button type="submit" class="btn-submit-signup">Confirm</form:button>
 			<div class="signup-link">
-				Don't remember your password? <a href="#">Help!</a>
+				Don't remember your password? <a href="forgot.htm">Help!</a>
 			</div>
 		</form:form>
 	</div>
     <div class="filter-login"></div>
+    <%@include file="/WEB-INF/views/customer/reuse/home.jsp" %>
     <script>
 	    function closeRegisterForm(){
 			document.getElementById('signup-form').style.display="none"

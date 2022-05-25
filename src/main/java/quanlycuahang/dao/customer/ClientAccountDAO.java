@@ -40,15 +40,16 @@ public class ClientAccountDAO {
 		Transaction transaction = session.beginTransaction();
 		try {
 			session.update(account);
+			System.out.println(account.toString());
 			transaction.commit();
+			session.close();
+			return 0;
 		} catch (Exception e) {
 			// TODO: handle exception
 			transaction.rollback();
 			session.close();
 			return -1; // Lỗi khi cập nhật tài khoản
 		}
-		session.close();
-		return 0;
 	}
 	public ClientAccount getClientAccountByUsername(String username) {
 		Session session = factory.getCurrentSession();

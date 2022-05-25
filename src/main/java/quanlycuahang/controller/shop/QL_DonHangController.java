@@ -41,9 +41,7 @@ public class QL_DonHangController {
 	public String index(ModelMap model) {
 
 		List<Bill> Bill = this.getBill();
-
 		model.addAttribute("Bill", Bill);
-		model.addAttribute("b", Bill.get(1));
 		return "shop/QL_DonHang";
 	}
 

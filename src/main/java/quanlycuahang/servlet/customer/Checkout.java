@@ -68,7 +68,7 @@ public class Checkout extends HttpServlet {
 			conn = DriverManager.getConnection(dbURL, user, pass);
 			String now = getToday(); // Get current date time
 			String createBillStatement = String.format("INSERT INTO BILL (CREATE_AT, DELIVER_ADDRESS,CUSTOMER) VALUES (N'%s', N'%s', N'%s')", now, address,account.getUsername());
-			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CUSTOMER = '%s'", account.getUsername());
+			String getBillId = String.format("SELECT BILL_ID FROM BILL WHERE CREATE_AT = N'%s' AND CUSTOMER = N'%s'", now, account.getUsername());
 			Statement statement = conn.createStatement();
 			conn.setAutoCommit(false);
 			// Create bill

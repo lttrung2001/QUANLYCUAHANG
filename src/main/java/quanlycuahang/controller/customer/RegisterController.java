@@ -38,7 +38,7 @@ public class RegisterController {
 		account.setEmail(account.getEmail().toLowerCase());
 		Client info = account.getClientInfo();
 		info.setLastName(info.getLastName().toUpperCase());
-		info.setFirstName(info.getLastName().toUpperCase());
+		info.setFirstName(info.getFirstName().toUpperCase());
 		info.setAddress(info.getAddress().toUpperCase());
 		account.setClientInfo(info);
 		account.setCode(new Integer(new Random().nextInt(100000, 999999)).toString()); 
@@ -68,6 +68,9 @@ public class RegisterController {
 		else if (res == -2) {
 			errors.rejectValue("email", "account", "Email đã tồn tại!");
 		}
+		if (account.getClientInfo().getPhoneNumber().length() < 10 && !account.getClientInfo().getPhoneNumber().matches("[0-9]")) {
+			errors.rejectValue("clientInfo.phoneNumber", "account", "Số điện thoại có độ dài là 10 và chỉ chứa các ký tự số!");
+		}
 		if (errors.hasErrors()) {
 			model.addAttribute("account", account);
 			return "customer/register";
@@ -90,24 +93,23 @@ public class RegisterController {
 	
 	@RequestMapping(value = "verify", method = RequestMethod.POST)
 	public String verify(ModelMap model, @RequestParam("username") String username, HttpServletRequest request,
-						@Validated @ModelAttribute("account") ClientAccount account, BindingResult errors) {
-		if (errors.hasFieldErrors("code")) {
-			account.setUsername(username);
-			model.addAttribute("account", account);
-			return "customer/verify-email";
-		}
+						@ModelAttribute("account") ClientAccount account, BindingResult errors) {
+		account.setUsername(username);
 		String code = account.getCode().toString();
+		System.out.println(code);
 		account = clientAccountDAO.getClientAccountByUsername(username);
 		if (account.getCode().equals(code)) {
 			account.setCode("");
 			clientAccountDAO.updateAccount(account);
 			return "customer/verify-success";
 		}
+		else if (code.equals("")) {
+			errors.rejectValue("code", "account", "Không để trống mã code!");
+		}
 		else {
 			errors.rejectValue("code", "account", "Mã code không đúng!");
-			account.setCode(code);
-			model.addAttribute("account", account);
-			return "customer/verify-email";
 		}
+		model.addAttribute("account", account);
+		return "customer/verify-email";
 	}
 }

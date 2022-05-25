@@ -16,7 +16,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/my_css/CSS-Cart.css'/>">
-</head>
+ </head>
 <body>
 	<c:set var="totalPrice" value="${0}" />
 	<div class="shoppingCart">

@@ -33,43 +33,43 @@
                 <div class="navigation">
                     <ul>
                         <li class="objectManagement">
-                            <a href="#">
+                            <a>
                                 <span class="icon"><i class="fa-solid fa-bullhorn"></i></span>
                                 <span class="title">Thông báo</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="#">
+                            <a href="admin/donhang/index.htm">
                                 <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
                                 <span class="title">Quản lý đơn hàng</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="#">
+                            <a href="admin/product/productType.htm">
                                 <span class="icon"><i class="fa-solid fa-clipboard-list"></i></span>
                                 <span class="title">Quản lý loại sản phẩm</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="<c:url value='admin/product/index.htm'/>">
+                            <a href="admin/product/index.htm">
                                 <span class="icon"><i class="fa-solid fa-shirt"></i></span>
                                 <span class="title">Quản lý sản phẩm</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="<c:url value='admin/customer/index.htm'/>">
+                            <a href="admin/customer/index.htm">
                                 <span class="icon"><i class="fa-solid fa-users"></i></span>
                                 <span class="title">Quản lý khách hàng</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="<c:url value='admin/thongke/index.htm'/>">
+                            <a href="admin/thongke/index.htm">
                                 <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                                 <span class="title">Thống kê</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="index.html">
+                            <a href="home.htm">
                                 <span class="icon"><i class="fa-solid fa-shop"></i></span>
                                 <span class="title" >My Shop</span>
                             </a>
@@ -80,7 +80,7 @@
 
             <div id="accountLogin" >
                 <img src="<c:url value='/resources/my_image/Customer Images/IMGcab.jpg'/>" alt="" >
-                <a href="#">${sessionScope.admin.fullname }</a>
+                <a>${sessionScope.admin.fullname }</a>
             </div>
         </div>
         

@@ -34,15 +34,16 @@
 					<td>${bd.productInBill.id }</td>
 					<td>${bd.productInBill.name }</td>
 					<td>${bd.amount }</td>
-					<td><fmt:formatNumber currencyCode="VND" currencySymbol="đ" value="${bd.productInBill.price }" minFractionDigits="0"></fmt:formatNumber></td>
-					<td><fmt:formatNumber currencyCode="VND" currencySymbol="đ" value="${bd.amount*bd.productInBill.price }" minFractionDigits="0"></fmt:formatNumber></td>
+					<td><fmt:formatNumber currencyCode="VND" type="currency" currencySymbol="đ" value="${bd.productInBill.price }" minFractionDigits="0"></fmt:formatNumber></td>
+					<td><fmt:formatNumber currencyCode="VND" type="currency" currencySymbol="đ" value="${bd.amount*bd.productInBill.price }" minFractionDigits="0"></fmt:formatNumber></td>
 				</tr>
 				<c:set var="total" value="${total + bd.amount*bd.productInBill.price }"></c:set>
 			</c:forEach>
 		</tbody>
 	</table>
 	<h3 class="card-title">Thành tiền: 
-	<fmt:formatNumber currencyCode="VND" currencySymbol="đ" value="${total }" minFractionDigits="0"></fmt:formatNumber>
+	<fmt:formatNumber currencyCode="VND" type="currency" currencySymbol="đ" value="${total }" minFractionDigits="0"></fmt:formatNumber>
 	</h3>
+	<c:if test="${bill.status eq 'N'.charAt(0) }"><a type="button" class="btn btn-danger" href="account/bill-${bill.id }.htm">Hủy đơn</a></c:if>
 </body>
 </html>
