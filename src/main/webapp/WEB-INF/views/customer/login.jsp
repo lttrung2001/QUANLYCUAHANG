@@ -51,6 +51,7 @@
 		
 	</div>
     <div class="filter-login"></div>
+    <%@include file="/WEB-INF/views/customer/reuse/home.jsp" %>
     <script>
 	    function closeLoginForm(){
 			document.getElementById('login-form').style.display="none"

@@ -39,13 +39,13 @@
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="#">
+                            <a href="admin/donhang/index.htm">
                                 <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
                                 <span class="title">Quản lý đơn hàng</span>
                             </a>
                         </li>
                         <li class="objectManagement">
-                            <a href="#">
+                            <a href="admin/product/productType.htm">
                                 <span class="icon"><i class="fa-solid fa-clipboard-list"></i></span>
                                 <span class="title">Quản lý loại sản phẩm</span>
                             </a>
