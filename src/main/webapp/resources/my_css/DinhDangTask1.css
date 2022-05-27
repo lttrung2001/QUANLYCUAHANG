@@ -1275,3 +1275,24 @@ form.search-form button i{
 .footer-left ul li, .footer-right ul li{
   margin: auto 10px;
 }
+
+/* .pagination { */
+/*     display: flex; */
+/*     list-style: none; */
+/*     justify-content: center; */
+/* } */
+
+/* .pagination > li { */
+/*     margin: 0 8px; */
+/*     display: inline-block; */
+/*     border: 2px solid dodgerblue; */
+/*     border-radius: 4px; */
+/* } */
+/* .pagination > li > a { */
+/*     font-size: 24px; */
+/*     text-decoration: none; */
+/*     color: dodgerblue; */
+/*     display: inline-block; */
+/*     width: 100%; */
+/*     padding: 0 16px; */
+/* } */

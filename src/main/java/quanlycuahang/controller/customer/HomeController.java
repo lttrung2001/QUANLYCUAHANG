@@ -1,9 +1,7 @@
 package quanlycuahang.controller.customer;
 
-import java.util.HashSet;
-
-import java.util.Set;
-
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -27,17 +25,20 @@ public class HomeController {
 	private ProductTypeDAO productTypeDAO;
 	
 	@RequestMapping(value = "home")
-	public String home(ModelMap model) {
+	public String home(ModelMap model, Integer offset, Integer maxResults) {
 		model.addAttribute("part", "home");
-		model.addAttribute("products", productDAO.getAllProduct());
+		model.addAttribute("count", productDAO.count());
+		model.addAttribute("offset", offset);
+		model.addAttribute("products", productDAO.findAll(offset, maxResults));
+//		model.addAttribute("products", productDAO.getAllProduct());
 		return "customer/customer_home";
 	}
 	
 	@RequestMapping(value = "top")
 	public String top(ModelMap model) {
 		model.addAttribute("part", "top");
-		Set<ProductType> productType = partDAO.getPartById(1).getProTypeList();
-		Set<Product> products = new HashSet<Product>();
+		List<ProductType> productType = partDAO.getPartById(1).getProTypeList();
+		List<Product> products = new ArrayList<Product>();
 		for (ProductType pt : productType) 
 			products.addAll(pt.getList());
 		model.addAttribute("products", products);
@@ -54,8 +55,8 @@ public class HomeController {
 	@RequestMapping(value = "bot")
 	public String bot(ModelMap model) {
 		model.addAttribute("part", "bot");
-		Set<ProductType> productType = partDAO.getPartById(2).getProTypeList();
-		Set<Product> products = new HashSet<Product>();
+		List<ProductType> productType = partDAO.getPartById(2).getProTypeList();
+		List<Product> products = new ArrayList<Product>();
 		for (ProductType pt : productType) 
 			products.addAll(pt.getList());
 		model.addAttribute("products", products);

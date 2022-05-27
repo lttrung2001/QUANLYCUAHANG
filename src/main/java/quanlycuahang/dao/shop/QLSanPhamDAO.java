@@ -1,6 +1,7 @@
 package quanlycuahang.dao.shop;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Projections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
@@ -141,4 +143,20 @@ public class QLSanPhamDAO {
 	public String defaulttName() {
 		return baseUploadFile.defaultName();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Product> findAll(Integer offset, Integer maxResults) {
+        return factory.getCurrentSession()
+                .createQuery("from Product where qttInStock != 0")
+                .setFirstResult(offset!=null?offset:0)
+                .setMaxResults(maxResults!=null?maxResults:10)
+                .list();
+    }
+	
+    public Long count() {
+        return (Long)factory.getCurrentSession()
+                .createCriteria(Product.class)
+                .setProjection(Projections.rowCount())
+                .uniqueResult();
+    }
 }

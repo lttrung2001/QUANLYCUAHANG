@@ -13,6 +13,7 @@ import quanlycuahang.entity.Part;
 @Repository
 @Transactional
 public class PartDAO {
+	
 	@Autowired
 	private SessionFactory factory;
 	

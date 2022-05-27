@@ -1,9 +1,9 @@
 package quanlycuahang.entity;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
+import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,12 +15,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "PRODUCT")
@@ -48,10 +42,10 @@ public class Product {
 	private ProductType proType;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productInBill")
-	private Set<BillDetail> inBill = new HashSet<BillDetail>();
+	private List<BillDetail> inBill = new ArrayList<BillDetail>();
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productInCart")
-	private Set<Cart> inCart = new HashSet<Cart>();
+	private List<Cart> inCart = new ArrayList<Cart>();
 
 	public int getId() {
 		return id;
@@ -117,24 +111,24 @@ public class Product {
 		this.proType = proType;
 	}
 
-	public Set<BillDetail> getInBill() {
+	public List<BillDetail> getInBill() {
 		return inBill;
 	}
 
-	public void setInBill(Set<BillDetail> inBill) {
+	public void setInBill(List<BillDetail> inBill) {
 		this.inBill = inBill;
 	}
 
-	public Set<Cart> getInCart() {
+	public List<Cart> getInCart() {
 		return inCart;
 	}
 
-	public void setInCart(Set<Cart> inCart) {
+	public void setInCart(List<Cart> inCart) {
 		this.inCart = inCart;
 	}
 
 	public Product(int id, String name, String desc, double price, String image, int qttInStock, Date insertDate,
-			ProductType proType, Set<BillDetail> inBill, Set<Cart> inCart) {
+			ProductType proType, List<BillDetail> inBill, List<Cart> inCart) {
 		super();
 		this.id = id;
 		this.name = name;

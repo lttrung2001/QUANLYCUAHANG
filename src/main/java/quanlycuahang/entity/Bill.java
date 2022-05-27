@@ -1,12 +1,13 @@
 package quanlycuahang.entity;
 
+import java.util.ArrayList;
+
+
 import java.util.Date;
 
 
 
-import java.util.HashSet;
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,7 +38,7 @@ public class Bill {
 	@JoinColumn(name = "CUSTOMER")
 	private ClientAccount customerAcc;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "bill")
-	Set<BillDetail> billDetails = new HashSet<BillDetail>();
+	List<BillDetail> billDetails = new ArrayList<BillDetail>();
 	public int getId() {
 		return id;
 	}
@@ -74,14 +75,14 @@ public class Bill {
 	public void setCustomerAcc(ClientAccount customerAcc) {
 		this.customerAcc = customerAcc;
 	}
-	public Set<BillDetail> getBillDetails() {
+	public List<BillDetail> getBillDetails() {
 		return billDetails;
 	}
-	public void setBillDetails(Set<BillDetail> billDetails) {
+	public void setBillDetails(List<BillDetail> billDetails) {
 		this.billDetails = billDetails;
 	}
 	public Bill(int id, Date createDate, char status, String address, String staffCreate, ClientAccount customerAcc,
-			Set<BillDetail> billDetails) {
+			List<BillDetail> billDetails) {
 		super();
 		this.id = id;
 		this.createDate = createDate;

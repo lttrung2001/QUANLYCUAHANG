@@ -1,9 +1,8 @@
 package quanlycuahang.entity;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -13,11 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
-
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "PRODUCT_TYPE")
@@ -32,7 +27,7 @@ public class ProductType {
 	@JoinColumn(name = "PART", nullable = false)
 	private Part part;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "proType")
-	private Set<Product> list = new HashSet<Product>();
+	private List<Product> list = new ArrayList<Product>();
 	public int getProTypeId() {
 		return proTypeId;
 	}
@@ -51,13 +46,13 @@ public class ProductType {
 	public void setPart(Part part) {
 		this.part = part;
 	}
-	public Set<Product> getList() {
+	public List<Product> getList() {
 		return list;
 	}
-	public void setList(Set<Product> list) {
+	public void setList(List<Product> list) {
 		this.list = list;
 	}
-	public ProductType(int proTypeId, String proTypeName, Part part, Set<Product> list) {
+	public ProductType(int proTypeId, String proTypeName, Part part, List<Product> list) {
 		super();
 		this.proTypeId = proTypeId;
 		this.proTypeName = proTypeName;

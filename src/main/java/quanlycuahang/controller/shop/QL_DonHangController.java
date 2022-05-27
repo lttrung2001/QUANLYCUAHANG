@@ -1,14 +1,10 @@
 package quanlycuahang.controller.shop;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -18,7 +14,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,8 +21,6 @@ import quanlycuahang.entity.ClientAccount;
 import quanlycuahang.entity.Product;
 import quanlycuahang.entity.Bill;
 import quanlycuahang.entity.BillDetail;
-import quanlycuahang.entity.Client;
-import quanlycuahang.entity.ProductType;
 
 @Transactional
 @Controller
@@ -125,7 +118,7 @@ public class QL_DonHangController {
 		model.addAttribute("message", "");
 		
 		
-		Set<BillDetail> getBillDetail=tempBill.getBillDetails();
+		List<BillDetail> getBillDetail= tempBill.getBillDetails();
 		String listProduct="";
 		Double total=0.0;
 		for(BillDetail item: getBillDetail){

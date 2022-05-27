@@ -1,10 +1,10 @@
 package quanlycuahang.entity;
 
+import java.util.ArrayList;
+
 import java.util.Date;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -46,9 +46,9 @@ public class ClientAccount {
 	@OneToOne(mappedBy = "clientAccount")
 	private Client clientInfo;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customerAcc")
-	private Set<Bill> bills = new HashSet<Bill>();
+	private List<Bill> bills = new ArrayList<Bill>();
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "accountInCart")
-	private Set<Cart> products = new HashSet<Cart>();
+	private List<Cart> products = new ArrayList<Cart>();
 	public String getUsername() {
 		return username;
 	}
@@ -91,20 +91,20 @@ public class ClientAccount {
 	public void setClientInfo(Client clientInfo) {
 		this.clientInfo = clientInfo;
 	}
-	public Set<Bill> getBills() {
+	public List<Bill> getBills() {
 		return bills;
 	}
-	public void setBills(Set<Bill> bills) {
+	public void setBills(List<Bill> bills) {
 		this.bills = bills;
 	}
-	public Set<Cart> getProducts() {
+	public List<Cart> getProducts() {
 		return products;
 	}
-	public void setProducts(Set<Cart> products) {
+	public void setProducts(List<Cart> products) {
 		this.products = products;
 	}
 	public ClientAccount(String username, String password, int point, Date createdDate, String email, String code,
-			Client clientInfo, Set<Bill> bills, Set<Cart> products) {
+			Client clientInfo, List<Bill> bills, List<Cart> products) {
 		super();
 		this.username = username;
 		this.password = password;

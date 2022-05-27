@@ -1,9 +1,8 @@
 package quanlycuahang.entity;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,7 +19,7 @@ public class Part {
 	@Column(name = "PART_NAME", nullable = false)
 	private String name;
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "part")
-	private Set<ProductType> proTypeList = new HashSet<ProductType>();
+	private List<ProductType> proTypeList = new ArrayList<ProductType>();
 	public int getId() {
 		return id;
 	}
@@ -33,13 +32,13 @@ public class Part {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<ProductType> getProTypeList() {
+	public List<ProductType> getProTypeList() {
 		return proTypeList;
 	}
-	public void setProTypeList(Set<ProductType> proTypeList) {
+	public void setProTypeList(List<ProductType> proTypeList) {
 		this.proTypeList = proTypeList;
 	}
-	public Part(int id, String name, Set<ProductType> proTypeList) {
+	public Part(int id, String name, List<ProductType> proTypeList) {
 		super();
 		this.id = id;
 		this.name = name;
