@@ -3,6 +3,8 @@ package quanlycuahang.controller.customer;
 import java.util.Date;
 
 
+
+
 import java.util.Random;
 
 import javax.mail.MessagingException;
@@ -52,7 +54,7 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public String register(ModelMap model, @ModelAttribute("account") ClientAccount account, BindingResult errors) throws MessagingException {
+	public String register(ModelMap model, @Validated @ModelAttribute("account") ClientAccount account, BindingResult errors) throws MessagingException {
 		Client info = account.getClientInfo();
 		info.setId(account.getUsername());
 		account.setClientInfo(info);
