@@ -54,20 +54,24 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public String register(ModelMap model, @Validated @ModelAttribute("account") ClientAccount account, BindingResult errors) throws MessagingException {
+	public String register(ModelMap model, @Validated @ModelAttribute("account") ClientAccount account,
+			BindingResult errors) throws MessagingException {
+		if (errors.hasErrors()) {
+			model.addAttribute("account", account);
+			return "customer/register";
+		}
 		Client info = account.getClientInfo();
 		info.setId(account.getUsername());
 		account.setClientInfo(info);
 		account.setCreatedDate(new Date());
 		account = this.correctInfomation(account);
-		
 		int res = clientAccountDAO.checkAccountExists(account);
 		// Trùng tên tài khoản
 		if (res == -1) {
 			errors.rejectValue("username", "account", "Tên tài khoản đã tồn tại!");
 		}
 		// Trùng email
-		else if (res == -2) {
+		if (res == -2) {
 			errors.rejectValue("email", "account", "Email đã tồn tại!");
 		}
 		if (account.getClientInfo().getPhoneNumber().length() < 10 && !account.getClientInfo().getPhoneNumber().matches("[0-9]")) {
