@@ -1,8 +1,5 @@
 package quanlycuahang.entity;
 
-import java.util.ArrayList;
-
-
 import java.util.Date;
 
 
@@ -38,7 +35,7 @@ public class Bill {
 	@JoinColumn(name = "CUSTOMER")
 	private ClientAccount customerAcc;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "bill")
-	List<BillDetail> billDetails = new ArrayList<BillDetail>();
+	List<BillDetail> billDetails;
 	public int getId() {
 		return id;
 	}

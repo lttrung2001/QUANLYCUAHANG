@@ -1,7 +1,5 @@
 package quanlycuahang.entity;
 
-import java.util.ArrayList;
-
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +17,7 @@ public class Part {
 	@Column(name = "PART_NAME", nullable = false)
 	private String name;
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "part")
-	private List<ProductType> proTypeList = new ArrayList<ProductType>();
+	private List<ProductType> proTypeList;
 	public int getId() {
 		return id;
 	}

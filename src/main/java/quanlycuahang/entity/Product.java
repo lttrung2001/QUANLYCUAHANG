@@ -1,7 +1,5 @@
 package quanlycuahang.entity;
 
-import java.util.ArrayList;
-
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -41,11 +39,11 @@ public class Product {
 	@JoinColumn(name = "PRODUCT_TYPE", nullable = false)
 	private ProductType proType;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productInBill")
-	private List<BillDetail> inBill = new ArrayList<BillDetail>();
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "productInBill")
+	private List<BillDetail> inBill;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productInCart")
-	private List<Cart> inCart = new ArrayList<Cart>();
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "productInCart")
+	private List<Cart> inCart;
 
 	public int getId() {
 		return id;

@@ -1,7 +1,5 @@
 package quanlycuahang.entity;
 
-import java.util.ArrayList;
-
 import java.util.Date;
 
 import java.util.List;
@@ -46,9 +44,9 @@ public class ClientAccount {
 	@OneToOne(mappedBy = "clientAccount")
 	private Client clientInfo;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customerAcc")
-	private List<Bill> bills = new ArrayList<Bill>();
+	private List<Bill> bills;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "accountInCart")
-	private List<Cart> products = new ArrayList<Cart>();
+	private List<Cart> products;
 	public String getUsername() {
 		return username;
 	}
