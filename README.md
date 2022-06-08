@@ -1,5 +1,7 @@
 # do-an-lap-trinh-web
 # Đề tài website bán hàng - Môn lập trình web (thầy Hiếu - PTITHCM)
+## Description: 
+`A website for a small clothing store to manage and sale products online.`
 ## Team: 4 members
 ## Language: Java
 ## Tech stack: Spring MVC, Hibernate, Jquery
